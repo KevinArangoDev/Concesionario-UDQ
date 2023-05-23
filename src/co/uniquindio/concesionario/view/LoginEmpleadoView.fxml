@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import de.jensd.fx.glyphs.*?>
+<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.uniquindio.concesionario.controller.LoginEmpleadoController">
+   <children>
+      <AnchorPane prefHeight="600.0" prefWidth="500.0" style="-fx-background-color: #222831;">
+         <children>
+            <ImageView fx:id="imgLogo" fitHeight="300.0" fitWidth="300.0" layoutX="100.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../../../../OneDrive/Escritorio/ImgProyecto/logoCarro.png" />
+               </image></ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="500.0" prefHeight="600.0" prefWidth="500.0" style="-fx-background-color: #EEEEEE;">
+         <children>
+            <JFXTextField fx:id="txtUsuario" focusColor="#393e46" labelFloat="true" layoutX="64.0" layoutY="290.0" prefHeight="40.0" prefWidth="370.0" promptText="Usuario" AnchorPane.topAnchor="290.0" />
+            <JFXPasswordField fx:id="txtContrasenia" focusColor="#393e46" labelFloat="true" layoutX="64.0" layoutY="369.0" prefHeight="40.0" prefWidth="370.0" promptText="Contraseña" AnchorPane.topAnchor="370.0" />
+            <Label layoutX="155.0" layoutY="36.0" text="Bienvenido" textAlignment="CENTER" textFill="#393e46" AnchorPane.topAnchor="35.0">
+               <font>
+                  <Font name="Bell MT Bold" size="40.0" />
+               </font>
+            </Label>
+            <Label layoutX="174.0" layoutY="103.0" text="Iniciar Sesión" textFill="#393e46" AnchorPane.topAnchor="100.0">
+               <font>
+                  <Font name="Bell MT" size="28.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="btnIngresar" layoutX="297.0" layoutY="459.0" onAction="#ingresarVentEmpleado" prefWidth="140.0" style="-fx-background-color: #222831;" text="Iniciar Sesión" textFill="#eeeeee" AnchorPane.topAnchor="460.0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></JFXButton>
+            <JFXButton fx:id="btnVolver" layoutX="64.0" layoutY="459.0" onAction="#volverVentPrincipal" prefWidth="140.0" style="-fx-background-color: #222831;" text="Volver" textFill="#eeeeee" AnchorPane.topAnchor="460.0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></JFXButton>
+            <ImageView fitHeight="115.0" fitWidth="121.0" layoutX="193.0" layoutY="147.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="150.0">
+               <image>
+                  <Image url="@../../../../../../../../../OneDrive/Escritorio/ImgProyecto/logoUsuario.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

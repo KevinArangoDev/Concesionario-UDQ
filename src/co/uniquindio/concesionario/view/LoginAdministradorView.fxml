@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.uniquindio.concesionario.controller.LoginAdministradorController">
+   <children>
+      <AnchorPane prefHeight="600.0" prefWidth="500.0" style="-fx-background-color: #222831;">
+         <children>
+            <ImageView fx:id="imgLogo" fitHeight="300.0" fitWidth="300.0" layoutX="103.0" layoutY="169.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../../../../OneDrive/Escritorio/ImgProyecto/logoCarro.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="500.0" prefHeight="600.0" prefWidth="500.0" style="-fx-background-color: #EEEEEE;">
+         <children>
+            <Label layoutX="153.0" layoutY="34.0" text="Bienvenido" textFill="#393e46" AnchorPane.topAnchor="35.0">
+               <font>
+                  <Font name="Bell MT Bold" size="40.0" />
+               </font>
+            </Label>
+            <Label layoutX="173.0" layoutY="99.0" text="Iniciar Sesión" textFill="#393e46" AnchorPane.topAnchor="100.0">
+               <font>
+                  <Font name="Bell MT" size="28.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="115.0" fitWidth="121.0" layoutX="193.0" layoutY="153.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="150.0">
+               <image>
+                  <Image url="@../../../../../../../../../OneDrive/Escritorio/ImgProyecto/logoUsuario.png" />
+               </image>
+            </ImageView>
+            <JFXTextField fx:id="txtUsuarioAdmin" focusColor="#393e46" labelFloat="true" layoutX="65.0" layoutY="293.0" prefHeight="39.0" prefWidth="373.0" promptText="Usuario" AnchorPane.topAnchor="290.0" />
+            <JFXPasswordField fx:id="txtContraseniaAdmin" focusColor="#393e46" labelFloat="true" layoutX="65.0" layoutY="370.0" prefHeight="40.0" prefWidth="370.0" promptText="Contraseña" AnchorPane.topAnchor="370.0" />
+            <JFXButton fx:id="btnVolverAdmin" layoutX="65.0" layoutY="469.0" onAction="#volverVentPrincipal" prefWidth="140.0" style="-fx-background-color: #222831;" text="Volver" textFill="#eeeeee" AnchorPane.topAnchor="460.0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton fx:id="btnIngresarAdmin" layoutX="295.0" layoutY="469.0" onAction="#ingresarVentAdmin" prefWidth="140.0" style="-fx-background-color: #222831;" text="Iniciar Sesión" textFill="#eeeeee" AnchorPane.topAnchor="460.0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
