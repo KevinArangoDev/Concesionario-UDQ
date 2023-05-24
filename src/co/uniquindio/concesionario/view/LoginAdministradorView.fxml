@@ -15,7 +15,7 @@
          <children>
             <ImageView fx:id="imgLogo" fitHeight="300.0" fitWidth="300.0" layoutX="103.0" layoutY="169.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../../../../OneDrive/Escritorio/ImgProyecto/logoCarro.png" />
+                  <Image url="@../img/logoCarro.png" />
                </image>
             </ImageView>
          </children>
@@ -34,7 +34,7 @@
             </Label>
             <ImageView fitHeight="115.0" fitWidth="121.0" layoutX="193.0" layoutY="153.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="150.0">
                <image>
-                  <Image url="@../../../../../../../../../OneDrive/Escritorio/ImgProyecto/logoUsuario.png" />
+                  <Image url="@../img/logoUsuario.png" />
                </image>
             </ImageView>
             <JFXTextField fx:id="txtUsuarioAdmin" focusColor="#393e46" labelFloat="true" layoutX="65.0" layoutY="293.0" prefHeight="39.0" prefWidth="373.0" promptText="Usuario" AnchorPane.topAnchor="290.0" />

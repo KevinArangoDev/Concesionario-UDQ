@@ -16,7 +16,7 @@
          <children>
             <ImageView fx:id="imgLogo" fitHeight="300.0" fitWidth="300.0" layoutX="100.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../../../../OneDrive/Escritorio/ImgProyecto/logoCarro.png" />
+                  <Image url="@../img/logoCarro.png" />
                </image></ImageView>
          </children>
       </AnchorPane>
@@ -44,7 +44,7 @@
                </cursor></JFXButton>
             <ImageView fitHeight="115.0" fitWidth="121.0" layoutX="193.0" layoutY="147.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="150.0">
                <image>
-                  <Image url="@../../../../../../../../../OneDrive/Escritorio/ImgProyecto/logoUsuario.png" />
+                  <Image url="@../img/logoUsuario.png" />
                </image>
             </ImageView>
          </children>
