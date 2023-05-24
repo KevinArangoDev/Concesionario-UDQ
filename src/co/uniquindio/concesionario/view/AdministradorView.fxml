@@ -74,7 +74,7 @@
                         <TextField fx:id="txtIdentificacionEmpleado" prefHeight="40.0" prefWidth="250.0" />
                         <ComboBox prefHeight="40.0" prefWidth="230.0" promptText="Seleccione el cargo" style="-fx-background-color: #cccccc;">
                            <HBox.margin>
-                              <Insets left="10.0" />
+                              <Insets />
                            </HBox.margin>
                            <cursor>
                               <Cursor fx:constant="HAND" />
@@ -85,7 +85,7 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                            <HBox.margin>
-                              <Insets left="15.0" />
+                              <Insets />
                            </HBox.margin>
                         </JFXButton>
                      </children>
