@@ -50,7 +50,25 @@ public class LoginEmpleadoController implements Initializable {
 
     @FXML
     void ingresarVentEmpleado(ActionEvent event) {
+    	try{
+    	FXMLLoader loader = new FXMLLoader(
+				getClass().getResource("../view/EmpleadoView.fxml"));
+		Parent root = loader.load();
 
+		EmpleadoController controlador = loader.getController();
+
+		Scene scene = new Scene(root);
+		Stage stage = new Stage();
+
+		stage.setScene(scene);
+		stage.show();
+		stage.setTitle("Car UQ");
+		Stage myStage = (Stage) this.btnIngresar.getScene().getWindow();
+		myStage.close();
+
+	} catch (IOException e) {
+        e.printStackTrace();
+	}
     }
 
 
