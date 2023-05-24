@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.uniquindio.concesionario.controller.EmpleadoController">
+   <children>
+      <VBox prefHeight="600.0" prefWidth="250.0" style="-fx-background-color: #2a313c;">
+         <children>
+            <Pane prefHeight="240.0" prefWidth="250.0" style="-fx-background-color: #222831;">
+               <children>
+                  <ImageView fitHeight="216.0" fitWidth="212.0" layoutX="13.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../../../ImgProyecto/logoCarro.png" />
+                     </image>
+                  </ImageView>
+               </children></Pane>
+            <JFXButton fx:id="btnVenderVehiculo" onAction="#ventVenderVehiculo" prefHeight="80.0" prefWidth="300.0" style="-fx-background-color: #2a313c;" text="Vender Vehículo" textFill="#eeeeee">
+               <font>
+                  <Font name="Bell MT Bold" size="20.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></JFXButton>
+            <JFXButton fx:id="btnAlquilarVehiculo" onAction="#ventAlquilarVehiculo" prefHeight="80.0" prefWidth="300.0" style="-fx-background-color: #2a313c;" text="Alquilar Vehículo" textFill="#eeeeee">
+               <font>
+                  <Font name="Bell MT Bold" size="20.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton fx:id="btnComprarVehiculo" onAction="#ventComprarVehiculo" prefHeight="80.0" prefWidth="300.0" style="-fx-background-color: #2a313c;" text="Comprar Vehículo" textFill="#eeeeee">
+               <font>
+                  <Font name="Bell MT Bold" size="20.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton fx:id="btnCerrarSesionEmpleado" onAction="#ventCerrasSesion" prefHeight="80.0" prefWidth="300.0" style="-fx-background-color: #2a313c;" text="Cerrar Sesión" textFill="#eeeeee">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font name="Bell MT Bold" size="20.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </VBox>
+      <AnchorPane layoutX="250.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Pane prefHeight="80.0" prefWidth="750.0" style="-fx-background-color: #2a313c;" AnchorPane.bottomAnchor="510.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Label layoutX="282.0" layoutY="28.0" text="Inicio Empleado" textFill="#eeeeee">
+                     <font>
+                        <Font name="Bell MT" size="28.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Label layoutX="40.0" layoutY="112.0" text="Ultimos Lanzamientos:" textFill="#2a313c" AnchorPane.leftAnchor="40.0">
+               <font>
+                  <Font name="Bell MT" size="22.0" />
+               </font>
+            </Label>
+            <ScrollPane layoutX="40.0" layoutY="150.0" prefHeight="177.0" prefWidth="693.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0">
+               <content>
+                  <HBox prefHeight="174.0" prefWidth="850.0" />
+               </content>
+            </ScrollPane>
+            <Label layoutX="40.0" layoutY="359.0" text="Próximos en llegar:" textFill="#2a313c">
+               <font>
+                  <Font name="Bell MT" size="22.0" />
+               </font>
+            </Label>
+            <ScrollPane layoutX="40.0" layoutY="395.0" prefHeight="177.0" prefWidth="693.0">
+               <content>
+                  <HBox prefHeight="175.0" prefWidth="864.0" />
+               </content>
+            </ScrollPane>
+         </children>
+      </AnchorPane>
+</children>
+</AnchorPane>

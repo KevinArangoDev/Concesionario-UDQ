@@ -1,17 +1,112 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.AnchorPane?>
 
-
-<BorderPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="co.uniquindio.concesionario.controller.AdministradorController">
-   <center>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+<AnchorPane prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.uniquindio.concesionario.controller.AdministradorController">
+   <children>
+      <VBox prefHeight="600.0" prefWidth="250.0" style="-fx-background-color: #2a313c;">
          <children>
-            <Label layoutX="79.0" layoutY="44.0" text="Label" />
+            <Pane prefHeight="240.0" prefWidth="250.0" style="-fx-background-color: #222831;">
+               <children>
+                  <ImageView fitHeight="216.0" fitWidth="212.0" layoutX="13.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../../../ImgProyecto/logoCarro.png" />
+                     </image>
+                  </ImageView>
+               </children></Pane>
+            <JFXButton fx:id="btnCRUDEmpleado" onAction="#ventCrudEmpleado" prefHeight="80.0" prefWidth="300.0" style="-fx-background-color: #2a313c;" text="CRUD Empleado" textFill="#eeeeee">
+               <font>
+                  <Font name="Bell MT Bold" size="20.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></JFXButton>
+            <JFXButton fx:id="btnReportes" onAction="#ventReportes" prefHeight="80.0" prefWidth="300.0" style="-fx-background-color: #2a313c;" text="Reportes" textFill="#eeeeee">
+               <font>
+                  <Font name="Bell MT Bold" size="20.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton fx:id="btnCerrarSesion" onAction="#cerrarSesion" prefHeight="80.0" prefWidth="300.0" style="-fx-background-color: #2a313c;" text="Cerrar Sesión" textFill="#eeeeee">
+               <font>
+                  <Font name="Bell MT Bold" size="20.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+         </children>
+      </VBox>
+      <AnchorPane layoutX="250.0" prefHeight="600.0" prefWidth="750.0" style="-fx-background-color: #EEEEEE;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <GridPane layoutX="14.0" layoutY="239.0" prefHeight="370.0" prefWidth="700.0" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="158.0" minHeight="9.0" prefHeight="64.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="329.0" minHeight="10.0" prefHeight="306.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <TableView prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+                    <columns>
+                      <TableColumn prefWidth="125.0" text="Cargo" />
+                      <TableColumn prefWidth="125.0" text="ID" />
+                        <TableColumn prefWidth="125.0" text="Nombre" />
+                        <TableColumn prefWidth="125.0" text="Apellido" />
+                        <TableColumn prefWidth="70.0" text="Edad" />
+                        <TableColumn prefWidth="129.0" text="Sueldo" />
+                    </columns>
+                  </TableView>
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <TextField fx:id="txtIdentificacionEmpleado" prefHeight="40.0" prefWidth="250.0" />
+                        <ComboBox prefHeight="40.0" prefWidth="230.0" promptText="Seleccione el cargo" style="-fx-background-color: #cccccc;">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ComboBox>
+                        <JFXButton fx:id="btnBuscarEmpleado" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #2a313c;" text="Buscar" textFill="#eeeeee">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <HBox.margin>
+                              <Insets left="15.0" />
+                           </HBox.margin>
+                        </JFXButton>
+                     </children>
+                  </HBox>
+               </children>
+            </GridPane>
+            <Pane layoutX="-2.0" layoutY="71.0" prefHeight="116.0" prefWidth="750.0" style="-fx-background-color: #222831;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="71.0">
+               <children>
+                  <Label layoutX="25.0" layoutY="41.0" text="Información del empleado:" textFill="#eeeeee">
+                     <font>
+                        <Font name="Bell MT Bold" size="28.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Label layoutX="255.0" layoutY="22.0" text="Inicio Administrador" textFill="#222831" AnchorPane.topAnchor="20.0">
+               <font>
+                  <Font name="Bell MT" size="28.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
-   </center>
-</BorderPane>
+   </children>
+</AnchorPane>
