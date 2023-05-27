@@ -15,6 +15,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 public class AdministradorController implements Initializable {
+	ModelFactoryController singleton = ModelFactoryController.getInstance();
 
     @FXML
     private ResourceBundle resources;
@@ -45,6 +46,25 @@ public class AdministradorController implements Initializable {
 
     @FXML
     void ventCrudEmpleado(ActionEvent event) {
+    	try {
+
+    		FXMLLoader loader = new FXMLLoader(
+    				getClass().getResource("../view/CrudEmpleadoView.fxml"));
+    		Parent root = loader.load();
+
+
+    		Scene scene = new Scene(root);
+    		Stage stage = new Stage();
+
+    		stage.setScene(scene);
+    		stage.show();
+    		stage.setTitle("Reportes");
+    		Stage myStage = (Stage) this.btnCRUDEmpleado.getScene().getWindow();
+    		myStage.close();
+
+    	} catch (IOException e) {
+
+    	}
 
     }
 
