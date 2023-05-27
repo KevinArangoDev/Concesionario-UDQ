@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.uniquindio.concesionario.controller.EmpleadoController">
+<AnchorPane prefHeight="600.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.uniquindio.concesionario.controller.EmpleadoController">
    <children>
       <VBox prefHeight="600.0" prefWidth="250.0" style="-fx-background-color: #2a313c;">
          <children>
@@ -72,21 +72,405 @@
                   <Font name="Bell MT" size="22.0" />
                </font>
             </Label>
-            <ScrollPane layoutX="40.0" layoutY="150.0" prefHeight="177.0" prefWidth="693.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0">
-               <content>
-                  <HBox prefHeight="174.0" prefWidth="850.0" />
-               </content>
-            </ScrollPane>
-            <Label layoutX="40.0" layoutY="359.0" text="Próximos en llegar:" textFill="#2a313c">
-               <font>
-                  <Font name="Bell MT" size="22.0" />
-               </font>
-            </Label>
-            <ScrollPane layoutX="40.0" layoutY="395.0" prefHeight="177.0" prefWidth="693.0">
-               <content>
-                  <HBox prefHeight="175.0" prefWidth="864.0" />
-               </content>
-            </ScrollPane>
+            <Pane layoutX="40.0" layoutY="152.0" prefHeight="400.0" prefWidth="730.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0">
+               <children>
+                  <TabPane prefHeight="400.0" prefWidth="730.0" tabClosingPolicy="UNAVAILABLE">
+                    <tabs>
+                      <Tab text="Carros">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="14.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="15.0">
+                                       <image>
+                                          <Image url="@../img/cruzeCarro.jpg" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="265.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../img/cruzeCarro.jpg" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="503.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="15.0">
+                                       <image>
+                                          <Image url="@../img/cruzeCarro.jpg" />
+                                       </image>
+                                    </ImageView>
+                                    <Label layoutX="15.0" layoutY="164.0" text="Cruze" textFill="#2a313c">
+                                       <font>
+                                          <Font name="Bell MT Bold" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="515.0" layoutY="165.0" text="Cruze" textFill="#2a313c">
+                                       <font>
+                                          <Font name="Bell MT Bold" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="265.0" layoutY="164.0" text="Cruze" textFill="#2a313c">
+                                       <font>
+                                          <Font name="Bell MT Bold" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Hyperlink layoutX="15.0" layoutY="197.0" text="Descargar ficha Técnica">
+                                       <font>
+                                          <Font name="Bell MT" size="16.0" />
+                                       </font>
+                                    </Hyperlink>
+                                    <Hyperlink layoutX="265.0" layoutY="197.0" text="Descargar ficha Técnica">
+                                       <font>
+                                          <Font name="Bell MT" size="16.0" />
+                                       </font>
+                                    </Hyperlink>
+                                    <Hyperlink layoutX="515.0" layoutY="197.0" text="Descargar ficha Técnica">
+                                       <font>
+                                          <Font name="Bell MT" size="16.0" />
+                                       </font>
+                                    </Hyperlink>
+                                    <Separator layoutX="235.0" layoutY="14.0" orientation="VERTICAL" prefHeight="257.0" prefWidth="3.0" style="-fx-background-color: #2a313c;" />
+                                    <Separator layoutX="493.0" layoutY="14.0" orientation="VERTICAL" prefHeight="257.0" prefWidth="3.0" style="-fx-background-color: #2a313c;" />
+                                    <Separator layoutX="10.0" layoutY="270.0" prefHeight="4.0" prefWidth="694.0" style="-fx-background-color: #2a313c;" />
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                        <Tab text="Camionetas">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="265.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../img/camioneta.jpg" />
+                                       </image></ImageView>
+                                    <Label layoutX="15.0" layoutY="164.0" text="Captiva" textFill="#2a313c">
+                                       <font>
+                                          <Font name="Bell MT Bold" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="515.0" layoutY="165.0" text="Captiva" textFill="#2a313c">
+                                       <font>
+                                          <Font name="Bell MT Bold" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="265.0" layoutY="164.0" text="Captiva" textFill="#2a313c">
+                                       <font>
+                                          <Font name="Bell MT Bold" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Hyperlink layoutX="15.0" layoutY="197.0" text="Descargar ficha Técnica">
+                                       <font>
+                                          <Font name="Bell MT" size="16.0" />
+                                       </font>
+                                    </Hyperlink>
+                                    <Hyperlink layoutX="265.0" layoutY="197.0" text="Descargar ficha Técnica">
+                                       <font>
+                                          <Font name="Bell MT" size="16.0" />
+                                       </font>
+                                    </Hyperlink>
+                                    <Hyperlink layoutX="515.0" layoutY="197.0" text="Descargar ficha Técnica">
+                                       <font>
+                                          <Font name="Bell MT" size="16.0" />
+                                       </font>
+                                    </Hyperlink>
+                                    <Separator layoutX="235.0" layoutY="14.0" orientation="VERTICAL" prefHeight="257.0" prefWidth="3.0" style="-fx-background-color: #2a313c;" />
+                                    <Separator layoutX="493.0" layoutY="14.0" orientation="VERTICAL" prefHeight="257.0" prefWidth="3.0" style="-fx-background-color: #2a313c;" />
+                                    <Separator layoutX="10.0" layoutY="270.0" prefHeight="4.0" prefWidth="694.0" style="-fx-background-color: #2a313c;" />
+                                    <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="515.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../img/camioneta.jpg" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="15.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../img/camioneta.jpg" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                        <Tab text="Pick-Ups">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="14.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="15.0">
+                                       <image>
+                                          <Image url="@../img/PickUps.jpg" />
+                                       </image>
+                                    </ImageView>
+                                    <Label layoutX="15.0" layoutY="164.0" text="Truck" textFill="#2a313c">
+                                       <font>
+                                          <Font name="Bell MT Bold" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="515.0" layoutY="165.0" text="Truck" textFill="#2a313c">
+                                       <font>
+                                          <Font name="Bell MT Bold" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="265.0" layoutY="164.0" text="Truck" textFill="#2a313c">
+                                       <font>
+                                          <Font name="Bell MT Bold" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Hyperlink layoutX="15.0" layoutY="197.0" text="Descargar ficha Técnica">
+                                       <font>
+                                          <Font name="Bell MT" size="16.0" />
+                                       </font>
+                                    </Hyperlink>
+                                    <Hyperlink layoutX="265.0" layoutY="197.0" text="Descargar ficha Técnica">
+                                       <font>
+                                          <Font name="Bell MT" size="16.0" />
+                                       </font>
+                                    </Hyperlink>
+                                    <Hyperlink layoutX="515.0" layoutY="197.0" text="Descargar ficha Técnica">
+                                       <font>
+                                          <Font name="Bell MT" size="16.0" />
+                                       </font>
+                                    </Hyperlink>
+                                    <Separator layoutX="235.0" layoutY="14.0" orientation="VERTICAL" prefHeight="257.0" prefWidth="3.0" style="-fx-background-color: #2a313c;" />
+                                    <Separator layoutX="493.0" layoutY="14.0" orientation="VERTICAL" prefHeight="257.0" prefWidth="3.0" style="-fx-background-color: #2a313c;" />
+                                    <Separator layoutX="10.0" layoutY="270.0" prefHeight="4.0" prefWidth="694.0" style="-fx-background-color: #2a313c;" />
+                                    <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="265.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../img/PickUps.jpg" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="515.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../img/PickUps.jpg" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                        <Tab text="Eléctricos">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <ImageView fitHeight="134.0" fitWidth="200.0" layoutX="15.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="15.0">
+                                       <image>
+                                          <Image url="@../img/electrico.jpg" />
+                                       </image>
+                                    </ImageView>
+                                    <Label layoutX="15.0" layoutY="164.0" text="Eléctrico" textFill="#2a313c">
+                                       <font>
+                                          <Font name="Bell MT Bold" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="515.0" layoutY="165.0" text="Eléctrico" textFill="#2a313c">
+                                       <font>
+                                          <Font name="Bell MT Bold" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="265.0" layoutY="164.0" text="Eléctrico" textFill="#2a313c">
+                                       <font>
+                                          <Font name="Bell MT Bold" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Hyperlink layoutX="15.0" layoutY="197.0" text="Descargar ficha Técnica">
+                                       <font>
+                                          <Font name="Bell MT" size="16.0" />
+                                       </font>
+                                    </Hyperlink>
+                                    <Hyperlink layoutX="265.0" layoutY="197.0" text="Descargar ficha Técnica">
+                                       <font>
+                                          <Font name="Bell MT" size="16.0" />
+                                       </font>
+                                    </Hyperlink>
+                                    <Hyperlink layoutX="515.0" layoutY="197.0" text="Descargar ficha Técnica">
+                                       <font>
+                                          <Font name="Bell MT" size="16.0" />
+                                       </font>
+                                    </Hyperlink>
+                                    <Separator layoutX="235.0" layoutY="14.0" orientation="VERTICAL" prefHeight="257.0" prefWidth="3.0" style="-fx-background-color: #2a313c;" />
+                                    <Separator layoutX="493.0" layoutY="14.0" orientation="VERTICAL" prefHeight="257.0" prefWidth="3.0" style="-fx-background-color: #2a313c;" />
+                                    <Separator layoutX="10.0" layoutY="270.0" prefHeight="4.0" prefWidth="694.0" style="-fx-background-color: #2a313c;" />
+                                    <ImageView fitHeight="134.0" fitWidth="200.0" layoutX="265.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../img/electrico.jpg" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fitHeight="134.0" fitWidth="200.0" layoutX="515.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../img/electrico.jpg" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                        <Tab text="Deportivos">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="14.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="15.0">
+                                       <image>
+                                          <Image url="@../img/deportivo.jpg" />
+                                       </image>
+                                    </ImageView>
+                                    <Label layoutX="15.0" layoutY="164.0" text="Camaro" textFill="#2a313c">
+                                       <font>
+                                          <Font name="Bell MT Bold" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="515.0" layoutY="165.0" text="Camaro" textFill="#2a313c">
+                                       <font>
+                                          <Font name="Bell MT Bold" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="265.0" layoutY="164.0" text="Camaro" textFill="#2a313c">
+                                       <font>
+                                          <Font name="Bell MT Bold" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Hyperlink layoutX="15.0" layoutY="197.0" text="Descargar ficha Técnica">
+                                       <font>
+                                          <Font name="Bell MT" size="16.0" />
+                                       </font>
+                                    </Hyperlink>
+                                    <Hyperlink layoutX="265.0" layoutY="197.0" text="Descargar ficha Técnica">
+                                       <font>
+                                          <Font name="Bell MT" size="16.0" />
+                                       </font>
+                                    </Hyperlink>
+                                    <Hyperlink layoutX="515.0" layoutY="197.0" text="Descargar ficha Técnica">
+                                       <font>
+                                          <Font name="Bell MT" size="16.0" />
+                                       </font>
+                                    </Hyperlink>
+                                    <Separator layoutX="235.0" layoutY="14.0" orientation="VERTICAL" prefHeight="257.0" prefWidth="3.0" style="-fx-background-color: #2a313c;" />
+                                    <Separator layoutX="493.0" layoutY="14.0" orientation="VERTICAL" prefHeight="257.0" prefWidth="3.0" style="-fx-background-color: #2a313c;" />
+                                    <Separator layoutX="10.0" layoutY="270.0" prefHeight="4.0" prefWidth="694.0" style="-fx-background-color: #2a313c;" />
+                                    <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="515.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../img/deportivo.jpg" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="265.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../img/deportivo.jpg" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                        <Tab text="Vans">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="503.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="15.0">
+                                       <image>
+                                          <Image url="@../img/van.jpg" />
+                                       </image>
+                                    </ImageView>
+                                    <Label layoutX="15.0" layoutY="164.0" text="Van Gmc" textFill="#2a313c">
+                                       <font>
+                                          <Font name="Bell MT Bold" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="515.0" layoutY="165.0" text="Van Gmc" textFill="#2a313c">
+                                       <font>
+                                          <Font name="Bell MT Bold" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="265.0" layoutY="164.0" text="Van Gmc" textFill="#2a313c">
+                                       <font>
+                                          <Font name="Bell MT Bold" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Hyperlink layoutX="15.0" layoutY="197.0" text="Descargar ficha Técnica">
+                                       <font>
+                                          <Font name="Bell MT" size="16.0" />
+                                       </font>
+                                    </Hyperlink>
+                                    <Hyperlink layoutX="265.0" layoutY="197.0" text="Descargar ficha Técnica">
+                                       <font>
+                                          <Font name="Bell MT" size="16.0" />
+                                       </font>
+                                    </Hyperlink>
+                                    <Hyperlink layoutX="515.0" layoutY="197.0" text="Descargar ficha Técnica">
+                                       <font>
+                                          <Font name="Bell MT" size="16.0" />
+                                       </font>
+                                    </Hyperlink>
+                                    <Separator layoutX="235.0" layoutY="14.0" orientation="VERTICAL" prefHeight="257.0" prefWidth="3.0" style="-fx-background-color: #2a313c;" />
+                                    <Separator layoutX="493.0" layoutY="14.0" orientation="VERTICAL" prefHeight="257.0" prefWidth="3.0" style="-fx-background-color: #2a313c;" />
+                                    <Separator layoutX="10.0" layoutY="270.0" prefHeight="4.0" prefWidth="694.0" style="-fx-background-color: #2a313c;" />
+                                    <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="265.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../img/van.jpg" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="14.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../img/van.jpg" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                        <Tab text="Camiones y Buses">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="15.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="15.0">
+                                       <image>
+                                          <Image url="@../img/bus.jpg" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="265.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../img/camion.jpg" />
+                                       </image>
+                                    </ImageView>
+                                    <Label layoutX="15.0" layoutY="164.0" text="Bus" textFill="#2a313c">
+                                       <font>
+                                          <Font name="Bell MT Bold" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="515.0" layoutY="165.0" text="Bus" textFill="#2a313c">
+                                       <font>
+                                          <Font name="Bell MT Bold" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="265.0" layoutY="164.0" text="Camión" textFill="#2a313c">
+                                       <font>
+                                          <Font name="Bell MT Bold" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Hyperlink layoutX="15.0" layoutY="197.0" text="Descargar ficha Técnica">
+                                       <font>
+                                          <Font name="Bell MT" size="16.0" />
+                                       </font>
+                                    </Hyperlink>
+                                    <Hyperlink layoutX="265.0" layoutY="197.0" text="Descargar ficha Técnica">
+                                       <font>
+                                          <Font name="Bell MT" size="16.0" />
+                                       </font>
+                                    </Hyperlink>
+                                    <Hyperlink layoutX="515.0" layoutY="197.0" text="Descargar ficha Técnica">
+                                       <font>
+                                          <Font name="Bell MT" size="16.0" />
+                                       </font>
+                                    </Hyperlink>
+                                    <Separator layoutX="235.0" layoutY="14.0" orientation="VERTICAL" prefHeight="257.0" prefWidth="3.0" style="-fx-background-color: #2a313c;" />
+                                    <Separator layoutX="493.0" layoutY="14.0" orientation="VERTICAL" prefHeight="257.0" prefWidth="3.0" style="-fx-background-color: #2a313c;" />
+                                    <Separator layoutX="10.0" layoutY="270.0" prefHeight="4.0" prefWidth="694.0" style="-fx-background-color: #2a313c;" />
+                                    <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="510.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../img/bus.jpg" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                    </tabs>
+                  </TabPane>
+               </children>
+            </Pane>
          </children>
       </AnchorPane>
 </children>
