@@ -15,7 +15,6 @@ public abstract class Vehiculo implements Serializable {
 	private  String cambios;
 	private Double velMax;
 	private String cilindraje;
-	private String numPasajeros;
 	private String placa ;
 
 	/**
@@ -33,7 +32,7 @@ public abstract class Vehiculo implements Serializable {
 	 */
 
 	public Vehiculo(TipoCombustible tipoCombustible, TipoTrasmision tipoTrasmision, TipoNuevoUsado tipoNuevoUsado,
-			String marca, String modelo, String cambios, Double velMax, String cilindraje, String numPasajeros,
+			String marca, String modelo, String cambios, Double velMax, String cilindraje,
 			String placa) {
 		super();
 		this.tipoCombustible = tipoCombustible;
@@ -44,16 +43,7 @@ public abstract class Vehiculo implements Serializable {
 		this.cambios = cambios;
 		this.velMax = velMax;
 		this.cilindraje = cilindraje;
-		this.numPasajeros = numPasajeros;
 		this.placa = placa;
-	}
-
-	/**
-	 * constructor vacio
-	 */
-
-	public Vehiculo() {
-		super();
 	}
 
 	/**
@@ -109,12 +99,6 @@ public abstract class Vehiculo implements Serializable {
 	public void setCilindraje(String cilindraje) {
 		this.cilindraje = cilindraje;
 	}
-	public String getNumPasajeros() {
-		return numPasajeros;
-	}
-	public void setNumPasajeros(String numPasajeros) {
-		this.numPasajeros = numPasajeros;
-	}
 	public String getPlaca() {
 		return placa;
 	}
@@ -126,8 +110,8 @@ public abstract class Vehiculo implements Serializable {
 	public String toString() {
 		return "Vehiculo [tipoCombustible=" + tipoCombustible + ", tipoTrasmision=" + tipoTrasmision
 				+ ", tipoNuevoUsado=" + tipoNuevoUsado + ", marca=" + marca + ", modelo=" + modelo + ", Cambios="
-				+ cambios + ", velMax=" + velMax + ", cilindraje=" + cilindraje + ", numPasajeros=" + numPasajeros
-				+ ", placa=" + placa + "]";
+				+ cambios + ", velMax=" + velMax + ", cilindraje=" + cilindraje + ", numPasajeros=" +
+				 ", placa=" + placa + "]";
 	}
 
 

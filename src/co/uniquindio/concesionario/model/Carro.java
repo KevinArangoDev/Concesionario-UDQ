@@ -9,7 +9,8 @@ public abstract class Carro  extends Vehiculo implements Serializable{
 	/**
 	 * Declaracion de atributos
 	 */
-
+	private String numPasajeros;
+	private boolean velCrucero;
 	private String numPuertas;
 	private String capMaletero;
 	private boolean hasAireAcondicionado;
@@ -27,8 +28,9 @@ public abstract class Carro  extends Vehiculo implements Serializable{
 	 * @param cambios
 	 * @param velMax
 	 * @param cilindraje
-	 * @param numPasajeros
 	 * @param placa
+	 * @param numPasajeros
+	 * @param velCrucero
 	 * @param numPuertas
 	 * @param capMaletero
 	 * @param hasAireAcondicionado
@@ -36,12 +38,14 @@ public abstract class Carro  extends Vehiculo implements Serializable{
 	 * @param hasABS
 	 * @param numBolsasAire
 	 */
+
 	public Carro(TipoCombustible tipoCombustible, TipoTrasmision tipoTrasmision, TipoNuevoUsado tipoNuevoUsado,
-			String marca, String modelo, String cambios, Double velMax, String cilindraje, String numPasajeros,
-			String placa, String numPuertas, String capMaletero, boolean hasAireAcondicionado, boolean hasCamaraReversa,
-			boolean hasABS, String numBolsasAire) {
-		super(tipoCombustible, tipoTrasmision, tipoNuevoUsado, marca, modelo, cambios, velMax, cilindraje, numPasajeros,
-				placa);
+			String marca, String modelo, String cambios, Double velMax, String cilindraje, String placa,
+			String numPasajeros, boolean velCrucero, String numPuertas, String capMaletero,
+			boolean hasAireAcondicionado, boolean hasCamaraReversa, boolean hasABS, String numBolsasAire) {
+		super(tipoCombustible, tipoTrasmision, tipoNuevoUsado, marca, modelo, cambios, velMax, cilindraje, placa);
+		this.numPasajeros = numPasajeros;
+		this.velCrucero = velCrucero;
 		this.numPuertas = numPuertas;
 		this.capMaletero = capMaletero;
 		this.hasAireAcondicionado = hasAireAcondicionado;
@@ -50,24 +54,29 @@ public abstract class Carro  extends Vehiculo implements Serializable{
 		this.numBolsasAire = numBolsasAire;
 	}
 
-
-	//constructor vacio
-	public Carro(TipoCombustible tipoCombustible, TipoTrasmision tipoTrasmision, TipoNuevoUsado tipoNuevoUsado,
-			String marca, String modelo, String cambios, Double velMax, String cilindraje, String numPasajeros,
-			String placa) {
-		super(tipoCombustible, tipoTrasmision, tipoNuevoUsado, marca, modelo, cambios, velMax, cilindraje, numPasajeros,
-				placa);
-	}
-
+// ------------------------------------------------------------------
 	/**
 	 * Getters and Setters
 	 * @return
 	 */
-// ------------------------------------------------------------------
+
 
 	public String getNumPuertas() {
 		return numPuertas;
 	}
+	public String getNumPasajeros() {
+		return numPasajeros;
+	}
+	public void setNumPasajeros(String numPasajeros) {
+		this.numPasajeros = numPasajeros;
+	}
+	public boolean isVelCrucero() {
+		return velCrucero;
+	}
+	public void setVelCrucero(boolean velCrucero) {
+		this.velCrucero = velCrucero;
+	}
+
 	public void setNumPuertas(String numPuertas) {
 		this.numPuertas = numPuertas;
 	}

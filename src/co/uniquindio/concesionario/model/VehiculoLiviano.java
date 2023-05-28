@@ -5,7 +5,6 @@ public abstract class VehiculoLiviano  extends Carro{
 	/**
 	 * Declaracion de atributos
 	 */
-	private boolean velCrucero;
 	private boolean sensorColision;
 	private  boolean sensorTraficoCruzado;
 	private boolean asisPermCarril;
@@ -20,52 +19,39 @@ public abstract class VehiculoLiviano  extends Carro{
 	 * @param cambios
 	 * @param velMax
 	 * @param cilindraje
-	 * @param numPasajeros
 	 * @param placa
+	 * @param numPasajeros
+	 * @param velCrucero
 	 * @param numPuertas
 	 * @param capMaletero
 	 * @param hasAireAcondicionado
 	 * @param hasCamaraReversa
 	 * @param hasABS
 	 * @param numBolsasAire
-	 * @param velCrucero
 	 * @param sensorColision
 	 * @param sensorTraficoCruzado
 	 * @param asisPermCarril
 	 */
+
 	public VehiculoLiviano(TipoCombustible tipoCombustible, TipoTrasmision tipoTrasmision,
 			TipoNuevoUsado tipoNuevoUsado, String marca, String modelo, String cambios, Double velMax,
-			String cilindraje, String numPasajeros, String placa, String numPuertas, String capMaletero,
-			boolean hasAireAcondicionado, boolean hasCamaraReversa, boolean hasABS, String numBolsasAire,
-			boolean velCrucero, boolean sensorColision, boolean sensorTraficoCruzado, boolean asisPermCarril) {
-		super(tipoCombustible, tipoTrasmision, tipoNuevoUsado, marca, modelo, cambios, velMax, cilindraje, numPasajeros,
-				placa, numPuertas, capMaletero, hasAireAcondicionado, hasCamaraReversa, hasABS, numBolsasAire);
-		this.velCrucero = velCrucero;
+			String cilindraje, String placa, String numPasajeros, boolean velCrucero, String numPuertas,
+			String capMaletero, boolean hasAireAcondicionado, boolean hasCamaraReversa, boolean hasABS,
+			String numBolsasAire, boolean sensorColision, boolean sensorTraficoCruzado, boolean asisPermCarril) {
+		super(tipoCombustible, tipoTrasmision, tipoNuevoUsado, marca, modelo, cambios, velMax, cilindraje, placa,
+				numPasajeros, velCrucero, numPuertas, capMaletero, hasAireAcondicionado, hasCamaraReversa, hasABS,
+				numBolsasAire);
 		this.sensorColision = sensorColision;
 		this.sensorTraficoCruzado = sensorTraficoCruzado;
 		this.asisPermCarril = asisPermCarril;
 	}
-	//constructor vacio
-	public VehiculoLiviano(TipoCombustible tipoCombustible, TipoTrasmision tipoTrasmision,
-			TipoNuevoUsado tipoNuevoUsado, String marca, String modelo, String cambios, Double velMax,
-			String cilindraje, String numPasajeros, String placa, String numPuertas, String capMaletero,
-			boolean hasAireAcondicionado, boolean hasCamaraReversa, boolean hasABS, String numBolsasAire) {
-		super(tipoCombustible, tipoTrasmision, tipoNuevoUsado, marca, modelo, cambios, velMax, cilindraje, numPasajeros,
-				placa, numPuertas, capMaletero, hasAireAcondicionado, hasCamaraReversa, hasABS, numBolsasAire);
-	}
-
 	/**
 	 * Getters and Setters  , to String
 	 * @return
 	 */
 
 //----------------------------------------------------------------------
-	public boolean isVelCrucero() {
-		return velCrucero;
-	}
-	public void setVelCrucero(boolean velCrucero) {
-		this.velCrucero = velCrucero;
-	}
+
 	public boolean isSensorColision() {
 		return sensorColision;
 	}
@@ -86,7 +72,7 @@ public abstract class VehiculoLiviano  extends Carro{
 	}
 	@Override
 	public String toString() {
-		return "VehiculoLiviano [velCrucero=" + velCrucero + ", sensorColision=" + sensorColision
+		return "VehiculoLiviano [velCrucero=" +  ", sensorColision=" + sensorColision
 				+ ", sensorTraficoCruzado=" + sensorTraficoCruzado + ", asisPermCarril=" + asisPermCarril + "]";
 	}
 //------------------------------------------------------------------------------------------------

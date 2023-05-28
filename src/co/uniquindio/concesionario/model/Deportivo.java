@@ -2,35 +2,18 @@ package co.uniquindio.concesionario.model;
 
 public class Deportivo  extends  Vehiculo implements deCeroACien{
 	/**
+	 *
+	 */
+	private static final long serialVersionUID = 1L;
+	/**
 	 * Declaracion de atributos
 	 */
 	private String numPuertas;
 	private String numBolsasAire;
 	private Double caballosFuerza;
 
-/**
- * constructor vacio
- * @param tipoCombustible
- * @param tipoTrasmision
- * @param tipoNuevoUsado
- * @param marca
- * @param modelo
- * @param cambios
- * @param velMax
- * @param cilindraje
- * @param numPasajeros
- * @param placa
- */
-	public Deportivo(TipoCombustible tipoCombustible, TipoTrasmision tipoTrasmision, TipoNuevoUsado tipoNuevoUsado,
-			String marca, String modelo, String cambios, Double velMax, String cilindraje, String numPasajeros,
-			String placa) {
-		super(tipoCombustible, tipoTrasmision, tipoNuevoUsado, marca, modelo, cambios, velMax, cilindraje, numPasajeros,
-				placa);
-	}
-
 	/**
-	 * constructor  que tiene los atributso de la superclse y de la clase Depopttivo
-	 *
+	 * Constructor de la clase
 	 * @param tipoCombustible
 	 * @param tipoTrasmision
 	 * @param tipoNuevoUsado
@@ -39,7 +22,6 @@ public class Deportivo  extends  Vehiculo implements deCeroACien{
 	 * @param cambios
 	 * @param velMax
 	 * @param cilindraje
-	 * @param numPasajeros
 	 * @param placa
 	 * @param numPuertas
 	 * @param numBolsasAire
@@ -47,15 +29,15 @@ public class Deportivo  extends  Vehiculo implements deCeroACien{
 	 */
 
 	public Deportivo(TipoCombustible tipoCombustible, TipoTrasmision tipoTrasmision, TipoNuevoUsado tipoNuevoUsado,
-			String marca, String modelo, String cambios, Double velMax, String cilindraje, String numPasajeros,
-			String placa, String numPuertas, String numBolsasAire, Double caballosFuerza) {
-		super(tipoCombustible, tipoTrasmision, tipoNuevoUsado, marca, modelo, cambios, velMax, cilindraje, numPasajeros,
-				placa);
+			String marca, String modelo, String cambios, Double velMax, String cilindraje, String placa,
+			String numPuertas, String numBolsasAire, Double caballosFuerza) {
+		super(tipoCombustible, tipoTrasmision, tipoNuevoUsado, marca, modelo, cambios, velMax, cilindraje, placa);
 		this.numPuertas = numPuertas;
 		this.numBolsasAire = numBolsasAire;
 		this.caballosFuerza = caballosFuerza;
 	}
 
+//--------------------------------------------------------------------------------------------------
 	/**
 	 * Getters and Setters
 	 * @return

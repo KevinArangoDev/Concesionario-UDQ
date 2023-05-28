@@ -3,15 +3,17 @@ package co.uniquindio.concesionario.model;
 import java.io.Serializable;
 
 @SuppressWarnings("serial")
-public class Bus extends Carro  implements Serializable{
+public class Bus extends VehiculoPesado  implements Serializable{
+
 	/**
 	 * Declaracion de atributos
 	 */
 	private String  numEjes;
 	private String numsalidasEmergencia;
 
+
 	/**
-	 * constructor de la clase  Bus , con los atributos de su superclase Carro
+	 * Constructor de la clase
 	 * @param tipoCombustible
 	 * @param tipoTrasmision
 	 * @param tipoNuevoUsado
@@ -20,35 +22,26 @@ public class Bus extends Carro  implements Serializable{
 	 * @param cambios
 	 * @param velMax
 	 * @param cilindraje
-	 * @param numPasajeros
 	 * @param placa
+	 * @param numPasajeros
+	 * @param velCrucero
 	 * @param numPuertas
 	 * @param capMaletero
 	 * @param hasAireAcondicionado
 	 * @param hasCamaraReversa
 	 * @param hasABS
 	 * @param numBolsasAire
-	 * @param numEjes
-	 * @param numsalidasEmergencia
 	 */
 	public Bus(TipoCombustible tipoCombustible, TipoTrasmision tipoTrasmision, TipoNuevoUsado tipoNuevoUsado,
-			String marca, String modelo, String cambios, Double velMax, String cilindraje, String numPasajeros,
-			String placa, String numPuertas, String capMaletero, boolean hasAireAcondicionado, boolean hasCamaraReversa,
-			boolean hasABS, String numBolsasAire, String numEjes, String numsalidasEmergencia) {
-		super(tipoCombustible, tipoTrasmision, tipoNuevoUsado, marca, modelo, cambios, velMax, cilindraje, numPasajeros,
-				placa, numPuertas, capMaletero, hasAireAcondicionado, hasCamaraReversa, hasABS, numBolsasAire);
-		this.numEjes = numEjes;
-		this.numsalidasEmergencia = numsalidasEmergencia;
+			String marca, String modelo, String cambios, Double velMax, String cilindraje, String placa,
+			String numPasajeros, boolean velCrucero, String numPuertas, String capMaletero,
+			boolean hasAireAcondicionado, boolean hasCamaraReversa, boolean hasABS, String numBolsasAire) {
+		super(tipoCombustible, tipoTrasmision, tipoNuevoUsado, marca, modelo, cambios, velMax, cilindraje, placa, numPasajeros,
+				velCrucero, numPuertas, capMaletero, hasAireAcondicionado, hasCamaraReversa, hasABS, numBolsasAire);
+		// TODO Auto-generated constructor stub
 	}
 
-	// constructor vacio
-	public Bus(TipoCombustible tipoCombustible, TipoTrasmision tipoTrasmision, TipoNuevoUsado tipoNuevoUsado,
-			String marca, String modelo, String cambios, Double velMax, String cilindraje, String numPasajeros,
-			String placa, String numPuertas, String capMaletero, boolean hasAireAcondicionado, boolean hasCamaraReversa,
-			boolean hasABS, String numBolsasAire) {
-		super(tipoCombustible, tipoTrasmision, tipoNuevoUsado, marca, modelo, cambios, velMax, cilindraje, numPasajeros,
-				placa, numPuertas, capMaletero, hasAireAcondicionado, hasCamaraReversa, hasABS, numBolsasAire);
-	}
+
 
 
 /**
