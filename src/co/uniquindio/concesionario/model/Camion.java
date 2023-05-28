@@ -3,7 +3,9 @@ package co.uniquindio.concesionario.model;
 import java.io.Serializable;
 
 @SuppressWarnings("serial")
-public class Camion extends Carro implements Serializable{
+public class Camion extends VehiculoPesado implements Serializable{
+
+
 	/**
 	 * Declaracion de atributos
 	 */
@@ -12,49 +14,20 @@ public class Camion extends Carro implements Serializable{
 	private double frenAire;
 	private String numEjes;
 
-	/**
-	 * Contructor de la clase Camion con los atributos de su superclase  Carro
-	 * @param tipoCombustible
-	 * @param tipoTrasmision
-	 * @param tipoNuevoUsado
-	 * @param marca
-	 * @param modelo
-	 * @param cambios
-	 * @param velMax
-	 * @param cilindraje
-	 * @param numPasajeros
-	 * @param placa
-	 * @param numPuertas
-	 * @param capMaletero
-	 * @param hasAireAcondicionado
-	 * @param hasCamaraReversa
-	 * @param hasABS
-	 * @param numBolsasAire
-	 * @param tipoCamion
-	 * @param capCarga
-	 * @param frenAire
-	 * @param numEjes
-	 */
+
 	public Camion(TipoCombustible tipoCombustible, TipoTrasmision tipoTrasmision, TipoNuevoUsado tipoNuevoUsado,
-			String marca, String modelo, String cambios, Double velMax, String cilindraje, String numPasajeros,
-			String placa, String numPuertas, String capMaletero, boolean hasAireAcondicionado, boolean hasCamaraReversa,
-			boolean hasABS, String numBolsasAire, String tipoCamion, String capCarga, double frenAire, String numEjes) {
-		super(tipoCombustible, tipoTrasmision, tipoNuevoUsado, marca, modelo, cambios, velMax, cilindraje, numPasajeros,
-				placa, numPuertas, capMaletero, hasAireAcondicionado, hasCamaraReversa, hasABS, numBolsasAire);
+			String marca, String modelo, double frenAire, String cambios, Double velMax, String cilindraje, String placa,
+			String numPasajeros, String numEjes, boolean velCrucero, String capCarga, String numPuertas, String capMaletero,
+			boolean hasAireAcondicionado, boolean hasCamaraReversa, boolean hasABS, String numBolsasAire, String tipoCamion) {
+		super(tipoCombustible, tipoTrasmision,  tipoNuevoUsado, marca, modelo, cambios, velMax, cilindraje, placa, numPasajeros,
+				velCrucero, numPuertas, capMaletero, hasAireAcondicionado, hasCamaraReversa, hasABS, numBolsasAire);
 		this.tipoCamion = tipoCamion;
-		this.capCarga = capMaletero;
+		this.capCarga = capCarga;
 		this.frenAire = frenAire;
 		this.numEjes = numEjes;
 	}
 
-	// constructor vacio
-	public Camion(TipoCombustible tipoCombustible, TipoTrasmision tipoTrasmision, TipoNuevoUsado tipoNuevoUsado,
-			String marca, String modelo, String cambios, Double velMax, String cilindraje, String numPasajeros,
-			String placa, String numPuertas, String capMaletero, boolean hasAireAcondicionado, boolean hasCamaraReversa,
-			boolean hasABS, String numBolsasAire) {
-		super(tipoCombustible, tipoTrasmision, tipoNuevoUsado, marca, modelo, cambios, velMax, cilindraje, numPasajeros,
-				placa, numPuertas, capMaletero, hasAireAcondicionado, hasCamaraReversa, hasABS, numBolsasAire);
-	}
+
 
 	/**
 	 * Getters and setters  y metodo to String

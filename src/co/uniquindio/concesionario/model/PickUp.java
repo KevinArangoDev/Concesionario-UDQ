@@ -3,7 +3,8 @@ package co.uniquindio.concesionario.model;
 import java.io.Serializable;
 
 @SuppressWarnings("serial")
-public class PickUp extends Carro implements Serializable{
+public class PickUp extends VehiculoLiviano implements Serializable{
+
 
 	/**
 	 * Declaracion de atributos
@@ -12,7 +13,7 @@ public class PickUp extends Carro implements Serializable{
 	private String capCajaCarga;
 
 	/**
-	 * Constructor de la clase Pickup  con los atributos de su superClase carro
+	 * Constructor de la clase
 	 * @param tipoCombustible
 	 * @param tipoTrasmision
 	 * @param tipoNuevoUsado
@@ -21,34 +22,31 @@ public class PickUp extends Carro implements Serializable{
 	 * @param cambios
 	 * @param velMax
 	 * @param cilindraje
-	 * @param numPasajeros
 	 * @param placa
+	 * @param numPasajeros
+	 * @param velCrucero
 	 * @param numPuertas
 	 * @param capMaletero
 	 * @param hasAireAcondicionado
 	 * @param hasCamaraReversa
 	 * @param hasABS
 	 * @param numBolsasAire
-	 * @param cuatroXcuatro
-	 * @param capCajaCarga
+	 * @param sensorColision
+	 * @param sensorTraficoCruzado
+	 * @param asisPermCarril
 	 */
 	public PickUp(TipoCombustible tipoCombustible, TipoTrasmision tipoTrasmision, TipoNuevoUsado tipoNuevoUsado,
-			String marca, String modelo, String cambios, Double velMax, String cilindraje, String numPasajeros,
-			String placa, String numPuertas, String capMaletero, boolean hasAireAcondicionado, boolean hasCamaraReversa,
-			boolean hasABS, String numBolsasAire, boolean cuatroXcuatro, String capCajaCarga) {
-		super(tipoCombustible, tipoTrasmision, tipoNuevoUsado, marca, modelo, cambios, velMax, cilindraje, numPasajeros,
-				placa, numPuertas, capMaletero, hasAireAcondicionado, hasCamaraReversa, hasABS, numBolsasAire);
+			String marca, String modelo, String cambios, Double velMax, String cilindraje, String placa,
+			String numPasajeros, boolean velCrucero, String numPuertas, String capMaletero,
+			boolean hasAireAcondicionado, boolean hasCamaraReversa, boolean hasABS, String numBolsasAire,
+			boolean sensorColision, boolean sensorTraficoCruzado, boolean asisPermCarril, boolean cuatroXcuatro, String capCajaCarga) {
+		super(tipoCombustible, tipoTrasmision, tipoNuevoUsado, marca, modelo, cambios, velMax, cilindraje, placa, numPasajeros,
+				velCrucero, numPuertas, capMaletero, hasAireAcondicionado, hasCamaraReversa, hasABS, numBolsasAire,
+				sensorColision, sensorTraficoCruzado, asisPermCarril);
 		this.cuatroXcuatro = cuatroXcuatro;
-		this.capCajaCarga = capMaletero;
+		this.capCajaCarga = capCajaCarga;
 	}
-	// constructor vacio
-	public PickUp(TipoCombustible tipoCombustible, TipoTrasmision tipoTrasmision, TipoNuevoUsado tipoNuevoUsado,
-			String marca, String modelo, String cambios, Double velMax, String cilindraje, String numPasajeros,
-			String placa, String numPuertas, String capMaletero, boolean hasAireAcondicionado, boolean hasCamaraReversa,
-			boolean hasABS, String numBolsasAire) {
-		super(tipoCombustible, tipoTrasmision, tipoNuevoUsado, marca, modelo, cambios, velMax, cilindraje, numPasajeros,
-				placa, numPuertas, capMaletero, hasAireAcondicionado, hasCamaraReversa, hasABS, numBolsasAire);
-	}
+
 
 
 	/**
