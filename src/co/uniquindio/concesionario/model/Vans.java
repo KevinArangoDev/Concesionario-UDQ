@@ -26,7 +26,7 @@ public class Vans extends VehiculoLiviano {
 	 * @param sensorTraficoCruzado
 	 * @param asisPermCarril
 	 */
-	public Vans(TipoCombustible tipoCombustible, TipoTrasmision tipoTrasmision, TipoNuevoUsado tipoNuevoUsado,
+	public Vans(TipoCombustible tipoCombustible, TipoTransmision tipoTrasmision, TipoNuevoUsado tipoNuevoUsado,
 			String marca, String modelo, String cambios, Double velMax, String cilindraje, String placa,
 			String numPasajeros, double velCrucero, String numPuertas, String capMaletero,
 			boolean hasAireAcondicionado, boolean hasCamaraReversa, boolean hasABS, String numBolsasAire,

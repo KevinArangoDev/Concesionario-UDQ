@@ -1,17 +1,19 @@
 package co.uniquindio.concesionario.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
-import co.uniquindio.concesionario.exception.AdministradorException;
 import co.uniquindio.concesionario.model.Administrador;
 import co.uniquindio.concesionario.model.Concesionario;
 import co.uniquindio.concesionario.model.Empleado;
+import co.uniquindio.concesionario.model.Vehiculo;
 
 
 public class ModelFactoryController {
 	//Atributos
 	Concesionario concesionario;
 	Empleado empleado;
+	private ArrayList<Vehiculo> listaVehiculos;
 	boolean administrador;
 	private static class SingletonHolder {
 		// El constructor de Singleton puede ser llamado desde aqui al ser
@@ -26,6 +28,7 @@ public class ModelFactoryController {
 		public ModelFactoryController() {
 			System.out.println("invocación clase singleton");
 			inicializarDatos();
+			listaVehiculos = new ArrayList<>();
 		}
 
 		private void inicializarDatos() {
@@ -61,6 +64,10 @@ public class ModelFactoryController {
 		public void setAdministrador(boolean administrador) {
 			this.administrador = administrador;
 		}
+
+		public ArrayList<Vehiculo> getListaVehiculos() {
+	        return listaVehiculos;
+	    }
 
 		public void registrarEmpleado(Administrador administrador , Empleado empleado) throws IOException {
 

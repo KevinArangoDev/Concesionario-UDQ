@@ -39,7 +39,7 @@ public abstract class Carro  extends Vehiculo implements Serializable{
 	 * @param numBolsasAire
 	 */
 
-	public Carro(TipoCombustible tipoCombustible, TipoTrasmision tipoTrasmision, TipoNuevoUsado tipoNuevoUsado,
+	public Carro(TipoCombustible tipoCombustible, TipoTransmision tipoTrasmision, TipoNuevoUsado tipoNuevoUsado,
 			String marca, String modelo, String cambios, Double velMax, String cilindraje, String placa,
 			String numPasajeros, double velCrucero, String numPuertas, String capMaletero,
 			boolean hasAireAcondicionado, boolean hasCamaraReversa, boolean hasABS, String numBolsasAire) {

@@ -3,6 +3,12 @@ package co.uniquindio.concesionario.controller;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
+
+import co.uniquindio.concesionario.model.Moto;
+import co.uniquindio.concesionario.model.TipoCombustible;
+import co.uniquindio.concesionario.model.TipoNuevoUsado;
+import co.uniquindio.concesionario.model.TipoTransmision;
+
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -12,6 +18,13 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.image.ImageView;
 
 public class ComprarMotoController {
+
+	 private ModelFactoryController singleton;
+
+	    public void initialize() {
+	        singleton = ModelFactoryController.getInstance();
+
+	    }
 
     @FXML
     private ResourceBundle resources;
@@ -23,10 +36,10 @@ public class ComprarMotoController {
     private JFXTextField txtModelo;
 
     @FXML
-    private ComboBox<?> listaCombustible;
+    private ComboBox<TipoCombustible> listaCombustible;
 
     @FXML
-    private ComboBox<?> listaNuevoUsado;
+    private ComboBox<TipoNuevoUsado> listaNuevoUsado;
 
     @FXML
     private JFXTextField txtVelocidadMaxima;
@@ -56,7 +69,9 @@ public class ComprarMotoController {
     private JFXTextField txtMarca;
 
     @FXML
-    private ComboBox<?> listaTrasmision;
+    private ComboBox<TipoTransmision> listaTrasmision;
+
+
 
 
 
@@ -82,6 +97,29 @@ public class ComprarMotoController {
 
     @FXML
     void realizarCompraMoto(ActionEvent event) {
+
+    	TipoCombustible tipoCombustible = listaCombustible.getValue();
+    	TipoTransmision tipoTransmision = listaTrasmision.getValue();
+        TipoNuevoUsado tipoNuevoUsado = listaNuevoUsado.getValue();
+    	String marca = txtMarca.getText();
+        String modelo = txtModelo.getText();
+        String cambios = txtCambios.getText();
+        double velMaxima = Double.parseDouble(txtVelocidadMaxima.getText());
+        String cilindraje = txtCilindraje.getText();
+        String placa = txtPlaca.getText();
+
+        Moto moto = new Moto();
+        moto.setTipoCombustible(tipoCombustible);
+        moto.setTipoTransmision(tipoTransmision);
+        moto.setTipoNuevoUsado(tipoNuevoUsado);
+        moto.setMarca(marca);
+        moto.setModelo(modelo);
+        moto.setCambios(cambios);
+        moto.setVelMax(velMaxima);
+        moto.setCilindraje(cilindraje);
+        moto.setPlaca(placa);
+
+        singleton.getListaVehiculos().add(moto);
 
     }
 

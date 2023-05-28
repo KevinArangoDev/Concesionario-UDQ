@@ -6,7 +6,7 @@ import java.io.Serializable;
 public class Camioneta extends VehiculoLiviano implements Serializable{
 
 
-	public Camioneta(TipoCombustible tipoCombustible, TipoTrasmision tipoTrasmision, TipoNuevoUsado tipoNuevoUsado,
+	public Camioneta(TipoCombustible tipoCombustible, TipoTransmision tipoTrasmision, TipoNuevoUsado tipoNuevoUsado,
 			String marca, String modelo, String cambios, Double velMax, String cilindraje, String placa,
 			String numPasajeros, double velCrucero, String numPuertas, String capMaletero,
 			boolean hasAireAcondicionado, boolean hasCamaraReversa, boolean hasABS, String numBolsasAire,

@@ -33,7 +33,7 @@ public abstract class VehiculoLiviano  extends Carro{
 	 * @param asisPermCarril
 	 */
 
-	public VehiculoLiviano(TipoCombustible tipoCombustible, TipoTrasmision tipoTrasmision,
+	public VehiculoLiviano(TipoCombustible tipoCombustible, TipoTransmision tipoTrasmision,
 			TipoNuevoUsado tipoNuevoUsado, String marca, String modelo, String cambios, Double velMax,
 			String cilindraje, String placa, String numPasajeros, double velCrucero, String numPuertas,
 			String capMaletero, boolean hasAireAcondicionado, boolean hasCamaraReversa, boolean hasABS,

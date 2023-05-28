@@ -25,7 +25,7 @@ public class Bus extends VehiculoPesado  implements Serializable{
 	 * @param hasABS
 	 * @param numBolsasAire
 	 */
-	public Bus(TipoCombustible tipoCombustible, TipoTrasmision tipoTrasmision, TipoNuevoUsado tipoNuevoUsado,
+	public Bus(TipoCombustible tipoCombustible, TipoTransmision tipoTrasmision, TipoNuevoUsado tipoNuevoUsado,
 			String marca, String modelo, String cambios, Double velMax, String cilindraje, String placa,
 			String numPasajeros, double velCrucero, String numPuertas, String capMaletero,
 			boolean hasAireAcondicionado, boolean hasCamaraReversa, boolean hasABS, String numBolsasAire) {

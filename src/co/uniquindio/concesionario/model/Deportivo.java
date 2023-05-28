@@ -28,7 +28,7 @@ public class Deportivo  extends  Vehiculo implements deCeroACien{
 	 * @param caballosFuerza
 	 */
 
-	public Deportivo(TipoCombustible tipoCombustible, TipoTrasmision tipoTrasmision, TipoNuevoUsado tipoNuevoUsado,
+	public Deportivo(TipoCombustible tipoCombustible, TipoTransmision tipoTrasmision, TipoNuevoUsado tipoNuevoUsado,
 			String marca, String modelo, String cambios, Double velMax, String cilindraje, String placa,
 			String numPuertas, String numBolsasAire, Double caballosFuerza) {
 		super(tipoCombustible, tipoTrasmision, tipoNuevoUsado, marca, modelo, cambios, velMax, cilindraje, placa);
