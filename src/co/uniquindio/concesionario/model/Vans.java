@@ -3,13 +3,6 @@ package co.uniquindio.concesionario.model;
 @SuppressWarnings("serial")
 public class Vans extends VehiculoLiviano {
 
-
-	/**
-	 * Declaracion atributos
-	 */
-
-	private boolean cuatroXcuatro;
-
 	/**
 	 *
 	 * @param tipoCombustible
@@ -35,37 +28,12 @@ public class Vans extends VehiculoLiviano {
 	 */
 	public Vans(TipoCombustible tipoCombustible, TipoTrasmision tipoTrasmision, TipoNuevoUsado tipoNuevoUsado,
 			String marca, String modelo, String cambios, Double velMax, String cilindraje, String placa,
-			String numPasajeros, boolean velCrucero, String numPuertas, String capMaletero,
+			String numPasajeros, double velCrucero, String numPuertas, String capMaletero,
 			boolean hasAireAcondicionado, boolean hasCamaraReversa, boolean hasABS, String numBolsasAire,
 			boolean sensorColision, boolean sensorTraficoCruzado, boolean asisPermCarril, boolean cuatroXcuatro) {
 		super(tipoCombustible, tipoTrasmision, tipoNuevoUsado, marca, modelo, cambios, velMax, cilindraje, placa, numPasajeros,
 				velCrucero, numPuertas, capMaletero, hasAireAcondicionado, hasCamaraReversa, hasABS, numBolsasAire,
 				sensorColision, sensorTraficoCruzado, asisPermCarril);
-		this.cuatroXcuatro = cuatroXcuatro;
 	}
-
-
-
-	/**
-	 * Getters and setters  y metodo to String
-	 * @return
-	 */
-//------------------------------------------------------------------------------
-	public boolean isCuatroXcuatro() {
-		return cuatroXcuatro;
-	}
-	public void setCuatroXcuatro(boolean cuatroXcuatro) {
-		this.cuatroXcuatro = cuatroXcuatro;
-	}
-
-	@Override
-	public String toString() {
-		return "Vans [cuatroXcuatro=" + cuatroXcuatro +  "]";
-	}
-
-//---------------------------------------------------------------------------
-
-
-
 
 }

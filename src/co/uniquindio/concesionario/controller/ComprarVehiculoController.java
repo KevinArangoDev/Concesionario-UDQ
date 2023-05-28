@@ -1,41 +1,19 @@
 package co.uniquindio.concesionario.controller;
-
 import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXTextField;
 
-import co.uniquindio.concesionario.model.TipoCombustible;
-import co.uniquindio.concesionario.model.TipoNuevoUsado;
-import co.uniquindio.concesionario.model.TipoTrasmision;
-
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
-import javafx.scene.control.ComboBox;
-import javafx.scene.image.ImageView;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
-public class ComprarVehiculoController implements Initializable {
+public class ComprarVehiculoController {
 
-	@Override
-	public void initialize(URL location, ResourceBundle resources) {
-		// Obtener los valores de la enumeración TipoCombustible
-        TipoCombustible[] tiposCombustible = TipoCombustible.values();
-
-        // Agregar los valores al ComboBox
-        listaTipoCombustible.getItems().addAll(tiposCombustible);
-
-        TipoTrasmision[] tiposTrasmision = TipoTrasmision.values();
-
-        // Agregar los valores al ComboBox
-        listaTipoTrasmision.getItems().addAll(tiposTrasmision);
-
-        TipoNuevoUsado[] tiposNuevoUsado = TipoNuevoUsado.values();
-
-        // Agregar los valores al ComboBox
-        listaTipoNuevoUsado.getItems().addAll(tiposNuevoUsado);
-	}
     @FXML
     private ResourceBundle resources;
 
@@ -43,84 +21,88 @@ public class ComprarVehiculoController implements Initializable {
     private URL location;
 
     @FXML
-    private ComboBox<TipoCombustible> listaTipoCombustible;
+    private JFXButton btnVPesado;
 
     @FXML
-    private JFXTextField txtModelo;
+    private JFXButton btnMoto;
 
     @FXML
-    private JFXButton btnLimpiarDatos;
+    private JFXButton btnVLiviano;
 
     @FXML
-    private ComboBox<TipoTrasmision> listaTipoTrasmision;
+    void ventCompMoto(ActionEvent event) {
+    	try {
+
+    		FXMLLoader loader = new FXMLLoader(
+    				getClass().getResource("../view/ComprarMotoView.fxml"));
+    		Parent root = loader.load();
+
+    		ComprarMotoController controlador = loader.getController();
+
+    		Scene scene = new Scene(root);
+    		Stage stage = new Stage();
+
+    		stage.setScene(scene);
+    		stage.show();
+    		stage.setTitle("Car UQ");
+    		Stage myStage = (Stage) this.btnMoto.getScene().getWindow();
+    		myStage.close();
+
+    	} catch (IOException e) {
+            e.printStackTrace();
+    	}
+    }
 
     @FXML
-    private JFXTextField txtVelocidadMaxima;
+    void ventVehPesado(ActionEvent event) {
+    	try {
 
-    @FXML
-    private ImageView imgLogo;
+    		FXMLLoader loader = new FXMLLoader(
+    				getClass().getResource("../view/ComprarPesadoView.fxml"));
+    		Parent root = loader.load();
 
-    @FXML
-    private JFXButton btnVolverVentEmpleado;
+    		ComprarPesadoController controlador = loader.getController();
 
-    @FXML
-    private JFXTextField txtCilindraje;
+    		Scene scene = new Scene(root);
+    		Stage stage = new Stage();
 
-    @FXML
-    private ComboBox<?> listaTipoDeVehiculos;
+    		stage.setScene(scene);
+    		stage.show();
+    		stage.setTitle("Car UQ");
+    		Stage myStage = (Stage) this.btnVPesado.getScene().getWindow();
+    		myStage.close();
 
-    @FXML
-    private JFXTextField txtMarca;
-
-    @FXML
-    private JFXButton btnRealizarCompra;
-
-    @FXML
-    private ComboBox<TipoNuevoUsado> listaTipoNuevoUsado;
-
-    @FXML
-    private JFXTextField txtNumPasajeros;
-
-    @FXML
-    void listaVehiculos(ActionEvent event) {
+    	} catch (IOException e) {
+            e.printStackTrace();
+    	}
 
     }
 
     @FXML
-    void listaTipoTrasmision(ActionEvent event) {
+    void ventVehLiviano(ActionEvent event) {
+    	try {
 
-    }
+    		FXMLLoader loader = new FXMLLoader(
+    				getClass().getResource("../view/ComprarLivianoView.fxml"));
+    		Parent root = loader.load();
 
-    @FXML
-    void listaTipoCombustible(ActionEvent event) {
+    		ComprarLivianoController controlador = loader.getController();
 
-    }
+    		Scene scene = new Scene(root);
+    		Stage stage = new Stage();
 
-    @FXML
-    void listaTipNueUsa(ActionEvent event) {
+    		stage.setScene(scene);
+    		stage.show();
+    		stage.setTitle("Car UQ");
+    		Stage myStage = (Stage) this.btnVLiviano.getScene().getWindow();
+    		myStage.close();
 
-    }
-
-
-
-    @FXML
-    void volVentEmpleado(ActionEvent event) {
-
-    }
-
-
-
-    @FXML
-    void limpiarDatos(ActionEvent event) {
-
+    	} catch (IOException e) {
+            e.printStackTrace();
+    	}
     }
 
 
-
-    @FXML
-    void realizarCompra(ActionEvent event) {
-
-    }
 
 
 }

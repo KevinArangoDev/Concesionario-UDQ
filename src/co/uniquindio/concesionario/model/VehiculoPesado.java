@@ -13,7 +13,6 @@ public abstract class VehiculoPesado extends Carro {
 	private String capMaletero;
 	private String salidasEmergencia;
 	private String capCajaCarga;
-	private double velCrucero;
 
 
 	/**
@@ -38,7 +37,7 @@ public abstract class VehiculoPesado extends Carro {
 	 */
 	public VehiculoPesado(TipoCombustible tipoCombustible, TipoTrasmision tipoTrasmision, TipoNuevoUsado tipoNuevoUsado,
 			String marca, String modelo, String cambios, Double velMax, String cilindraje, String placa,
-			String numPasajeros, boolean velCrucero, String numPuertas, String capMaletero,
+			String numPasajeros, double velCrucero, String numPuertas, String capMaletero,
 			boolean hasAireAcondicionado, boolean hasCamaraReversa, boolean hasABS, String numBolsasAire) {
 		super(tipoCombustible, tipoTrasmision, tipoNuevoUsado, marca, modelo, cambios, velMax, cilindraje, placa, numPasajeros,
 				velCrucero, numPuertas, capMaletero, hasAireAcondicionado, hasCamaraReversa, hasABS, numBolsasAire);
@@ -79,19 +78,17 @@ public abstract class VehiculoPesado extends Carro {
 		this.capCajaCarga = capCajaCarga;
 	}
 
-	public double getVelCrucero() {
-		return velCrucero;
-	}
 
-	public void setVelCrucero(double velCrucero) {
-		this.velCrucero = velCrucero;
-	}
+
+
 
 	@Override
 	public String toString() {
 		return "VehiculoPesado [capMaletero=" + capMaletero + ", salidasEmergencia=" + salidasEmergencia
-				+ ", capCajaCarga=" + capCajaCarga + ", velCrucero=" + velCrucero + "]";
+				+ ", capCajaCarga=" + capCajaCarga + "]";
 	}
+
+
 
 
 
