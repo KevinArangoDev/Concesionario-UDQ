@@ -1,11 +1,12 @@
 package co.uniquindio.concesionario.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
-import co.uniquindio.concesionario.exception.AdministradorException;
 import co.uniquindio.concesionario.model.Administrador;
 import co.uniquindio.concesionario.model.Concesionario;
 import co.uniquindio.concesionario.model.Empleado;
+import co.uniquindio.concesionario.model.Vehiculo;
 
 
 public class ModelFactoryController {
@@ -26,6 +27,7 @@ public class ModelFactoryController {
 		public ModelFactoryController() {
 			System.out.println("invocación clase singleton");
 			inicializarDatos();
+
 		}
 
 		private void inicializarDatos() {

@@ -1,6 +1,6 @@
 package co.uniquindio.concesionario.model;
 
-public enum TipoTrasmision {
+public enum TipoTransmision {
 	AUTOMATICO, MANUAL
 
 }

@@ -116,6 +116,25 @@ public class EmpleadoController implements Initializable {
 
     @FXML
     void ventCerrasSesion(ActionEvent event) {
+    	try {
 
+    		FXMLLoader loader = new FXMLLoader(
+    				getClass().getResource("../view/PrincipalView.fxml"));
+    		Parent root = loader.load();
+
+    		PrincipalController controlador = loader.getController();
+
+    		Scene scene = new Scene(root);
+    		Stage stage = new Stage();
+
+    		stage.setScene(scene);
+    		stage.show();
+    		stage.setTitle("Car UQ");
+    		Stage myStage = (Stage) this.btnCerrarSesionEmpleado.getScene().getWindow();
+    		myStage.close();
+
+    	} catch (IOException e) {
+            e.printStackTrace();
+    	}
     }
 }

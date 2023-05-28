@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="655.0" prefWidth="1500.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.uniquindio.concesionario.controller.ComprarPesadoController">
+                     <children>
+                        <AnchorPane prefHeight="655.0" prefWidth="500.0" style="-fx-background-color: #222831;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="500.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <ImageView fx:id="imgLogo1" fitHeight="139.0" fitWidth="141.0" layoutX="187.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/logoCarro.png" />
+                                 </image>
+                              </ImageView>
+                              <Label layoutX="30.0" layoutY="163.0" text="Sistema de Compra Vehículo Liviano" textFill="#eeeeee">
+                                 <font>
+                                    <Font name="Bell MT Bold" size="28.0" />
+                                 </font>
+                              </Label>
+                              <ComboBox fx:id="listaBuscarVehicvulo1" layoutX="210.0" layoutY="470.0" onAction="#buscarVehiculo" prefHeight="40.0" prefWidth="270.0" AnchorPane.rightAnchor="18.0" />
+                              <Label layoutX="27.0" layoutY="477.0" text="Tipo de Combustible:" textFill="#eeeeee" AnchorPane.leftAnchor="27.0">
+                                 <font>
+                                    <Font name="Bell MT" size="20.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="20.0" layoutY="328.0" text="Tipo de Trasmisión:" textFill="#eeeeee">
+                                 <font>
+                                    <Font name="Bell MT" size="20.0" />
+                                 </font>
+                              </Label>
+                              <ComboBox fx:id="listaTrasmisionPesados" layoutX="210.0" layoutY="321.0" onAction="#listaTrasmisionPesado" prefHeight="40.0" prefWidth="270.0" />
+                              <Label layoutX="27.0" layoutY="404.0" text="Nuevo ó Usado:" textFill="#eeeeee">
+                                 <font>
+                                    <Font name="Bell MT" size="20.0" />
+                                 </font>
+                              </Label>
+                              <ComboBox fx:id="listaNuevoUsadoPesado" layoutX="210.0" layoutY="397.0" onAction="#listaNuevoUsadoPesado" prefHeight="40.0" prefWidth="270.0" />
+                              <Label layoutX="27.0" layoutY="548.0" text="Marca:" textFill="#eeeeee">
+                                 <font>
+                                    <Font name="Bell MT" size="20.0" />
+                                 </font>
+                              </Label>
+                              <JFXTextField fx:id="txtMarcaPesado" layoutX="211.0" layoutY="541.0" prefHeight="39.0" prefWidth="269.0" style="-fx-background-color: #eeeeee;" />
+                              <Label layoutX="115.0" layoutY="65.0" text="Información del Cliente" textFill="#222831">
+                                 <font>
+                                    <Font name="Bell MT Bold" size="28.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="23.0" layoutY="249.0" text="Seleccione el Vehículo:" textFill="#eeeeee">
+                                 <font>
+                                    <Font name="Bell MT" size="20.0" />
+                                 </font>
+                              </Label>
+                              <ComboBox fx:id="listaCombustibleLiviano1" layoutX="210.0" layoutY="470.0" onAction="#listaCombustiblePesado" prefHeight="40.0" prefWidth="270.0" />
+                              <Label layoutX="27.0" layoutY="600.0" text="Modelo" textFill="#eeeeee">
+                                 <font>
+                                    <Font name="Bell MT" size="20.0" />
+                                 </font>
+                              </Label>
+                              <JFXTextField fx:id="txtModeloPesado" layoutX="211.0" layoutY="593.0" prefHeight="39.0" prefWidth="269.0" style="-fx-background-color: #eeeeee;" />
+                              <ComboBox fx:id="listaVehiculosPesados" layoutX="211.0" layoutY="242.0" onAction="#listaVehiculoPesado" prefHeight="40.0" prefWidth="270.0" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="520.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #eeeeee;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="500.0" AnchorPane.rightAnchor="500.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <Label layoutX="137.0" layoutY="31.0" text="Información Extra" textFill="#222831">
+                                 <font>
+                                    <Font name="Bell MT Bold" size="28.0" />
+                                 </font>
+                              </Label>
+                              <Separator layoutX="45.0" layoutY="65.0" prefHeight="3.0" prefWidth="411.0" style="-fx-background-color: #222831;" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0" />
+                              <Label layoutX="25.0" layoutY="94.0" text="Bolsas de Aire:" textFill="#222831" AnchorPane.leftAnchor="20.0">
+                                 <font>
+                                    <Font name="Bell MT" size="20.0" />
+                                 </font>
+                              </Label>
+                              <JFXTextField fx:id="txtBolsasAirePesado" layoutX="155.0" layoutY="87.0" prefHeight="39.0" prefWidth="291.0" AnchorPane.leftAnchor="190.0" AnchorPane.rightAnchor="40.0" />
+                              <Label layoutX="16.0" layoutY="151.0" text="Cambios:" textFill="#222831">
+                                 <font>
+                                    <Font name="Bell MT" size="20.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="15.0" layoutY="210.0" text="Velocidad Máxima" textFill="#222831">
+                                 <font>
+                                    <Font name="Bell MT" size="20.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="11.0" layoutY="272.0" text="Cilindraje:" textFill="#222831">
+                                 <font>
+                                    <Font name="Bell MT" size="20.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="16.0" layoutY="336.0" text="Placa:" textFill="#222831">
+                                 <font>
+                                    <Font name="Bell MT" size="20.0" />
+                                 </font>
+                              </Label>
+                              <JFXTextField fx:id="txtCambiosPesado" layoutX="190.0" layoutY="144.0" prefHeight="39.0" prefWidth="291.0" AnchorPane.leftAnchor="190.0" AnchorPane.rightAnchor="40.0" />
+                              <JFXTextField fx:id="txtVelMaximaPesado" layoutX="190.0" layoutY="203.0" prefHeight="39.0" prefWidth="291.0" AnchorPane.leftAnchor="190.0" AnchorPane.rightAnchor="40.0" />
+                              <JFXTextField fx:id="txtCilindrajePesado" layoutX="190.0" layoutY="265.0" prefHeight="39.0" prefWidth="291.0" AnchorPane.leftAnchor="190.0" AnchorPane.rightAnchor="40.0" />
+                              <JFXTextField fx:id="txtPlacaPesado" layoutX="190.0" layoutY="329.0" prefHeight="39.0" prefWidth="291.0" AnchorPane.leftAnchor="190.0" AnchorPane.rightAnchor="40.0" />
+                              <Label layoutX="16.0" layoutY="398.0" text="Numero Pasajeros:" textFill="#222831">
+                                 <font>
+                                    <Font name="Bell MT" size="20.0" />
+                                 </font>
+                              </Label>
+                              <JFXTextField fx:id="txtPasajerosPesado" layoutX="190.0" layoutY="391.0" prefHeight="39.0" prefWidth="291.0" AnchorPane.leftAnchor="190.0" AnchorPane.rightAnchor="40.0" />
+                              <Label layoutX="16.0" layoutY="456.0" text="Velocidad Crucero:" textFill="#222831">
+                                 <font>
+                                    <Font name="Bell MT" size="20.0" />
+                                 </font>
+                              </Label>
+                              <JFXTextField fx:id="txtVelCruceroPesado" layoutX="190.0" layoutY="449.0" prefHeight="39.0" prefWidth="291.0" AnchorPane.leftAnchor="190.0" AnchorPane.rightAnchor="40.0" />
+                              <Label layoutX="18.0" layoutY="518.0" text="Numero Puertas:" textFill="#222831">
+                                 <font>
+                                    <Font name="Bell MT" size="20.0" />
+                                 </font>
+                              </Label>
+                              <JFXTextField fx:id="txtNumPuertasPesado" layoutX="180.0" layoutY="511.0" prefHeight="39.0" prefWidth="291.0" AnchorPane.leftAnchor="190.0" AnchorPane.rightAnchor="40.0" />
+                              <Label layoutX="15.0" layoutY="582.0" text="Capacidad Maletero:" textFill="#222831">
+                                 <font>
+                                    <Font name="Bell MT" size="20.0" />
+                                 </font>
+                              </Label>
+                              <JFXTextField fx:id="txtCapMaleteroPesado" layoutX="190.0" layoutY="575.0" prefHeight="39.0" prefWidth="291.0" AnchorPane.leftAnchor="190.0" AnchorPane.rightAnchor="40.0" />
+                           </children>
+                        </AnchorPane>
+                        <Separator layoutX="60.0" layoutY="205.0" prefHeight="3.0" prefWidth="411.0" style="-fx-background-color: #eeeeee;" />
+                        <AnchorPane layoutX="1000.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #222831;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="1000.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <Label layoutX="137.0" layoutY="22.0" text="Información Extra" textFill="#eeeeee">
+                                 <font>
+                                    <Font name="Bell MT Bold" size="28.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="22.0" layoutY="286.0" text="Tiene aire Acondicionado:" textFill="#eeeeee">
+                                 <font>
+                                    <Font name="Bell MT" size="20.0" />
+                                 </font>
+                              </Label>
+                              <Separator layoutX="45.0" layoutY="56.0" prefHeight="3.0" prefWidth="411.0" style="-fx-background-color: #eeeeee;" />
+                              <JFXButton fx:id="btnVolverVentEmpleado1" layoutX="29.0" layoutY="598.0" onAction="#volVentEmpleado" style="-fx-background-color: #eeeeee;" text="Volver" textFill="#222831">
+                                 <font>
+                                    <Font name="Bell MT" size="18.0" />
+                                 </font>
+                              </JFXButton>
+                              <JFXButton fx:id="btnLimpiarDatosLiviano1" layoutX="151.0" layoutY="598.0" style="-fx-background-color: #eeeeee;" text="Limpiar Datos" textFill="#222831">
+                                 <font>
+                                    <Font name="Bell MT" size="18.0" />
+                                 </font>
+                              </JFXButton>
+                              <JFXButton fx:id="btnRealizarCompraLivianoPesado" layoutX="332.0" layoutY="598.0" onAction="#compraVehPesado" style="-fx-background-color: #eeeeee;" text="Realizar Compra" textFill="#222831">
+                                 <font>
+                                    <Font name="Bell MT" size="18.0" />
+                                 </font>
+                              </JFXButton>
+                              <ComboBox fx:id="tieneAirePesado" layoutX="256.0" layoutY="279.0" prefHeight="40.0" prefWidth="224.0" AnchorPane.rightAnchor="20.0" />
+                              <Label layoutX="27.0" layoutY="132.0" text="Tiene aire Camára de Reversa:" textFill="#eeeeee">
+                                 <font>
+                                    <Font name="Bell MT" size="20.0" />
+                                 </font>
+                              </Label>
+                              <ComboBox fx:id="tieneCamReversaPesado" layoutX="282.0" layoutY="125.0" prefHeight="40.0" prefWidth="201.0" AnchorPane.rightAnchor="20.0" />
+                              <Label layoutX="29.0" layoutY="208.0" text="Tiene ABS:" textFill="#eeeeee">
+                                 <font>
+                                    <Font name="Bell MT" size="20.0" />
+                                 </font>
+                              </Label>
+                              <ComboBox fx:id="tieneABSPesado" layoutX="264.0" layoutY="201.0" prefHeight="40.0" prefWidth="222.0" AnchorPane.rightAnchor="20.0" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>

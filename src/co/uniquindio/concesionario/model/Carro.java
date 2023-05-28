@@ -10,7 +10,7 @@ public abstract class Carro  extends Vehiculo implements Serializable{
 	 * Declaracion de atributos
 	 */
 	private String numPasajeros;
-	private boolean velCrucero;
+	private double velCrucero;
 	private String numPuertas;
 	private String capMaletero;
 	private boolean hasAireAcondicionado;
@@ -39,9 +39,9 @@ public abstract class Carro  extends Vehiculo implements Serializable{
 	 * @param numBolsasAire
 	 */
 
-	public Carro(TipoCombustible tipoCombustible, TipoTrasmision tipoTrasmision, TipoNuevoUsado tipoNuevoUsado,
+	public Carro(TipoCombustible tipoCombustible, TipoTransmision tipoTrasmision, TipoNuevoUsado tipoNuevoUsado,
 			String marca, String modelo, String cambios, Double velMax, String cilindraje, String placa,
-			String numPasajeros, boolean velCrucero, String numPuertas, String capMaletero,
+			String numPasajeros, double velCrucero, String numPuertas, String capMaletero,
 			boolean hasAireAcondicionado, boolean hasCamaraReversa, boolean hasABS, String numBolsasAire) {
 		super(tipoCombustible, tipoTrasmision, tipoNuevoUsado, marca, modelo, cambios, velMax, cilindraje, placa);
 		this.numPasajeros = numPasajeros;
@@ -70,10 +70,10 @@ public abstract class Carro  extends Vehiculo implements Serializable{
 	public void setNumPasajeros(String numPasajeros) {
 		this.numPasajeros = numPasajeros;
 	}
-	public boolean isVelCrucero() {
+	public double getVelCrucero() {
 		return velCrucero;
 	}
-	public void setVelCrucero(boolean velCrucero) {
+	public void setVelCrucero(double velCrucero) {
 		this.velCrucero = velCrucero;
 	}
 
