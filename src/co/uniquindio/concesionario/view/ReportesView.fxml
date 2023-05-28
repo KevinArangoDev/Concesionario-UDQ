@@ -1,8 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.BorderPane?>
 
-<BorderPane xmlns:fx="http://javafx.com/fxml/1">
-	<!-- TODO Add Nodes -->
-</BorderPane>
 
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.uniquindio.concesionario.controller.ReporteController">
+   <children>
+      <TableView fx:id="tablaVehiculos" layoutX="146.0" layoutY="50.0" prefHeight="413.0" prefWidth="653.0">
+        <columns>
+          <TableColumn fx:id="columnaMarca" prefWidth="135.0" text="Marca" />
+          <TableColumn fx:id="columnaModelo" prefWidth="147.0" text="Modelo" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

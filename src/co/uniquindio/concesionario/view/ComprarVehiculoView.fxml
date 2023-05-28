@@ -22,5 +22,6 @@
       <JFXButton fx:id="btnMoto" layoutX="200.0" layoutY="147.0" onAction="#ventCompMoto" prefWidth="200.0" style="-fx-background-color: #222831;" text="Moto" textFill="#eeeeee" />
       <JFXButton fx:id="btnVPesado" layoutX="200.0" layoutY="220.0" onAction="#ventVehPesado" prefWidth="200.0" style="-fx-background-color: #222831;" text="Vehículo Pesado" textFill="#eeeeee" />
       <JFXButton fx:id="btnVLiviano" layoutX="200.0" layoutY="287.0" onAction="#ventVehLiviano" prefWidth="200.0" style="-fx-background-color: #222831;" text="Vehículo Liviano" textFill="#eeeeee" />
+      <JFXButton fx:id="btnVolver" layoutX="200.0" layoutY="347.0" onAction="#ventVolver" prefWidth="200.0" style="-fx-background-color: #222831;" text="Volver" textFill="#eeeeee" />
    </children>
 </AnchorPane>

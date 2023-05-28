@@ -7,7 +7,8 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.BorderPane?>
-<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="655.0" prefWidth="1500.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.uniquindio.concesionario.controller.ComprarMotoController">
+
+<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="655.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.uniquindio.concesionario.controller.ComprarMotoController">
                      <children>
                         <AnchorPane prefHeight="655.0" prefWidth="500.0" style="-fx-background-color: #222831;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="502.0" AnchorPane.topAnchor="0.0">
                            <children>
@@ -52,7 +53,7 @@
                               </Label>
                            </children>
                         </AnchorPane>
-                        <AnchorPane layoutX="520.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #eeeeee;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="500.0" AnchorPane.rightAnchor="500.0" AnchorPane.topAnchor="0.0">
+                        <AnchorPane layoutX="520.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #eeeeee;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="500.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
                               <Label layoutX="137.0" layoutY="31.0" text="Información Extra" textFill="#222831">
                                  <font>
@@ -86,7 +87,7 @@
                                     <Font name="Bell MT" size="20.0" />
                                  </font>
                               </Label>
-                              <JFXTextField fx:id="txtCambios" layoutX="155.0" layoutY="163.0" prefHeight="39.0" prefWidth="291.0" AnchorPane.leftAnchor="190.0" AnchorPane.rightAnchor="40.0" />
+                              <JFXTextField fx:id="txtCambios" layoutX="155.0" layoutY="163.0" prefHeight="39.0" prefWidth="291.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="40.0" />
                               <JFXTextField fx:id="txtVelocidadMaxima" layoutX="155.0" layoutY="246.0" prefHeight="39.0" prefWidth="291.0" AnchorPane.leftAnchor="190.0" AnchorPane.rightAnchor="40.0" />
                               <JFXTextField fx:id="txtCilindraje" layoutX="155.0" layoutY="330.0" prefHeight="39.0" prefWidth="291.0" AnchorPane.leftAnchor="190.0" AnchorPane.rightAnchor="40.0" />
                               <JFXTextField fx:id="txtPlaca" layoutX="155.0" layoutY="419.0" prefHeight="39.0" prefWidth="291.0" AnchorPane.leftAnchor="190.0" AnchorPane.rightAnchor="40.0" />
@@ -97,4 +98,3 @@
                         </AnchorPane>
                         <Separator layoutX="60.0" layoutY="205.0" prefHeight="3.0" prefWidth="411.0" style="-fx-background-color: #eeeeee;" />
                      </children></AnchorPane>
-

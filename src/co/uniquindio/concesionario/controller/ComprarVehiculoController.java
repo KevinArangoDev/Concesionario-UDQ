@@ -30,6 +30,9 @@ public class ComprarVehiculoController {
     private JFXButton btnVLiviano;
 
     @FXML
+    private JFXButton btnVolver;
+
+    @FXML
     void ventCompMoto(ActionEvent event) {
     	try {
 
@@ -87,6 +90,30 @@ public class ComprarVehiculoController {
     		Parent root = loader.load();
 
     		ComprarLivianoController controlador = loader.getController();
+
+    		Scene scene = new Scene(root);
+    		Stage stage = new Stage();
+
+    		stage.setScene(scene);
+    		stage.show();
+    		stage.setTitle("Car UQ");
+    		Stage myStage = (Stage) this.btnVLiviano.getScene().getWindow();
+    		myStage.close();
+
+    	} catch (IOException e) {
+            e.printStackTrace();
+    	}
+    }
+
+    @FXML
+    void ventVolver(ActionEvent event) {
+    	try {
+
+    		FXMLLoader loader = new FXMLLoader(
+    				getClass().getResource("../view/EmpleadoView.fxml"));
+    		Parent root = loader.load();
+
+    		EmpleadoController controlador = loader.getController();
 
     		Scene scene = new Scene(root);
     		Stage stage = new Stage();
