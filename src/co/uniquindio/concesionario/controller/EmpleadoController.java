@@ -48,7 +48,7 @@ public class EmpleadoController implements Initializable {
     				getClass().getResource("../view/VenderVehiculoView.fxml"));
     		Parent root = loader.load();
 
-    		LoginAdministradorController controlador = loader.getController();
+    		VenderVehiculoController controlador = loader.getController();
 
     		Scene scene = new Scene(root);
     		Stage stage = new Stage();
@@ -72,7 +72,7 @@ public class EmpleadoController implements Initializable {
     				getClass().getResource("../view/AlquilarVehiculoView.fxml"));
     		Parent root = loader.load();
 
-    		LoginAdministradorController controlador = loader.getController();
+    		ComprarVehiculoController controlador = loader.getController();
 
     		Scene scene = new Scene(root);
     		Stage stage = new Stage();
@@ -97,7 +97,7 @@ public class EmpleadoController implements Initializable {
     				getClass().getResource("../view/ComprarVehiculoView.fxml"));
     		Parent root = loader.load();
 
-    		LoginAdministradorController controlador = loader.getController();
+    		ComprarVehiculoController controlador = loader.getController();
 
     		Scene scene = new Scene(root);
     		Stage stage = new Stage();
