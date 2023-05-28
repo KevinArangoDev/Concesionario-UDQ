@@ -1,8 +1,96 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.BorderPane?>
 
-<BorderPane xmlns:fx="http://javafx.com/fxml/1">
-	<!-- TODO Add Nodes -->
-</BorderPane>
-
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.uniquindio.concesionario.controller.ComprarVehiculoController">
+   <children>
+      <AnchorPane prefHeight="600.0" prefWidth="500.0" style="-fx-background-color: #222831;">
+         <children>
+            <ImageView fx:id="imgLogo" fitHeight="139.0" fitWidth="141.0" layoutX="181.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/logoCarro.png" />
+               </image>
+            </ImageView>
+            <ComboBox fx:id="listaTipoDeVehiculos" layoutX="194.0" layoutY="219.0" onAction="#listaVehiculos" prefHeight="40.0" prefWidth="237.0" AnchorPane.rightAnchor="40.0" />
+            <Label layoutX="44.0" layoutY="226.0" text="Tipo de Vehículo:" textFill="#eeeeee" AnchorPane.leftAnchor="40.0">
+               <font>
+                  <Font name="Bell MT" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="139.0" layoutY="153.0" text="Sistema de Compra" textFill="#eeeeee">
+               <font>
+                  <Font name="Bell MT Bold" size="28.0" />
+               </font>
+            </Label>
+            <Separator layoutX="40.0" layoutY="185.0" prefHeight="3.0" prefWidth="411.0" style="-fx-background-color: #eeeeee;" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" />
+            <Label layoutX="40.0" layoutY="300.0" text="Tipo de Combustible:" textFill="#eeeeee">
+               <font>
+                  <Font name="Bell MT" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="40.0" layoutY="371.0" text="Tipo de Trasmisión" textFill="#eeeeee">
+               <font>
+                  <Font name="Bell MT" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="40.0" layoutY="442.0" text="Nuevo ó usado:" textFill="#eeeeee">
+               <font>
+                  <Font name="Bell MT" size="20.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="listaTipoTrasmision" layoutX="223.0" layoutY="364.0" onAction="#listaTipoTrasmision" prefHeight="40.0" prefWidth="237.0" />
+            <ComboBox fx:id="listaTipoCombustible" layoutX="223.0" layoutY="293.0" onAction="#listaTipoCombustible" prefHeight="40.0" prefWidth="237.0" />
+            <ComboBox fx:id="listaTipoNuevoUsado" layoutX="223.0" layoutY="435.0" onAction="#listaTipNueUsa" prefHeight="40.0" prefWidth="237.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="500.0" prefHeight="600.0" prefWidth="500.0" style="-fx-background-color: #eeeeee;">
+         <children>
+            <Label layoutX="14.0" layoutY="125.0" text="Marca:" textFill="#222831" AnchorPane.leftAnchor="10.0">
+               <font>
+                  <Font name="Bell MT" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="105.0" layoutY="55.0" text="Información de Vehículo" textFill="#222831" AnchorPane.topAnchor="50.0">
+               <font>
+                  <Font name="Bell MT Bold" size="28.0" />
+               </font>
+            </Label>
+            <Label layoutX="9.0" layoutY="269.0" text="Velocidad Máxima:" textFill="#222831" AnchorPane.leftAnchor="9.0">
+               <font>
+                  <Font name="Bell MT" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="3.0" layoutY="417.0" text="Número de Pasajero: " textFill="#222831" AnchorPane.leftAnchor="3.0">
+               <font>
+                  <Font name="Bell MT" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="5.0" layoutY="342.0" text="Cilindraje:" textFill="#222831" AnchorPane.leftAnchor="5.0">
+               <font>
+                  <Font name="Bell MT" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="9.0" layoutY="199.0" text="Modelo:" textFill="#222831" AnchorPane.leftAnchor="9.0">
+               <font>
+                  <Font name="Bell MT" size="20.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="txtMarca" layoutX="168.0" layoutY="118.0" prefHeight="39.0" prefWidth="273.0" AnchorPane.rightAnchor="40.0" />
+            <JFXTextField fx:id="txtModelo" layoutX="169.0" layoutY="192.0" prefHeight="39.0" prefWidth="273.0" AnchorPane.rightAnchor="40.0" />
+            <JFXTextField fx:id="txtVelocidadMaxima" layoutX="169.0" layoutY="262.0" prefHeight="39.0" prefWidth="273.0" AnchorPane.rightAnchor="40.0" />
+            <JFXButton fx:id="btnVolverVentEmpleado" layoutX="29.0" layoutY="519.0" onAction="#volVentEmpleado" style="-fx-background-color: #222831;" text="Volver" textFill="#eeeeee" />
+            <JFXButton fx:id="btnLimpiarDatos" layoutX="137.0" layoutY="519.0" onAction="#limpiarDatos" style="-fx-background-color: #222831;" text="Limpiar datos" textFill="#eeeeee" />
+            <JFXButton fx:id="btnRealizarCompra" layoutX="293.0" layoutY="519.0" onAction="#realizarCompra" style="-fx-background-color: #222831;" text="Comprar Vehículo" textFill="#eeeeee" />
+            <Separator layoutX="43.0" layoutY="84.0" prefHeight="3.0" prefWidth="411.0" style="-fx-background-color: #222831;" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" />
+            <JFXTextField fx:id="txtCilindraje" layoutX="187.0" layoutY="335.0" prefHeight="39.0" prefWidth="273.0" />
+            <JFXTextField fx:id="txtNumPasajeros" layoutX="187.0" layoutY="410.0" prefHeight="39.0" prefWidth="273.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
