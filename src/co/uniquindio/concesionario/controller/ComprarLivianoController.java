@@ -2,17 +2,39 @@ package co.uniquindio.concesionario.controller;
 
 
 
-import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXTextField;
-import java.net.URL;
-import java.util.ResourceBundle;
-
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+import javafx.util.StringConverter;
+
+import java.io.IOException;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.ResourceBundle;
+
+import com.jfoenix.controls.JFXButton;
+
+import co.uniquindio.concesionario.model.Concesionario;
+import co.uniquindio.concesionario.model.TipoCombustible;
+import co.uniquindio.concesionario.model.TipoNuevoUsado;
+import co.uniquindio.concesionario.model.TipoTransaccion;
+import co.uniquindio.concesionario.model.TipoTransmision;
+import co.uniquindio.concesionario.model.Vehiculo;
 
 public class ComprarLivianoController {
+
+    private ModelFactoryController singleton;
 
     @FXML
     private ResourceBundle resources;
@@ -21,120 +43,241 @@ public class ComprarLivianoController {
     private URL location;
 
     @FXML
-    private ComboBox<?> tieneCamReversa;
+    private ComboBox<String> tieneCamReversa;
+
 
     @FXML
-    private ComboBox<?> listaBuscarVehicvulo;
+    private ComboBox<String> tieneSensorColision;
 
     @FXML
-    private ComboBox<?> tieneSensorColision;
+    private TextField txtCapMaletero;
 
     @FXML
-    private JFXTextField txtCapMaletero;
+    private ComboBox<TipoCombustible> listaCombustibleLiviano;
 
     @FXML
-    private ComboBox<?> listaCombustibleLiviano;
+    private ComboBox<String> tieneAire;
 
     @FXML
-    private ComboBox<?> tieneAire;
+    private ComboBox<String> tieneAsisCarril;
 
     @FXML
-    private JFXButton btnVolverVentEmpleado;
+    private TextField txtBolsasAire;
 
     @FXML
-    private ComboBox<?> tieneAsisCarril;
+    private ComboBox<TipoTransmision> listaTrasmisionLiviano;
 
     @FXML
-    private JFXTextField txtBolsasAire;
+    private ComboBox<TipoNuevoUsado> listaNuevoUsadoLiviano;
 
     @FXML
-    private ComboBox<?> listaTrasmisionLiviano;
+    private ComboBox<TipoTransaccion> listaTipoTransaccion;
 
     @FXML
-    private JFXButton btnRealizarCompraLiviano;
+    private TextField txtVelMaxima;
 
     @FXML
-    private ComboBox<?> listaVehiculosLivianos;
+    private ComboBox<String> tieneABS;
 
     @FXML
-    private JFXTextField txtVelCrucero;
+    private TextField txtPasajeros;
 
     @FXML
-    private ComboBox<?> listaNuevoUsadoLiviano;
-
-    @FXML
-    private JFXTextField txtVelMaxima;
-
-    @FXML
-    private ComboBox<?> tieneABS;
-
-    @FXML
-    private JFXTextField txtPasajeros;
-
-    @FXML
-    private JFXTextField txtMarcaLiviano;
+    private TextField txtMarcaLiviano;
 
     @FXML
     private ImageView imgLogo;
 
     @FXML
-    private JFXTextField txtCambios;
+    private TextField txtCambios;
 
     @FXML
-    private JFXTextField txtPlaca;
+    private TextField txtPlaca;
 
     @FXML
-    private JFXTextField txtModeloLiviano;
+    private TextField txtModeloLiviano;
 
     @FXML
-    private ComboBox<?> tieneSenTrafCruzado;
+    private ComboBox<String> tieneSenTrafCruzado;
 
     @FXML
-    private JFXTextField txtNumPuertas;
+    private TextField txtNumPuertas;
 
     @FXML
     private JFXButton btnLimpiarDatosLiviano;
 
     @FXML
-    private JFXTextField txtCilindraje;
-
+    private TextField txtCilindraje;
+    @FXML
+    private TextField txtVelCrucero;
+    @FXML
+    private JFXButton btnVolverVentEmpleado;
 
 
     @FXML
-    void buscarVehiculo(ActionEvent event) {
+    private void initialize() {
+        singleton = ModelFactoryController.getInstance();
 
+        // Configurar opciones para otros ComboBox
+        listaCombustibleLiviano.getItems().addAll(TipoCombustible.values());
+        listaTrasmisionLiviano.getItems().addAll(TipoTransmision.values());
+        listaNuevoUsadoLiviano.getItems().addAll(TipoNuevoUsado.values());
+        listaTipoTransaccion.getItems().addAll(TipoTransaccion.values());
+
+        ObservableList<String> opcionesSiNo = FXCollections.observableArrayList("Si", "No");
+        tieneAire.setItems(opcionesSiNo);
+        tieneCamReversa.setItems(opcionesSiNo);
+        tieneABS.setItems(opcionesSiNo);
+        tieneSensorColision.setItems(opcionesSiNo);
+        tieneSenTrafCruzado.setItems(opcionesSiNo);
+        tieneAsisCarril.setItems(opcionesSiNo);
     }
 
-
     @FXML
-    void listaTrasmisionLiviano(ActionEvent event) {
+    private void compraVehLiviano(ActionEvent event) {
+    	Concesionario concesionario = ModelFactoryController.getInstance().getConcesionario();
 
+        String marca = txtMarcaLiviano.getText();
+        String modelo = txtModeloLiviano.getText();
+        String cambios = txtCambios.getText();
+        String velMaximaText = txtVelMaxima.getText();
+        String cilindraje = txtCilindraje.getText();
+        String placa = txtPlaca.getText();
+        double velMaxima;
+        TipoTransaccion tipoTransaccion = listaTipoTransaccion.getValue();
+        TipoCombustible tipoCombustible = listaCombustibleLiviano.getValue();
+        TipoTransmision tipoTransmision = listaTrasmisionLiviano.getValue();
+        TipoNuevoUsado tipoNuevoUsado = listaNuevoUsadoLiviano.getValue();
+        String numPasajeros = txtPasajeros.getText();
+
+        String numPuertas = txtNumPuertas.getText();
+        String capMaletero = txtCapMaletero.getText();
+        boolean hasAireAcondicionado = tieneAire != null && tieneAire.getValue().equals("Si");
+        boolean hasCamaraReversa = tieneCamReversa != null && tieneCamReversa.getValue().equals("Si");
+        boolean hasABS = tieneABS != null && tieneABS.getValue().equals("Si");
+        String numBolsasAire = txtBolsasAire.getText();
+        boolean sensorColision = (tieneSensorColision != null && tieneSensorColision.getValue().equals("Si")) ? true : false;
+        boolean sensorTraficoCruzado = (tieneSenTrafCruzado != null && tieneSenTrafCruzado.getValue().equals("Si")) ? true : false;
+        boolean asisPermCarril = (tieneAsisCarril != null && tieneAsisCarril.getValue().equals("Si")) ? true : false;
+
+        if (!velMaximaText.isEmpty()) {
+            velMaxima = Double.parseDouble(velMaximaText);
+        } else {
+            // La cadena velMaximaText está vacía, muestra un mensaje de error o realiza alguna acción adecuada
+            // Por ejemplo:
+            mostrarAlerta("Por favor, ingrese un valor para la velocidad máxima.");
+            return;  // Sale del método sin continuar con la compra del vehículo
+        }
+        String textoVelCrucero = txtVelCrucero.getText().trim();  // Obtiene el texto y elimina los espacios en blanco al inicio y al final
+        double velCrucero;
+
+        if (!textoVelCrucero.isEmpty()) {
+            velCrucero = Double.parseDouble(textoVelCrucero);
+        } else {
+            // Manejar el caso cuando el campo está vacío
+            // Por ejemplo, mostrar un mensaje de error o asignar un valor predeterminado
+            velCrucero = 0.0;  // Valor predeterminado
+        }
+
+        if (validarCampos(marca, modelo, cambios, velMaxima, cilindraje, placa, tipoTransaccion, tipoCombustible, tipoTransmision, tipoNuevoUsado, numPasajeros, velCrucero, numPuertas, capMaletero, hasAireAcondicionado, hasCamaraReversa, hasABS, numBolsasAire, sensorColision, sensorTraficoCruzado, asisPermCarril)) {
+        	Vehiculo vehiculoLiviano = ModelFactoryController.crearVehiculoLiviano(marca, modelo, cambios, velMaxima, cilindraje,
+                    placa, tipoTransaccion, tipoCombustible, tipoTransmision, tipoNuevoUsado, numPasajeros, velCrucero,
+                    numPuertas, capMaletero, hasAireAcondicionado, hasCamaraReversa, hasABS, numBolsasAire, sensorColision,
+                    sensorTraficoCruzado, asisPermCarril);
+        		concesionario.getListaVehiculos().add(vehiculoLiviano);
+                mostrarAlerta("¡Vehículo comprado!");
+                limpiarCampos();
+        } else {
+            mostrarAlerta("Por favor, completa todos los campos y selecciona una opción de revisión técnica.");
+        }
     }
 
-
-    @FXML
-    void listaNuevoUsadoLiviano(ActionEvent event) {
-
+    private boolean validarCampos(String marca, String modelo, String cambios, double velMaxima, String cilindraje,
+                              String placa, TipoTransaccion tipoTransaccion,
+                              TipoCombustible tipoCombustible, TipoTransmision tipoTransmision,
+                              TipoNuevoUsado tipoNuevoUsado, String numPasajeros, double velCrucero,
+                              String numPuertas, String capMaletero, boolean hasAireAcondicionado,
+                              boolean hasCamaraReversa, boolean hasABS, String numBolsasAire,
+                              boolean sensorColision, boolean sensorTraficoCruzado, boolean asisPermCarril) {
+    // Validar que todos los campos obligatorios estén completos
+    if (marca.isEmpty() || modelo.isEmpty() || cambios.isEmpty() || cilindraje.isEmpty() || placa.isEmpty() ||
+         tipoTransaccion == null || tipoCombustible == null ||
+        tipoTransmision == null || tipoNuevoUsado == null || numPasajeros.isEmpty() ||
+        numPuertas.isEmpty() || capMaletero.isEmpty() || numBolsasAire.isEmpty()) {
+        mostrarAlerta("Por favor, completa todos los campos obligatorios.");
+        return false;
     }
 
-
-
-    @FXML
-    void listaCombustibleLiviano(ActionEvent event) {
-
+    // Validar que los campos numéricos sean válidos
+    if (velMaxima <= 0 || velCrucero < 0) {
+        mostrarAlerta("Por favor, ingresa valores numéricos válidos para la velocidad máxima y el velocidad de crucero.");
+        return false;
     }
 
+    // Otras validaciones específicas según tus requisitos
 
+    return true;  // Todos los campos son válidos
+}
 
-    @FXML
-    void listaVehiculoLiviano(ActionEvent event) {
+	@FXML
+    private void volVentEmpleado(ActionEvent event) {
+		try {
 
+    		FXMLLoader loader = new FXMLLoader(
+    				getClass().getResource("../view/ComprarVehiculoView.fxml"));
+    		Parent root = loader.load();
+
+    		ComprarVehiculoController controlador = loader.getController();
+
+    		Scene scene = new Scene(root);
+    		Stage stage = new Stage();
+
+    		stage.setScene(scene);
+    		stage.show();
+    		stage.setTitle("Car UQ");
+    		Stage myStage = (Stage) this.btnVolverVentEmpleado.getScene().getWindow();
+    		myStage.close();
+
+    	} catch (IOException e) {
+            e.printStackTrace();
+    	}
     }
 
-
     @FXML
-    void volVentEmpleado(ActionEvent event) {
+    private void limpiarDatosLiviano(ActionEvent event) {
+        limpiarCampos();
+    }
 
+    private void limpiarCampos() {
+        txtMarcaLiviano.clear();
+        txtModeloLiviano.clear();
+        txtCambios.clear();
+        txtVelMaxima.clear();
+        txtCilindraje.clear();
+        txtPlaca.clear();
+        listaTipoTransaccion.getSelectionModel().clearSelection();
+        listaCombustibleLiviano.getSelectionModel().clearSelection();
+        listaTrasmisionLiviano.getSelectionModel().clearSelection();
+        listaNuevoUsadoLiviano.getSelectionModel().clearSelection();
+        txtPasajeros.clear();
+        txtVelCrucero.clear();
+        txtNumPuertas.clear();
+        txtCapMaletero.clear();
+        tieneAire.getSelectionModel().clearSelection();
+        tieneCamReversa.getSelectionModel().clearSelection();
+        tieneABS.getSelectionModel().clearSelection();
+        txtBolsasAire.clear();
+        tieneSensorColision.getSelectionModel().clearSelection();
+        tieneSenTrafCruzado.getSelectionModel().clearSelection();
+        tieneAsisCarril.getSelectionModel().clearSelection();
+    }
+
+    private void mostrarAlerta(String mensaje) {
+    	Alert alert = new Alert(AlertType.WARNING);
+        alert.setTitle("Alerta");
+        alert.setHeaderText(null);
+        alert.setContentText(mensaje);
+        alert.showAndWait();
     }
 
 }
