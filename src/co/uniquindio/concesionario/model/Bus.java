@@ -5,6 +5,8 @@ import java.io.Serializable;
 @SuppressWarnings("serial")
 public class Bus extends VehiculoPesado  implements Serializable{
 
+
+
 	/**
 	 * Constructor de la clase
 	 * @param tipoCombustible
@@ -25,14 +27,20 @@ public class Bus extends VehiculoPesado  implements Serializable{
 	 * @param hasABS
 	 * @param numBolsasAire
 	 */
-	public Bus(TipoCombustible tipoCombustible, TipoTransmision tipoTrasmision, TipoNuevoUsado tipoNuevoUsado,
-			String marca, String modelo, String cambios, Double velMax, String cilindraje, String placa,
-			String numPasajeros, double velCrucero, String numPuertas, String capMaletero,
-			boolean hasAireAcondicionado, boolean hasCamaraReversa, boolean hasABS, String numBolsasAire) {
-		super(tipoCombustible, tipoTrasmision, tipoNuevoUsado, marca, modelo, cambios, velMax, cilindraje, placa, numPasajeros,
-				velCrucero, numPuertas, capMaletero, hasAireAcondicionado, hasCamaraReversa, hasABS, numBolsasAire);
+	public Bus(TipoTransaccion tipoTransaccion, TipoCombustible tipoCombustible, TipoTransmision tipoTransmision,
+			TipoNuevoUsado tipoNuevoUsado, String marca, String modelo, String cambios, Double velMax,
+			String cilindraje, String placa, String numPasajeros, double velCrucero, String numPuertas,
+			String capMaletero, boolean hasAireAcondicionado, boolean hasCamaraReversa, boolean hasABS,
+			String numBolsasAire) {
+		super(tipoTransaccion, tipoCombustible, tipoTransmision, tipoNuevoUsado, marca, modelo, cambios, velMax, cilindraje,
+				placa, numPasajeros, velCrucero, numPuertas, capMaletero, hasAireAcondicionado, hasCamaraReversa, hasABS,
+				numBolsasAire);
 		// TODO Auto-generated constructor stub
 	}
+
+
+
+
 
 }
 

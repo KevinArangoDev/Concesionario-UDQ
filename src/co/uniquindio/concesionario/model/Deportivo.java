@@ -8,8 +8,6 @@ public class Deportivo  extends  Vehiculo implements deCeroACien{
 	/**
 	 * Declaracion de atributos
 	 */
-	private String numPuertas;
-	private String numBolsasAire;
 	private Double caballosFuerza;
 
 	/**
@@ -28,12 +26,10 @@ public class Deportivo  extends  Vehiculo implements deCeroACien{
 	 * @param caballosFuerza
 	 */
 
-	public Deportivo(TipoCombustible tipoCombustible, TipoTransmision tipoTrasmision, TipoNuevoUsado tipoNuevoUsado,
+	public Deportivo(TipoTransaccion tipoTransaccion, TipoCombustible tipoCombustible, TipoTransmision tipoTransmision, TipoNuevoUsado tipoNuevoUsado,
 			String marca, String modelo, String cambios, Double velMax, String cilindraje, String placa,
 			String numPuertas, String numBolsasAire, Double caballosFuerza) {
-		super(tipoCombustible, tipoTrasmision, tipoNuevoUsado, marca, modelo, cambios, velMax, cilindraje, placa);
-		this.numPuertas = numPuertas;
-		this.numBolsasAire = numBolsasAire;
+		super(tipoTransaccion, tipoCombustible, tipoTransmision, tipoNuevoUsado, marca, modelo, cambios, velMax, cilindraje, placa);
 		this.caballosFuerza = caballosFuerza;
 	}
 
@@ -43,24 +39,6 @@ public class Deportivo  extends  Vehiculo implements deCeroACien{
 	 * @return
 	 */
 
-	public String getNumPuertas() {
-		return numPuertas;
-	}
-
-
-	public void setNumPuertas(String numPuertas) {
-		this.numPuertas = numPuertas;
-	}
-
-
-	public String getNumBolsasAire() {
-		return numBolsasAire;
-	}
-
-
-	public void setNumBolsasAire(String numBolsasAire) {
-		this.numBolsasAire = numBolsasAire;
-	}
 
 
 	public Double getCaballosFuerza() {
@@ -73,12 +51,12 @@ public class Deportivo  extends  Vehiculo implements deCeroACien{
 	}
 
 // metodo to String
-
 	@Override
 	public String toString() {
-		return "Deportivo [numPuertas=" + numPuertas + ", numBolsasAire=" + numBolsasAire + ", caballosFuerza="
-				+ caballosFuerza + "]";
+		return "Deportivo [caballosFuerza=" + caballosFuerza + "]";
 	}
+
+
 
 
 	/**
@@ -90,6 +68,7 @@ public class Deportivo  extends  Vehiculo implements deCeroACien{
 		// TODO Auto-generated method stub
 		return 0;
 	}
+
 
 
 
