@@ -1,21 +1,28 @@
 package co.uniquindio.concesionario.controller;
 import com.jfoenix.controls.JFXButton;
 
+import co.uniquindio.concesionario.model.Empleado;
+
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 public class AdministradorController implements Initializable {
-	ModelFactoryController singleton = ModelFactoryController.getInstance();
+	ModelFactoryController modelFactoryController = ModelFactoryController.getInstance();
 
     @FXML
     private ResourceBundle resources;
@@ -27,6 +34,9 @@ public class AdministradorController implements Initializable {
     private JFXButton btnBuscarEmpleado;
 
     @FXML
+    private TableColumn<Empleado, String> colApellido;
+
+    @FXML
     private TextField txtIdentificacionEmpleado;
 
     @FXML
@@ -36,13 +46,26 @@ public class AdministradorController implements Initializable {
     private JFXButton btnCerrarSesion;
 
     @FXML
+    private TableColumn<Empleado, String> colEdad;
+
+    @FXML
+    private TableColumn<Empleado, Double> colSueldo;
+
+    @FXML
+    private TableColumn<Empleado, String> colNombre;
+
+    @FXML
+    private TableColumn<Empleado, String> colId;
+
+    @FXML
+    private TableColumn<Empleado, String> colCargo;
+
+    @FXML
     private JFXButton btnReportes;
 
-    @Override
-	public void initialize(URL location, ResourceBundle resources) {
-		// TODO Auto-generated method stub
+    @FXML
+    private TableView<Empleado> tblListaEmpleados;
 
-	}
 
     @FXML
     void ventCrudEmpleado(ActionEvent event) {
@@ -99,115 +122,25 @@ public class AdministradorController implements Initializable {
     void cerrarSesion(ActionEvent event) {
 
     }
+    @Override
+ 	public void initialize(URL location, ResourceBundle resources) {
+		colNombre.setCellValueFactory( new PropertyValueFactory<>("nombre") );
+		colApellido.setCellValueFactory( new PropertyValueFactory<>("apellido") );
+		colId.setCellValueFactory( new PropertyValueFactory<>("id") );
+		colCargo.setCellValueFactory( new PropertyValueFactory<>("cargo") );
+		colSueldo.setCellValueFactory( new PropertyValueFactory<>("sueldo") );
+		colEdad.setCellValueFactory( new PropertyValueFactory<>("edad") );
 
-    public void init(){
 
-    }
+
+		ArrayList<Empleado> empleados = modelFactoryController.concesionario.getListaEmpleados();
+
+		tblListaEmpleados.setItems(FXCollections.observableArrayList(empleados));
+
+ 	}
 
 }
 
-//    @FXML
-//    void volverInicio(ActionEvent event) {
-//    	 // Crear una ventana de confirmación
-//        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-//        alert.setTitle("Confirmación");
-//        alert.setHeaderText("si  vuelves al inicio se cerrara sesion automaticamente");
-//        alert.setContentText("¿Está seguro de ejecutar esta acción?");
-//
-//        // Agregar botones de "Sí" y "No"
-//        ButtonType buttonTypeYes = new ButtonType("Sí");
-//        ButtonType buttonTypeNo = new ButtonType("No");
-//        alert.getButtonTypes().setAll(buttonTypeYes, buttonTypeNo);
-//
-//        // Obtener el resultado de la ventana de confirmación
-//        ButtonType result = alert.showAndWait().orElse(ButtonType.NO);
-//
-//        // Verificar si el usuario eligió "Sí"
-//        if (result == buttonTypeYes) {
-//        	try {
-//                // Obtener el MenuItem seleccionado
-//                MenuItem menuItem = (MenuItem) event.getSource();
-//
-//                // Obtener el escenario actual a través del MenuItem
-//                Stage currentStage = (Stage) menuItem.getParentPopup().getOwnerWindow();
-//
-//                // Cargar la ventana principal desde su archivo FXML
-//                FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/principalView.fxml"));
-//                Parent ventanaPrincipalRoot = loader.load();
-//
-//
-//                // Configurar cualquier dato necesario en el controlador de la ventana principal
-//
-//                // Cambiar la escena actual en el escenario a la ventana principal
-//                Scene ventanaPrincipalScene = new Scene(ventanaPrincipalRoot);
-//                currentStage.setScene(ventanaPrincipalScene);
-//
-//                // Mostrar la ventana principal
-//                currentStage.show();
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//                // Manejar cualquier excepción que pueda ocurrir al cargar la ventana principal
-//            }
-//
-//        }
-//
-//
-//    }
-//
-//
-//    @FXML
-//    void volverLogin(ActionEvent event) {
-//    	try {
-//            // Obtener el MenuItem seleccionado
-//            MenuItem menuItem = (MenuItem) event.getSource();
-//
-//            // Obtener el escenario actual a través del MenuItem
-//            Stage currentStage = (Stage) menuItem.getParentPopup().getOwnerWindow();
-//
-//            // Cargar la ventana principal desde su archivo FXML
-//            FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/loginAdministradorView.fxml"));
-//            Parent ventanaPrincipalRoot = loader.load();
-//
-//
-//            // Configurar cualquier dato necesario en el controlador de la ventana principal
-//
-//            // Cambiar la escena actual en el escenario a la ventana principal
-//            Scene ventanaPrincipalScene = new Scene(ventanaPrincipalRoot);
-//            currentStage.setScene(ventanaPrincipalScene);
-//
-//            // Mostrar la ventana principal
-//            currentStage.show();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//
-//    }
-//
-//    @FXML
-//    void abrirVentAgregarEmpleado(ActionEvent event) {
-//    	try {
-//
-//    		FXMLLoader loader = new FXMLLoader(
-//    				getClass().getResource("../view/AgregarEmpleadoView.fxml"));
-//    		Parent root = loader.load();
-//
-//
-//
-//    		Scene scene = new Scene(root);
-//    		Stage stage = new Stage();
-//
-//    		stage.setScene(scene);
-//    		stage.show();
-//    		stage.setTitle("Lista Facturas");
-//    		Stage myStage = (Stage) this.btnAgregar.getScene().getWindow();
-//    		myStage.close();
-//
-//    	} catch (IOException e) {
-//
-//    	}
-//
-//
-//    }
 
 
 

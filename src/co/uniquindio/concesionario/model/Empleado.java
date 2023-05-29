@@ -19,6 +19,7 @@ public class Empleado extends Persona implements Serializable{
 	private double sueldo;
 	private EstadoEmpleado estadoEmpleado;
 	private ArrayList<Cliente> listaClientes;
+	private String password;
 
 
 	/**
@@ -29,10 +30,11 @@ public class Empleado extends Persona implements Serializable{
 	 * @param cargo
 	 * @param sueldo
 	 */
-	public Empleado(String nombre, String edad, String id, String cargo, double sueldo  , String apellido){
+	public Empleado(String nombre, String edad, String id, String cargo, double sueldo  , String apellido , String password){
 		super(nombre, edad, id , apellido);
 		this.cargo = cargo;
 		this.sueldo = sueldo;
+		this.password=password;
 		this.estadoEmpleado = EstadoEmpleado.ACTIVO;
 
 	}
@@ -78,6 +80,14 @@ public class Empleado extends Persona implements Serializable{
 	@Override
 	public String toString() {
 		return "Empleado [cargo=" + cargo + ", sueldo=" + sueldo + ", listaClientes=" + listaClientes + "]";
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 

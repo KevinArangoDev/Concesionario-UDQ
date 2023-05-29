@@ -8,7 +8,6 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.BorderPane?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="579.0" prefWidth="470.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.uniquindio.concesionario.controller.AgregarEmpleadoController">
    <children>
       <Label alignment="TOP_RIGHT" layoutX="42.0" layoutY="93.0" text="Cargo" AnchorPane.leftAnchor="20.0" />
@@ -35,8 +34,8 @@
       <Separator layoutX="9.0" layoutY="359.0" prefHeight="1.0" prefWidth="460.0" />
       <Label alignment="TOP_RIGHT" layoutX="25.0" layoutY="393.0" text="Contraseña" AnchorPane.leftAnchor="20.0" />
       <Label alignment="TOP_RIGHT" layoutX="19.0" layoutY="443.0" text="repite tu contraseña" AnchorPane.leftAnchor="20.0" />
-      <TextField fx:id="txtPassword" layoutX="162.0" layoutY="388.0" AnchorPane.leftAnchor="152.0" />
-      <TextField fx:id="txtPasswordRep" layoutX="162.0" layoutY="438.0" AnchorPane.leftAnchor="152.0" />
       <JFXButton fx:id="btnAgregar" layoutX="198.0" layoutY="502.0" onAction="#agregarPerson" style="-fx-background-color: #2a313c;" text="Agregar" textFill="#eeeeee" />
+      <PasswordField fx:id="txtPassword" layoutX="152.0" layoutY="388.0" />
+      <PasswordField fx:id="txtPasswordRep" layoutX="153.0" layoutY="438.0" />
    </children>
 </AnchorPane>

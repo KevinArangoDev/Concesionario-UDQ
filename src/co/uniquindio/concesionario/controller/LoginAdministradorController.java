@@ -61,7 +61,7 @@ public class LoginAdministradorController implements Initializable {
 				Parent root = loader.load();
 
 				AdministradorController controlador = loader.getController();
-				controlador.init();
+
 				Scene scene = new Scene(root);
 				Stage stage = new Stage();
 				stage.setTitle("Menu Administrador");
