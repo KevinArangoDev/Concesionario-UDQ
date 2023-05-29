@@ -285,22 +285,25 @@ public class Concesionario implements Serializable {
 	 * metodo para bloquear un empleado
 	 *
 	 * @param empleado
+	 * @param estado
+	 * @param bloqueado
 	 * @throws ConcesionarioException
 	 */
-	public void bloquearEmpleado( Empleado empleado) throws ConcesionarioException {
+	public void bloquearEmpleado( Empleado empleado, EstadoEmpleado estado) throws ConcesionarioException {
 		String idEmpleado = empleado.getId();
 
 		for (int i = 0; i < listaEmpleados.size(); i++) {
 			if (listaEmpleados.get(i).getId().equals(idEmpleado)) {
-				listaEmpleados.get(i).setEstadoEmpleado(EstadoEmpleado.BLOQUEADO);
+				listaEmpleados.get(i).setEstadoEmpleado(estado);
 
 				System.out.println("Se bloqueo el empleado. " + getNombre());
 				break;
 			} else {
 				throw new ConcesionarioException("no se encontro un empleado con esa id");
 
-			}
 
+
+		}
 		}
 	}
 //--------------------------------------------------------------------------------------------------------------------------------------------------

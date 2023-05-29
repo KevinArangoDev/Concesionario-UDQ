@@ -30,12 +30,12 @@ public class Empleado extends Persona implements Serializable{
 	 * @param cargo
 	 * @param sueldo
 	 */
-	public Empleado(String nombre, String edad, String id, String cargo, double sueldo  , String apellido , String password){
+	public Empleado(String nombre, String edad, String id, String cargo, double sueldo  , String apellido , String password ,EstadoEmpleado estadoEmpleado){
 		super(nombre, edad, id , apellido);
 		this.cargo = cargo;
 		this.sueldo = sueldo;
 		this.password=password;
-		this.estadoEmpleado = EstadoEmpleado.ACTIVO;
+		this.estadoEmpleado = estadoEmpleado;
 
 	}
 

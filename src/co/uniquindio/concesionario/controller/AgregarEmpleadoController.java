@@ -6,7 +6,9 @@ import com.jfoenix.controls.JFXButton;
 
 import co.uniquindio.concesionario.exception.ConcesionarioException;
 import co.uniquindio.concesionario.model.Empleado;
+import co.uniquindio.concesionario.model.EstadoEmpleado;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -14,7 +16,10 @@ import javax.swing.JOptionPane;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.PasswordField;
@@ -23,6 +28,7 @@ import javafx.stage.Stage;
 
 public class AgregarEmpleadoController implements Initializable{
 	ModelFactoryController modelFactoryController = ModelFactoryController.getInstance();
+	private CrudEmpleadoController CrudEmpleadoController;
 
     @FXML
     private ResourceBundle resources;
@@ -71,10 +77,11 @@ public class AgregarEmpleadoController implements Initializable{
 		String password = this.txtPassword.getText();
 		String passwordRep = this.txtPasswordRep.getText();
 		String edad =this.txtEdad.getText();
+		EstadoEmpleado estado=EstadoEmpleado.ACTIVO;
 
-		if(datosValidos(nombre , apellido , id, cargo, sueldo, password, passwordRep, edad)==true){
+		if(datosValidos(nombre , apellido , id, cargo, sueldo, password, passwordRep, edad ,estado)==true){
 			System.out.println("valido");
-			Empleado nuevoEmpleado = new Empleado(nombre, edad, id, cargo, sueldo, apellido, passwordRep);
+			Empleado nuevoEmpleado = new Empleado(nombre, edad, id, cargo, sueldo, apellido, passwordRep ,EstadoEmpleado.ACTIVO);
 
 			try {
 				modelFactoryController.getConcesionario().agregarEmpleado(nuevoEmpleado);;
@@ -84,10 +91,30 @@ public class AgregarEmpleadoController implements Initializable{
 
 				e.getMessage();
 				mostrarMensaje("excepcion", "verificacion", e.getMessage(), AlertType.INFORMATION);
-			}
-			Stage myStage = (Stage) this.btnAgregar.getScene().getWindow();
-			myStage.close();
 
+
+			}
+
+
+			try {
+
+	    		FXMLLoader loader = new FXMLLoader(
+	    				getClass().getResource("../view/CrudEmpleadoView.fxml"));
+	    		Parent root = loader.load();
+
+
+	    		Scene scene = new Scene(root);
+	    		Stage stage = new Stage();
+
+	    		stage.setScene(scene);
+	    		stage.show();
+	    		stage.setTitle("Crud");
+	    		Stage myStage = (Stage) this.btnAgregar.getScene().getWindow();
+	    		myStage.close();
+
+	    	} catch (IOException ex) {
+
+	    	}
 
 		}
 
@@ -111,7 +138,7 @@ public class AgregarEmpleadoController implements Initializable{
      * @param edad
      * @return
      */
-	private boolean datosValidos(String nombre, String apellido, String identificacion, String cargo ,double sueldo , String password, String passwordRep ,String edad) {
+	private boolean datosValidos(String nombre, String apellido, String identificacion, String cargo ,double sueldo , String password, String passwordRep ,String edad ,EstadoEmpleado estado) {
 
 	    boolean esNumerica = identificacion != null && !identificacion.isEmpty() && identificacion.matches("\\d+");
 	    boolean nombreValido = nombre != null && nombre.matches("[a-zA-Z]+");
@@ -157,11 +184,14 @@ public class AgregarEmpleadoController implements Initializable{
 		}
 	    if(notificacion.equals("")){
 			return true;
+		}else{
+			 mostrarMensaje("notificiacion persona", "informacion invalida", notificacion, AlertType.WARNING);
+
+			    return false;
+
+
 		}
 
-	    mostrarMensaje("notificiacion persona", "informacion invalida", notificacion, AlertType.WARNING);
-
-	    return false;
 
 
 
