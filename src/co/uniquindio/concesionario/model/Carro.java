@@ -39,11 +39,11 @@ public abstract class Carro  extends Vehiculo implements Serializable{
 	 * @param numBolsasAire
 	 */
 
-	public Carro(TipoCombustible tipoCombustible, TipoTransmision tipoTrasmision, TipoNuevoUsado tipoNuevoUsado,
+	public Carro(TipoTransaccion tipoTransaccion, TipoCombustible tipoCombustible, TipoTransmision tipoTransmision, TipoNuevoUsado tipoNuevoUsado,
 			String marca, String modelo, String cambios, Double velMax, String cilindraje, String placa,
 			String numPasajeros, double velCrucero, String numPuertas, String capMaletero,
 			boolean hasAireAcondicionado, boolean hasCamaraReversa, boolean hasABS, String numBolsasAire) {
-		super(tipoCombustible, tipoTrasmision, tipoNuevoUsado, marca, modelo, cambios, velMax, cilindraje, placa);
+		super(tipoTransaccion, tipoCombustible, tipoTransmision, tipoNuevoUsado, marca, modelo, cambios, velMax, cilindraje, placa);
 		this.numPasajeros = numPasajeros;
 		this.velCrucero = velCrucero;
 		this.numPuertas = numPuertas;
@@ -54,7 +54,11 @@ public abstract class Carro  extends Vehiculo implements Serializable{
 		this.numBolsasAire = numBolsasAire;
 	}
 
-// ------------------------------------------------------------------
+public Carro() {
+	super();
+}
+
+	// ------------------------------------------------------------------
 	/**
 	 * Getters and Setters
 	 * @return

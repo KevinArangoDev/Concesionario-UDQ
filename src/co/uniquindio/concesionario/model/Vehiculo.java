@@ -7,8 +7,9 @@ public abstract class Vehiculo implements Serializable {
 	/**
 	 * declaracion de atributos
 	 */
+	private TipoTransaccion tipoTransaccion;
 	private TipoCombustible tipoCombustible;
-	private TipoTransmision tipoTrasmision;
+	private TipoTransmision tipoTransmision;
 	private TipoNuevoUsado tipoNuevoUsado;
 	private  String marca;
 	private String modelo;
@@ -31,12 +32,12 @@ public abstract class Vehiculo implements Serializable {
 	 * @param placa
 	 */
 
-	public Vehiculo(TipoCombustible tipoCombustible, TipoTransmision tipoTrasmision, TipoNuevoUsado tipoNuevoUsado,
+	public Vehiculo(TipoTransaccion tipoTransaccion, TipoCombustible tipoCombustible, TipoTransmision tipoTransmision, TipoNuevoUsado tipoNuevoUsado,
 			String marca, String modelo, String cambios, Double velMax, String cilindraje,
 			String placa) {
 		super();
 		this.tipoCombustible = tipoCombustible;
-		this.tipoTrasmision = tipoTrasmision;
+		this.tipoTransmision = tipoTransmision;
 		this.tipoNuevoUsado = tipoNuevoUsado;
 		this.marca = marca;
 		this.modelo = modelo;
@@ -44,6 +45,7 @@ public abstract class Vehiculo implements Serializable {
 		this.velMax = velMax;
 		this.cilindraje = cilindraje;
 		this.placa = placa;
+		this.tipoTransaccion = tipoTransaccion;
 	}
 
 	public Vehiculo() {
@@ -58,14 +60,21 @@ public abstract class Vehiculo implements Serializable {
 	public TipoCombustible getTipoCombustible() {
 		return tipoCombustible;
 	}
+	public TipoTransaccion getTipoTransaccion() {
+		return tipoTransaccion;
+	}
+	public void setTipoTransaccion(TipoTransaccion tipoTransaccion) {
+		this.tipoTransaccion = tipoTransaccion;
+	}
+
 	public void setTipoCombustible(TipoCombustible tipoCombustible) {
 		this.tipoCombustible = tipoCombustible;
 	}
 	public TipoTransmision getTipoTrasmision() {
-		return tipoTrasmision;
+		return tipoTransmision;
 	}
 	public void setTipoTransmision(TipoTransmision tipoTrasmision) {
-		this.tipoTrasmision = tipoTrasmision;
+		this.tipoTransmision = tipoTrasmision;
 	}
 	public TipoNuevoUsado getTipoNuevoUsado() {
 		return tipoNuevoUsado;
@@ -109,19 +118,22 @@ public abstract class Vehiculo implements Serializable {
 	public void setPlaca(String placa) {
 		this.placa = placa;
 	}
+
+	public TipoTransmision getTipoTransmision() {
+		return tipoTransmision;
+	}
+
+
+
 	// metodo to String
 	@Override
 	public String toString() {
-		return "Vehiculo [tipoCombustible=" + tipoCombustible + ", tipoTrasmision=" + tipoTrasmision
+		return "Vehiculo [tipoCombustible=" + tipoCombustible + ", tipoTrasmision=" + tipoTransmision
 				+ ", tipoNuevoUsado=" + tipoNuevoUsado + ", marca=" + marca + ", modelo=" + modelo + ", Cambios="
 				+ cambios + ", velMax=" + velMax + ", cilindraje=" + cilindraje + ", numPasajeros=" +
 				 ", placa=" + placa + "]";
 	}
 
-
-
-
-
-
-
 }
+
+

@@ -6,15 +6,16 @@ import java.io.Serializable;
 public class Camioneta extends VehiculoLiviano implements Serializable{
 
 
-	public Camioneta(TipoCombustible tipoCombustible, TipoTransmision tipoTrasmision, TipoNuevoUsado tipoNuevoUsado,
-			String marca, String modelo, String cambios, Double velMax, String cilindraje, String placa,
-			String numPasajeros, double velCrucero, String numPuertas, String capMaletero,
-			boolean hasAireAcondicionado, boolean hasCamaraReversa, boolean hasABS, String numBolsasAire,
-			boolean sensorColision, boolean sensorTraficoCruzado, boolean asisPermCarril) {
-		super(tipoCombustible, tipoTrasmision, tipoNuevoUsado, marca, modelo, cambios, velMax, cilindraje, placa, numPasajeros,
-				velCrucero, numPuertas, capMaletero, hasAireAcondicionado, hasCamaraReversa, hasABS, numBolsasAire,
-				sensorColision, sensorTraficoCruzado, asisPermCarril);
+	public Camioneta(TipoTransaccion tipoTransaccion, TipoCombustible tipoCombustible, TipoTransmision tipoTransmision,
+			TipoNuevoUsado tipoNuevoUsado, String marca, String modelo, String cambios, double velMaxima,
+			String cilindraje, String placa, String numPasajeros, double velCrucero, String numPuertas,
+			String capMaletero, boolean hasAireAcondicionado, boolean hasCamaraReversa, String numBolsasAire,
+			boolean hasABS, boolean sensorColision, boolean sensorTraficoCruzado, boolean asisPermCarril) {
 		// TODO Auto-generated constructor stub
 	}
+
+
+
+
 
 }
