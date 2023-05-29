@@ -90,8 +90,7 @@ public class CrudEmpleadoController implements Initializable {
     		stage.setScene(scene);
     		stage.show();
     		stage.setTitle("Reportes");
-    		Stage myStage = (Stage) this.btnAgregar.getScene().getWindow();
-//    		myStage.close();
+
 
     	} catch (IOException e) {
 
@@ -103,6 +102,23 @@ public class CrudEmpleadoController implements Initializable {
 
     @FXML
     void actualizarEmpleado(ActionEvent event) {
+    	try {
+
+    		FXMLLoader loader = new FXMLLoader(
+    				getClass().getResource("../view/ActualizarEmpleadoView.fxml"));
+    		Parent root = loader.load();
+
+
+    		Scene scene = new Scene(root);
+    		Stage stage = new Stage();
+
+    		stage.setScene(scene);
+    		stage.show();
+    		stage.setTitle("Reportes");
+
+    	} catch (IOException e) {
+
+    	}
 
     }
 
@@ -123,6 +139,25 @@ public class CrudEmpleadoController implements Initializable {
 
     @FXML
     void volverVentanaAdmin(ActionEvent event) {
+    	try {
+
+    		FXMLLoader loader = new FXMLLoader(
+    				getClass().getResource("../view/AdministradorView.fxml"));
+    		Parent root = loader.load();
+
+
+    		Scene scene = new Scene(root);
+    		Stage stage = new Stage();
+
+    		stage.setScene(scene);
+    		stage.show();
+    		stage.setTitle("Reportes");
+    		Stage myStage = (Stage) this.btnAgregar.getScene().getWindow();
+//    		myStage.close();
+
+    	} catch (IOException e) {
+
+    	}
 
     }
 

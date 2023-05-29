@@ -10,6 +10,7 @@ import java.util.Optional;
 
 import co.uniquindio.concesionario.exception.AdministradorException;
 import co.uniquindio.concesionario.exception.ClienteException;
+import co.uniquindio.concesionario.exception.ConcesionarioException;
 import co.uniquindio.concesionario.exception.EmpleadoException;
 import co.uniquindio.concesionario.exception.VehiculoException;
 
@@ -207,9 +208,10 @@ public class Concesionario implements Serializable {
 	 *
 	 * @param cliente
 	 * @return
+	 * @throws ConcesionarioException
 	 */
 
-	public void agregarEmpleado( Empleado empleado) {
+	public void agregarEmpleado( Empleado empleado) throws ConcesionarioException {
 		int bandera = 0;
 		for (int i = 0; i < listaEmpleados.size() && bandera == 0; i++) {
 			if (listaEmpleados.get(i).getId().equals(empleado.getId())) {
@@ -221,7 +223,7 @@ public class Concesionario implements Serializable {
 			// Persistencia.guardarEmpleado(listaEmpleados);
 			System.out.println("Se agrego un nuevo empleado .");
 		} else {
-			System.out.println("Este empleado con esa id  ya existe");
+			throw new ConcesionarioException("ya existe un empleado con esa identificacion");
 		}
 
 
@@ -237,15 +239,16 @@ public class Concesionario implements Serializable {
 	 * @param cargo
 	 * @param sueldo
 	 * @return
+	 * @throws ConcesionarioException
 	 */
-	public void actualizarEmpleado(Empleado empleadoActualizado) {
+	public void actualizarEmpleado(Empleado empleadoActualizado) throws ConcesionarioException {
 
 		for (int i = 0; i < listaEmpleados.size(); i++) {
 			if (listaEmpleados.get(i).getId().equals(empleadoActualizado.getId())) {
 				listaEmpleados.set(i, empleadoActualizado);
 			} else {
 				// Si no se encontró el empleado con el id especificado
-				System.out.println("No se encontró el empleado con esa id: " + empleadoActualizado.getId());
+				throw new ConcesionarioException("no se encontro un empleado con esa id");
 
 			}
 		}
@@ -257,8 +260,9 @@ public class Concesionario implements Serializable {
 	 * validando que el empleado existe obteniendo su id
 	 *
 	 * @param cliente
+	 * @throws ConcesionarioException
 	 */
-	public void eliminarEmpleado( Empleado empleado) {
+	public void eliminarEmpleado( Empleado empleado) throws ConcesionarioException {
 
 		String idEmpleado = empleado.getId();
 
@@ -270,7 +274,7 @@ public class Concesionario implements Serializable {
 				// Persistencia.guardarCliente(listaClientes);
 				break;
 			} else {
-				System.out.println("no existe un empleado con esa id");
+				throw new ConcesionarioException("no existe un empleado con esa id");
 
 			}
 
@@ -281,8 +285,9 @@ public class Concesionario implements Serializable {
 	 * metodo para bloquear un empleado
 	 *
 	 * @param empleado
+	 * @throws ConcesionarioException
 	 */
-	public void bloquearEmpleado( Empleado empleado) {
+	public void bloquearEmpleado( Empleado empleado) throws ConcesionarioException {
 		String idEmpleado = empleado.getId();
 
 		for (int i = 0; i < listaEmpleados.size(); i++) {
@@ -292,7 +297,7 @@ public class Concesionario implements Serializable {
 				System.out.println("Se bloqueo el empleado. " + getNombre());
 				break;
 			} else {
-				System.out.println("no existe un empleado con esa id");
+				throw new ConcesionarioException("no se encontro un empleado con esa id");
 
 			}
 
@@ -395,7 +400,7 @@ public class Concesionario implements Serializable {
 //	}
 //
 
-	public void agregarCliente(Cliente cliente) throws EmpleadoException  {
+	public void agregarCliente(Cliente cliente) throws EmpleadoException, ConcesionarioException  {
 //		if(empleado.estadoEmpleado==EstadoEmpleado.ACTIVO){
 			int bandera = 0;
 			for (int i = 0; i < listaClientes.size() && bandera == 0; i++) {
@@ -408,7 +413,8 @@ public class Concesionario implements Serializable {
 			//	Persistencia.guardarCliente(listaClientes);
 				System.out.println("Se agrego un nuevo cliente .");
 			} else {
-				System.out.println("Este cliente ya existe");
+				throw new ConcesionarioException("ya existe un cliente con esa id");
+
 			}
 		}
 
@@ -453,10 +459,11 @@ public class Concesionario implements Serializable {
 	 * metodo utilizado para eliminar un cliente de la lista  de clientes   validando que el cliente existe
 	 * obteniendo su id y verificando si el empleado esta activo
 	 * @param cliente
+	 * @throws ConcesionarioException
 	 * @throws EmpleadoExceptions
 	 */
 
-	public void eliminarCliente(Cliente cliente) throws EmpleadoException  {
+	public void eliminarCliente(Cliente cliente) throws EmpleadoException, ConcesionarioException  {
 //		if(estadoEmpleado==EstadoEmpleado.ACTIVO){
 			String idCliente = cliente.getId();
 
@@ -467,7 +474,8 @@ public class Concesionario implements Serializable {
 					System.out.println("Se elimino el cliente.");
 					//Persistencia.guardarCliente(listaClientes);
 					break;
-				}else System.out.println("no existe un cliente con esa id");
+				}else 	throw new ConcesionarioException("no existe un cliente con esa id");
+
 
 			}
 
