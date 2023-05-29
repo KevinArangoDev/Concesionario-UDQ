@@ -12,7 +12,6 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import javax.swing.JOptionPane;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -28,7 +27,7 @@ import javafx.stage.Stage;
 
 public class AgregarEmpleadoController implements Initializable{
 	ModelFactoryController modelFactoryController = ModelFactoryController.getInstance();
-	private CrudEmpleadoController CrudEmpleadoController;
+
 
     @FXML
     private ResourceBundle resources;
@@ -73,27 +72,37 @@ public class AgregarEmpleadoController implements Initializable{
 		String apellido = this.txtApellido.getText();
 		String id = this.txtIdentificacion.getText();
 		String cargo = this.txtCargo.getText();
-		double sueldo = Double.parseDouble(this.txtSueldo.getText());
+		String sueldoText = this.txtSueldo.getText();
 		String password = this.txtPassword.getText();
 		String passwordRep = this.txtPasswordRep.getText();
 		String edad =this.txtEdad.getText();
 		EstadoEmpleado estado=EstadoEmpleado.ACTIVO;
 
-		if(datosValidos(nombre , apellido , id, cargo, sueldo, password, passwordRep, edad ,estado)==true){
-			System.out.println("valido");
-			Empleado nuevoEmpleado = new Empleado(nombre, edad, id, cargo, sueldo, apellido, passwordRep ,EstadoEmpleado.ACTIVO);
-
-			try {
-				modelFactoryController.getConcesionario().agregarEmpleado(nuevoEmpleado);;
-
-				System.out.println("empleadoRegistrado");
-			} catch (ConcesionarioException e) {
-
-				e.getMessage();
-				mostrarMensaje("excepcion", "verificacion", e.getMessage(), AlertType.INFORMATION);
+		if(datosValidos(nombre , apellido , id, cargo, sueldoText, password, passwordRep, edad ,estado)==true){
+			Double sueldo = null;
 
 
-			}
+			if (!sueldoText.isEmpty()) {
+
+				sueldo = Double.parseDouble(sueldoText);
+
+				System.out.println("valido");
+				Empleado nuevoEmpleado = new Empleado(nombre, edad, id, cargo, sueldo, apellido, passwordRep ,EstadoEmpleado.ACTIVO);
+
+				try {
+					modelFactoryController.getConcesionario().agregarEmpleado(nuevoEmpleado);;
+
+					System.out.println("empleadoRegistrado");
+				} catch (ConcesionarioException e) {
+
+					e.getMessage();
+					mostrarMensaje("excepcion", "verificacion", e.getMessage(), AlertType.INFORMATION);
+
+
+				}
+
+			            }
+
 
 
 			try {
@@ -117,12 +126,6 @@ public class AgregarEmpleadoController implements Initializable{
 	    	}
 
 		}
-
-
-
-
-
-
     }
 
     /**
@@ -138,12 +141,12 @@ public class AgregarEmpleadoController implements Initializable{
      * @param edad
      * @return
      */
-	private boolean datosValidos(String nombre, String apellido, String identificacion, String cargo ,double sueldo , String password, String passwordRep ,String edad ,EstadoEmpleado estado) {
+	private boolean datosValidos(String nombre, String apellido, String identificacion, String cargo ,String sueldoText , String password, String passwordRep ,String edad ,EstadoEmpleado estado) {
 
 	    boolean esNumerica = identificacion != null && !identificacion.isEmpty() && identificacion.matches("\\d+");
 	    boolean nombreValido = nombre != null && nombre.matches("[a-zA-Z]+");
 	    boolean cargoValido = cargo != null && cargo.matches("[a-zA-Z]+");
-	    boolean sueldoValido = sueldo>0;
+	    boolean sueldoValido = sueldoText != null  ;
 	    boolean passwordValido = password != null;
 	    boolean passwordRepValido = passwordRep != null;
 	    boolean apellidoValido = apellido != null && apellido.matches("[a-zA-Z]+");
@@ -167,7 +170,7 @@ public class AgregarEmpleadoController implements Initializable{
 	    if (cargo == null || !cargoValido) {
 	        notificacion += "El cargo ingresado es inválido. ";
 	    }
-	    if ( !sueldoValido) {
+	    if ( sueldoText == null||!sueldoValido) {
 	        notificacion += "El sueldo ingresado es inválido. ";
 	    }
 	    if (password == null || !passwordValido) {

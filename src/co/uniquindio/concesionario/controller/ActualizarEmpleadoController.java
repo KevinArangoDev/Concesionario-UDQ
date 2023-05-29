@@ -6,7 +6,6 @@ import com.jfoenix.controls.JFXButton;
 
 import co.uniquindio.concesionario.exception.ConcesionarioException;
 import co.uniquindio.concesionario.model.Empleado;
-import co.uniquindio.concesionario.model.EstadoEmpleado;
 
 import java.io.IOException;
 import java.net.URL;
@@ -57,8 +56,7 @@ public class ActualizarEmpleadoController implements Initializable{
 
     @FXML
     void getCargo(ActionEvent event) {
-    	String cargo = seleccion.getCargo();
-    	txtCargo.setText(cargo);
+
 
     }
 
@@ -93,9 +91,15 @@ public class ActualizarEmpleadoController implements Initializable{
     	String nombre = this.txtNombre.getText();
 		String apellido = this.txtApellido.getText();
 		String cargo = this.txtCargo.getText();
-		double sueldo = Double.parseDouble(this.txtSueldo.getText());
+		String sueldoText = this.txtSueldo.getText();
 		String edad = this.txtEdad.getText();
-    	if(datosValidos(nombre, apellido, cargo, sueldo, edad)){
+    	if(datosValidos(nombre, apellido, cargo, sueldoText, edad)){
+    		Double sueldo = null;
+
+
+			if (!sueldoText.isEmpty()) {
+
+				sueldo = Double.parseDouble(sueldoText);
     		seleccion.setNombre(nombre);
         	seleccion.setApellido(apellido);
         	seleccion.setCargo(cargo);
@@ -107,7 +111,7 @@ public class ActualizarEmpleadoController implements Initializable{
     		} catch (ConcesionarioException e) {
 
     			e.printStackTrace();
-    		}}
+    		}
         	try {
 
 	    		FXMLLoader loader = new FXMLLoader(
@@ -127,6 +131,8 @@ public class ActualizarEmpleadoController implements Initializable{
 	    	} catch (IOException ex) {
 
 	    	}
+			}
+    	}
 
 		}
 
@@ -156,11 +162,11 @@ public class ActualizarEmpleadoController implements Initializable{
 	public void setCrudEmpleadoController(CrudEmpleadoController crudEmpleadoController) {
 		this.crudEmpleadoController = crudEmpleadoController;
 	}
-	private boolean datosValidos(String nombre, String apellido, String cargo ,double sueldo ,String edad ) {
+	private boolean datosValidos(String nombre, String apellido, String cargo ,String sueldo ,String edad ) {
 
 	    boolean nombreValido = nombre != null && nombre.matches("[a-zA-Z]+");
 	    boolean cargoValido = cargo != null && cargo.matches("[a-zA-Z]+");
-	    boolean sueldoValido = sueldo>0;
+	    boolean sueldoValido = sueldo!=null;
 	    boolean apellidoValido = apellido != null && apellido.matches("[a-zA-Z]+");
 	    boolean edadValida = edad != null && !edad.isEmpty() && edad.matches("\\d+");
 
