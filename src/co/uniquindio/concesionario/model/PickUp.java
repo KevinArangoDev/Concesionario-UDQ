@@ -5,13 +5,6 @@ import java.io.Serializable;
 @SuppressWarnings("serial")
 public class PickUp extends VehiculoLiviano implements Serializable{
 
-
-	/**
-	 * Declaracion de atributos
-	 */
-	private boolean cuatroXcuatro;
-	private String capCajaCarga;
-
 	/**
 	 * Constructor de la clase
 	 * @param tipoCombustible
@@ -35,45 +28,15 @@ public class PickUp extends VehiculoLiviano implements Serializable{
 	 * @param sensorTraficoCruzado
 	 * @param asisPermCarril
 	 */
-	public PickUp(TipoCombustible tipoCombustible, TipoTrasmision tipoTrasmision, TipoNuevoUsado tipoNuevoUsado,
+	public PickUp(TipoCombustible tipoCombustible, TipoTransmision tipoTrasmision, TipoNuevoUsado tipoNuevoUsado,
 			String marca, String modelo, String cambios, Double velMax, String cilindraje, String placa,
-			String numPasajeros, boolean velCrucero, String numPuertas, String capMaletero,
+			String numPasajeros, double velCrucero, String numPuertas, String capMaletero,
 			boolean hasAireAcondicionado, boolean hasCamaraReversa, boolean hasABS, String numBolsasAire,
 			boolean sensorColision, boolean sensorTraficoCruzado, boolean asisPermCarril, boolean cuatroXcuatro, String capCajaCarga) {
 		super(tipoCombustible, tipoTrasmision, tipoNuevoUsado, marca, modelo, cambios, velMax, cilindraje, placa, numPasajeros,
 				velCrucero, numPuertas, capMaletero, hasAireAcondicionado, hasCamaraReversa, hasABS, numBolsasAire,
 				sensorColision, sensorTraficoCruzado, asisPermCarril);
-		this.cuatroXcuatro = cuatroXcuatro;
-		this.capCajaCarga = capCajaCarga;
 	}
-
-
-
-	/**
-	 * Getters and Setters y metodo To String
-	 * @return
-	 */
-//---------------------------------------------------------
-	public boolean isCuatroXcuatro() {
-		return cuatroXcuatro;
-	}
-	public void setCuatroXcuatro(boolean cuatroXcuatro) {
-		this.cuatroXcuatro = cuatroXcuatro;
-	}
-	public String getCapCajaCarga() {
-		return capCajaCarga;
-	}
-	public void setCapCajaCarga(String capCajaCarga) {
-		this.capCajaCarga = capCajaCarga;
-	}
-	@Override
-	public String toString() {
-		return "PickUp [cuatroXcuatro=" + cuatroXcuatro + ", capCajaCarga=" + capCajaCarga + "]";
-	}
-
-//-----------------------------------------------------------------------
-
-
 
 }
 

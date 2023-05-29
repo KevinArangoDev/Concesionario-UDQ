@@ -3,12 +3,12 @@
 <?import com.jfoenix.controls.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.BorderPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #eeeeee;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.uniquindio.concesionario.controller.ComprarVehiculoController">
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #eeeeee;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Pane prefHeight="100.0" prefWidth="600.0" style="-fx-background-color: #222831;">
          <children>
@@ -22,6 +22,5 @@
       <JFXButton fx:id="btnMoto" layoutX="200.0" layoutY="147.0" onAction="#ventCompMoto" prefWidth="200.0" style="-fx-background-color: #222831;" text="Moto" textFill="#eeeeee" />
       <JFXButton fx:id="btnVPesado" layoutX="200.0" layoutY="220.0" onAction="#ventVehPesado" prefWidth="200.0" style="-fx-background-color: #222831;" text="Vehículo Pesado" textFill="#eeeeee" />
       <JFXButton fx:id="btnVLiviano" layoutX="200.0" layoutY="287.0" onAction="#ventVehLiviano" prefWidth="200.0" style="-fx-background-color: #222831;" text="Vehículo Liviano" textFill="#eeeeee" />
-      <JFXButton fx:id="btnVolver" layoutX="200.0" layoutY="347.0" onAction="#ventVolver" prefWidth="200.0" style="-fx-background-color: #222831;" text="Volver" textFill="#eeeeee" />
    </children>
 </AnchorPane>

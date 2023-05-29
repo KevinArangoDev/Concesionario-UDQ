@@ -8,7 +8,7 @@ public abstract class Vehiculo implements Serializable {
 	 * declaracion de atributos
 	 */
 	private TipoCombustible tipoCombustible;
-	private TipoTrasmision tipoTrasmision;
+	private TipoTransmision tipoTrasmision;
 	private TipoNuevoUsado tipoNuevoUsado;
 	private  String marca;
 	private String modelo;
@@ -31,7 +31,7 @@ public abstract class Vehiculo implements Serializable {
 	 * @param placa
 	 */
 
-	public Vehiculo(TipoCombustible tipoCombustible, TipoTrasmision tipoTrasmision, TipoNuevoUsado tipoNuevoUsado,
+	public Vehiculo(TipoCombustible tipoCombustible, TipoTransmision tipoTrasmision, TipoNuevoUsado tipoNuevoUsado,
 			String marca, String modelo, String cambios, Double velMax, String cilindraje,
 			String placa) {
 		super();
@@ -46,6 +46,10 @@ public abstract class Vehiculo implements Serializable {
 		this.placa = placa;
 	}
 
+	public Vehiculo() {
+		// TODO Auto-generated constructor stub
+	}
+
 	/**
 	 * Getters and setters
 	 * @return
@@ -57,10 +61,10 @@ public abstract class Vehiculo implements Serializable {
 	public void setTipoCombustible(TipoCombustible tipoCombustible) {
 		this.tipoCombustible = tipoCombustible;
 	}
-	public TipoTrasmision getTipoTrasmision() {
+	public TipoTransmision getTipoTrasmision() {
 		return tipoTrasmision;
 	}
-	public void setTipoTrasmision(TipoTrasmision tipoTrasmision) {
+	public void setTipoTransmision(TipoTransmision tipoTrasmision) {
 		this.tipoTrasmision = tipoTrasmision;
 	}
 	public TipoNuevoUsado getTipoNuevoUsado() {
