@@ -4,15 +4,9 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Optional;
 
-import co.uniquindio.concesionario.exception.AdministradorException;
-import co.uniquindio.concesionario.exception.ClienteException;
 import co.uniquindio.concesionario.exception.ConcesionarioException;
 import co.uniquindio.concesionario.exception.EmpleadoException;
-import co.uniquindio.concesionario.exception.VehiculoException;
 
 @SuppressWarnings("serial")
 public class Concesionario implements Serializable {
@@ -262,6 +256,7 @@ public class Concesionario implements Serializable {
 	 * @param cliente
 	 * @throws ConcesionarioException
 	 */
+	@SuppressWarnings("unused")
 	public void eliminarEmpleado( Empleado empleado) throws ConcesionarioException {
 
 		String idEmpleado = empleado.getId();
@@ -285,22 +280,26 @@ public class Concesionario implements Serializable {
 	 * metodo para bloquear un empleado
 	 *
 	 * @param empleado
+	 * @param estado
+	 * @param bloqueado
 	 * @throws ConcesionarioException
 	 */
-	public void bloquearEmpleado( Empleado empleado) throws ConcesionarioException {
+	@SuppressWarnings("unused")
+	public void bloquearEmpleado( Empleado empleado, EstadoEmpleado estado) throws ConcesionarioException {
 		String idEmpleado = empleado.getId();
 
 		for (int i = 0; i < listaEmpleados.size(); i++) {
 			if (listaEmpleados.get(i).getId().equals(idEmpleado)) {
-				listaEmpleados.get(i).setEstadoEmpleado(EstadoEmpleado.BLOQUEADO);
+				listaEmpleados.get(i).setEstadoEmpleado(estado);
 
 				System.out.println("Se bloqueo el empleado. " + getNombre());
 				break;
 			} else {
 				throw new ConcesionarioException("no se encontro un empleado con esa id");
 
-			}
 
+
+		}
 		}
 	}
 //--------------------------------------------------------------------------------------------------------------------------------------------------
@@ -463,6 +462,7 @@ public class Concesionario implements Serializable {
 	 * @throws EmpleadoExceptions
 	 */
 
+	@SuppressWarnings("unused")
 	public void eliminarCliente(Cliente cliente) throws EmpleadoException, ConcesionarioException  {
 //		if(estadoEmpleado==EstadoEmpleado.ACTIVO){
 			String idCliente = cliente.getId();
