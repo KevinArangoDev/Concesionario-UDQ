@@ -182,6 +182,15 @@ public class Empleado extends Persona implements Serializable{
 //	}
 //
 //----------------------------------------------------------------------------------------------------
+	public static ArrayList<Empleado> obtenerEmpleados() {
+        ArrayList<Empleado> empleados = new ArrayList<>();
 
+        // Agrega algunos empleados ficticios al ArrayList
+        empleados.add(new Empleado("Juan Pérez", "", "", ""));
+        empleados.add(new Empleado("María García", "", "", ""));
+        empleados.add(new Empleado("Pedro López", "", "", ""));
+
+        return empleados;
+    }
 
 }

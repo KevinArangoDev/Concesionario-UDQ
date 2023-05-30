@@ -28,6 +28,7 @@ import java.util.ResourceBundle;
 import com.jfoenix.controls.JFXButton;
 
 import co.uniquindio.concesionario.model.Concesionario;
+import co.uniquindio.concesionario.model.Empleado;
 import co.uniquindio.concesionario.model.TipoCombustible;
 import co.uniquindio.concesionario.model.TipoNuevoUsado;
 import co.uniquindio.concesionario.model.TipoTransaccion;
@@ -124,6 +125,16 @@ public class ComprarLivianoController {
     private void initialize() {
         singleton = ModelFactoryController.getInstance();
 
+        ArrayList<Empleado> empleados = ModelFactoryController.getInstance().concesionario.getListaEmpleados(); // Obtén el ArrayList<Empleado>
+
+	     // Agregar un nuevo empleado a la lista
+	     Empleado nuevoEmpleado = new Empleado("Luis", "", "", "");
+	     empleados.add(nuevoEmpleado);
+
+	     // Agregar el nombre del nuevo empleado al ComboBox
+	     String nombreEmpleado = nuevoEmpleado.getNombre();
+	     vendedorComboBox.getItems().add(nombreEmpleado);
+
         // Configurar opciones para otros ComboBox
         listaCombustibleLiviano.getItems().addAll(TipoCombustible.values());
         listaTrasmisionLiviano.getItems().addAll(TipoTransmision.values());
@@ -140,7 +151,9 @@ public class ComprarLivianoController {
         tieneAsisCarril.setItems(opcionesSiNo);
     }
 
-    @FXML
+
+
+	@FXML
     private void compraVehLiviano(ActionEvent event) {
     	Concesionario concesionario = ModelFactoryController.getInstance().getConcesionario();
 

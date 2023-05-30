@@ -1,18 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.BorderPane?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.uniquindio.concesionario.controller.ReporteController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #eeeeee;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.uniquindio.concesionario.controller.ReporteController">
    <children>
-      <TableView fx:id="tablaVehiculos" layoutX="146.0" layoutY="50.0" prefHeight="413.0" prefWidth="653.0">
+      <TableView fx:id="tablaVehiculos" layoutX="32.0" layoutY="195.0" prefHeight="365.0" prefWidth="450.0" AnchorPane.leftAnchor="30.0">
         <columns>
-          <TableColumn fx:id="columnaMarca" prefWidth="135.0" text="Marca" />
-          <TableColumn fx:id="columnaModelo" prefWidth="147.0" text="Modelo" />
+          <TableColumn fx:id="columnaModelo" prefWidth="150.0" text="Modelo" />
+          <TableColumn fx:id="columnaMarca" prefWidth="150.0" text="Marca" />
+            <TableColumn fx:id="columnaPlaca" prefWidth="150.0" text="Placa" />
         </columns>
+      </TableView>
+      <Pane prefHeight="100.0" prefWidth="1000.0" style="-fx-background-color: #222831;">
+         <children>
+            <Label layoutX="445.0" layoutY="33.0" text="Reportes" textFill="#eeeeee">
+               <font>
+                  <Font name="Bell MT Bold" size="28.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Label layoutX="32.0" layoutY="149.0" text="Vehículos en el Inventario:" textFill="#222831" AnchorPane.leftAnchor="30.0">
+         <font>
+            <Font name="Bell MT Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="520.0" layoutY="149.0" text="Transacciones realizadas:" textFill="#222831" AnchorPane.rightAnchor="212.0">
+         <font>
+            <Font name="Bell MT Bold" size="24.0" />
+         </font>
+      </Label>
+      <Separator layoutX="496.0" layoutY="116.0" orientation="VERTICAL" prefHeight="444.0" prefWidth="8.0" style="-fx-background-color: #222831;" />
+      <TableView fx:id="tablaTransacciones" layoutX="525.0" layoutY="195.0" prefHeight="365.0" prefWidth="450.0" AnchorPane.rightAnchor="30.0">
+         <columns>
+            <TableColumn fx:id="columnaTransaccion" prefWidth="150.0" text="Transacción" />
+            <TableColumn fx:id="columnaModeloTransaccion" prefWidth="150.0" text="Modelo" />
+            <TableColumn fx:id="columnaPlacaTransaccion" prefWidth="150.0" text="Placa" />
+         </columns>
       </TableView>
    </children>
 </AnchorPane>

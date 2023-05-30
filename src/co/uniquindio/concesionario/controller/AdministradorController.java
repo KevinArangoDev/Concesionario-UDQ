@@ -101,18 +101,19 @@ public class AdministradorController implements Initializable {
     				getClass().getResource("../view/ReportesView.fxml"));
     		Parent root = loader.load();
 
+    		ReporteController controlador = loader.getController();
 
     		Scene scene = new Scene(root);
     		Stage stage = new Stage();
 
     		stage.setScene(scene);
     		stage.show();
-    		stage.setTitle("Reportes");
+    		stage.setTitle("Car UQ");
     		Stage myStage = (Stage) this.btnReportes.getScene().getWindow();
     		myStage.close();
 
     	} catch (IOException e) {
-
+            e.printStackTrace();
     	}
     }
 

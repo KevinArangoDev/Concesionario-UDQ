@@ -47,7 +47,8 @@ public class ModelFactoryController {
 
 		private void inicializarDatos() {
 			concesionario = new Concesionario("concesionarioUq " , "cll3-25");
-
+			empleado = new Empleado("Luis", "", "", "");
+			concesionario.getListaEmpleados().add(empleado);
 		}
 
 		/**
