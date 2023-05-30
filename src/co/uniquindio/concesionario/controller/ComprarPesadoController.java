@@ -176,7 +176,6 @@ public class ComprarPesadoController {
                     placa, tipoTransaccion, tipoCombustible, tipoTransmision, tipoNuevoUsado, numPasajeros, velCrucero,
                     numPuertas, capMaletero, hasAireAcondicionado, hasCamaraReversa, hasABS, numBolsasAire);
         		concesionario.getListaVehiculos().add(vehiculoPesado);
-        		concesionario.getListaTransacciones().add(vehiculoPesado);
         		ModelFactoryController.mostrarAlerta("¡Vehículo comprado!");
                 limpiarCampos();
                 ArrayList<Vehiculo> listaVehiculos = concesionario.getListaVehiculos();

@@ -33,6 +33,15 @@ public abstract class Persona implements Serializable{
 		this.apellido = apellido;
 	}
 
+
+
+	public Persona(String nombre, String id, String apellido) {
+		super();
+		this.nombre = nombre;
+		this.id = id;
+		this.apellido = apellido;
+	}
+
 	/**
 	 * Getters and setters
 	 * @return

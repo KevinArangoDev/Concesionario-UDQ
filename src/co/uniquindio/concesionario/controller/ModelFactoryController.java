@@ -51,6 +51,10 @@ public class ModelFactoryController {
 			concesionario.getListaEmpleados().add(empleado);
 		}
 
+		public void actualizarSesion(Empleado empl){
+			this.empleado = empl;
+		}
+
 		/**
 		 * Getters and Setters
 		 * @return
