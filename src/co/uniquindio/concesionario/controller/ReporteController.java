@@ -23,11 +23,30 @@ public class ReporteController implements Initializable {
     @FXML
     private TableView<Vehiculo> tablaVehiculos;
 
+
+
     @FXML
     private TableColumn<Vehiculo, String> columnaMarca;
 
     @FXML
     private TableColumn<Vehiculo, String> columnaModelo;
+
+    @FXML
+    private TableColumn<Vehiculo, String> columnaPlaca;
+
+    @FXML
+    private TableColumn<Vehiculo, String> columnaTransaccion;
+
+
+    @FXML
+    private TableView<Vehiculo> tablaTransacciones;
+
+    @FXML
+    private TableColumn<Vehiculo, String> columnaModeloTransaccion;
+
+    @FXML
+    private TableColumn<Vehiculo, String> columnaPlacaTransaccion;
+
 
 
 
@@ -36,6 +55,10 @@ public class ReporteController implements Initializable {
         // Configurar las celdas de fábrica para cada columna
         columnaMarca.setCellValueFactory(new PropertyValueFactory<>("marca"));
         columnaModelo.setCellValueFactory(new PropertyValueFactory<>("modelo"));
+        columnaPlaca.setCellValueFactory(new PropertyValueFactory<>("placa"));
+        columnaTransaccion.setCellValueFactory(new PropertyValueFactory<>("tipoTransaccion"));
+        columnaModeloTransaccion.setCellValueFactory(new PropertyValueFactory<>("modelo"));
+        columnaPlacaTransaccion.setCellValueFactory(new PropertyValueFactory<>("placa"));
         // Configurar otras columnas
 
         // Obtener la instancia del Concesionario desde ModelFactoryController
@@ -43,6 +66,7 @@ public class ReporteController implements Initializable {
 
         // Configurar los datos en la tabla
         tablaVehiculos.setItems(FXCollections.observableArrayList(concesionario.getListaVehiculos()));
+        tablaTransacciones.setItems(FXCollections.observableArrayList(concesionario.getListaTransacciones()));
 
     }
 
