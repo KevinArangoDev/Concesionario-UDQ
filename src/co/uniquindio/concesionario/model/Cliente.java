@@ -21,6 +21,12 @@ public class Cliente extends Persona implements Serializable {
 	}
 
 
+	public Cliente(String nombre, String id, String apellido) {
+		super(nombre, id, apellido);
+		// TODO Auto-generated constructor stub
+	}
+
+
 	/**
 	 * Getters and setters
 	 */

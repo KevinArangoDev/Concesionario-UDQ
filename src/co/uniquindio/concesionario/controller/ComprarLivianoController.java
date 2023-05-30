@@ -205,7 +205,6 @@ public class ComprarLivianoController {
                     numPuertas, capMaletero, hasAireAcondicionado, hasCamaraReversa, hasABS, numBolsasAire, sensorColision,
                     sensorTraficoCruzado, asisPermCarril);
         		concesionario.getListaVehiculos().add(vehiculoLiviano);
-        		concesionario.getListaTransacciones().add(vehiculoLiviano);
         		ModelFactoryController.mostrarAlerta("¡Vehículo comprado!");
                 limpiarCampos();
                 ArrayList<Vehiculo> listaVehiculos = concesionario.getListaVehiculos();

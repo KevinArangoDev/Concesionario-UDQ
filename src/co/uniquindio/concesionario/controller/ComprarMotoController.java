@@ -29,8 +29,10 @@ public class ComprarMotoController {
 
 	 private ModelFactoryController singleton;
 
+
 	    public void initialize() {
 	        singleton = ModelFactoryController.getInstance();
+
 
 	        // Obtener los valores de la enumeración TipoCombustible
 	        TipoCombustible[] tiposCombustible = TipoCombustible.values();

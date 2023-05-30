@@ -53,7 +53,7 @@ public class Empleado extends Persona implements Serializable{
 	public void setCargo(String cargo) {
 		this.cargo = cargo;
 	}
-	public double getSueldo() {
+	public Double getSueldo() {
 		return sueldo;
 	}
 	public void setSueldo(Double sueldo) {

@@ -17,6 +17,7 @@ public abstract class Vehiculo implements Serializable {
 	protected Double velMax;
 	protected String cilindraje;
 	protected String placa ;
+	protected double precio;
 
 	/**
 	 * Constructor para la clase Vehiculo
@@ -121,6 +122,15 @@ public abstract class Vehiculo implements Serializable {
 
 	public TipoTransmision getTipoTransmision() {
 		return tipoTransmision;
+	}
+
+
+	public double getPrecio() {
+		return precio;
+	}
+
+	public void setPrecio(double precio) {
+		this.precio = precio;
 	}
 
 	@Override

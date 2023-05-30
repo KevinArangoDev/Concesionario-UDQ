@@ -60,8 +60,10 @@ public class LoginEmpleadoController implements Initializable {
     void ingresarVentEmpleado(ActionEvent event) throws IOException  {
     	  String usuario = txtUsuario.getText();
     	  String contrasenia = txtContrasenia.getText();
-    	  if (validarCredenciales(usuario, contrasenia)) {
+    	  Empleado sesion = validarCredenciales(usuario, contrasenia);
+    	  if (sesion != null) {
 			  try{
+				  modelFactoryController.actualizarSesion(sesion);
 			    	FXMLLoader loader = new FXMLLoader(
 							getClass().getResource("../view/EmpleadoView.fxml"));
 					Parent root = loader.load();
@@ -82,7 +84,7 @@ public class LoginEmpleadoController implements Initializable {
 				}
 
 		  }else{
-			  mostrarMensaje("ee", "contraseña o usuario incorrecto", "", AlertType.INFORMATION);
+			  mostrarMensaje("empleado", "contraseña o usuario incorrecto", "", AlertType.INFORMATION);
 		  }
 
 
@@ -111,7 +113,7 @@ public class LoginEmpleadoController implements Initializable {
 		        e.printStackTrace();
 			}
     }
-    private boolean validarCredenciales(String usuario, String contrasenia)  {
+    private Empleado validarCredenciales(String usuario, String contrasenia)  {
         // Obtener el empleado correspondiente al usuario ingresado
         Empleado empleado = null;
 		try {
@@ -127,13 +129,13 @@ public class LoginEmpleadoController implements Initializable {
             if (empleado.getEstadoEmpleado() == EstadoEmpleado.BLOQUEADO) {
 
             	mostrarMensaje("empleado inactivo", "empleado:"+empleado.getNombre(), "empleado bloqueado", AlertType.INFORMATION);
-            	return false; // El empleado está bloqueado
+            	return null; // El empleado está bloqueado
 
             } else {
-                return true; // El empleado no está bloqueado
+                return empleado; // El empleado no está bloqueado
             }
         } else {
-            return false; // Credenciales inválidas
+            return null; // Credenciales inválidas
         }
     }
 	   public void mostrarMensaje(String titulo , String header , String contenido , AlertType alertType){
