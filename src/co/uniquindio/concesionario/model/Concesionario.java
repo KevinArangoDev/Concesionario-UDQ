@@ -240,11 +240,12 @@ public class Concesionario implements Serializable {
 		for (int i = 0; i < listaEmpleados.size(); i++) {
 			if (listaEmpleados.get(i).getId().equals(empleadoActualizado.getId())) {
 				listaEmpleados.set(i, empleadoActualizado);
-			} else {
-				// Si no se encontró el empleado con el id especificado
-				throw new ConcesionarioException("no se encontro un empleado con esa id");
-
 			}
+//			else {
+//				// Si no se encontró el empleado con el id especificado
+//				throw new ConcesionarioException("no se encontro un empleado con esa id");
+//
+//			}
 		}
 
 	}
@@ -256,10 +257,10 @@ public class Concesionario implements Serializable {
 	 * @param cliente
 	 * @throws ConcesionarioException
 	 */
-	@SuppressWarnings("unused")
-	public void eliminarEmpleado( Empleado empleado) throws ConcesionarioException {
 
-		String idEmpleado = empleado.getId();
+	public void eliminarEmpleado( Empleado empleadoSeleccionado) throws ConcesionarioException {
+
+		String idEmpleado = empleadoSeleccionado.getId();
 
 		for (int i = 0; i < listaEmpleados.size(); i++) {
 			if (listaEmpleados.get(i).getId().equals(idEmpleado)) {
@@ -268,9 +269,6 @@ public class Concesionario implements Serializable {
 				System.out.println("Se elimino el empleado.");
 				// Persistencia.guardarCliente(listaClientes);
 				break;
-			} else {
-				throw new ConcesionarioException("no existe un empleado con esa id");
-
 			}
 
 		}
@@ -284,7 +282,7 @@ public class Concesionario implements Serializable {
 	 * @param bloqueado
 	 * @throws ConcesionarioException
 	 */
-	@SuppressWarnings("unused")
+
 	public void bloquearEmpleado( Empleado empleado, EstadoEmpleado estado) throws ConcesionarioException {
 		String idEmpleado = empleado.getId();
 
@@ -294,12 +292,7 @@ public class Concesionario implements Serializable {
 
 				System.out.println("Se bloqueo el empleado. " + getNombre());
 				break;
-			} else {
-				throw new ConcesionarioException("no se encontro un empleado con esa id");
-
-
-
-		}
+			}
 		}
 	}
 //--------------------------------------------------------------------------------------------------------------------------------------------------
