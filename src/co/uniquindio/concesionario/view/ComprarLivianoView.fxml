@@ -46,7 +46,7 @@
                                  </font>
                               </Label>
                               <JFXTextField fx:id="txtMarcaLiviano" layoutX="211.0" layoutY="541.0" prefHeight="39.0" prefWidth="166.0" style="-fx-background-color: #eeeeee;" />
-                              <Label layoutX="24.0" layoutY="249.0" text="Paso la revisión:" textFill="#eeeeee">
+                              <Label layoutX="24.0" layoutY="249.0" text="Vendedor:" textFill="#eeeeee">
                                  <font>
                                     <Font name="Bell MT" size="20.0" />
                                  </font>
@@ -65,7 +65,7 @@
                </font>
             </Label>
             <ComboBox fx:id="listaTipoTransaccion" layoutX="209.0" layoutY="308.0" prefHeight="40.0" prefWidth="170.0" />
-            <ComboBox fx:id="revisionTecnicaComboBox" layoutX="210.0" layoutY="242.0" prefHeight="40.0" prefWidth="170.0" />
+            <ComboBox fx:id="vendedorComboBox" layoutX="210.0" layoutY="242.0" prefHeight="40.0" prefWidth="170.0" />
                            </children>
                         </AnchorPane>
       <AnchorPane layoutX="503.0" layoutY="4.0" prefHeight="620.0" prefWidth="391.0" style="-fx-background-color: #eeeeee;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="400.0" AnchorPane.rightAnchor="400.0" AnchorPane.topAnchor="0.0">

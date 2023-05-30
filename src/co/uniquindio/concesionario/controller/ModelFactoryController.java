@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import co.uniquindio.concesionario.model.Administrador;
+import co.uniquindio.concesionario.model.Bus;
+import co.uniquindio.concesionario.model.Camion;
 import co.uniquindio.concesionario.model.Camioneta;
 import co.uniquindio.concesionario.model.Concesionario;
 import co.uniquindio.concesionario.model.Empleado;
@@ -17,6 +19,9 @@ import co.uniquindio.concesionario.model.TipoTransmision;
 import co.uniquindio.concesionario.model.Vans;
 import co.uniquindio.concesionario.model.Vehiculo;
 import co.uniquindio.concesionario.model.VehiculoLiviano;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.ComboBox;
 
 
 public class ModelFactoryController {
@@ -92,6 +97,8 @@ public class ModelFactoryController {
 
 		}
 
+//------------------------------Crear vehiculo Liviano--------------------------------------
+
 		public static Vehiculo crearVehiculoLiviano(String marca, String modelo, String cambios, double velMaxima, String cilindraje,
 		        String placa, TipoTransaccion tipoTransaccion, TipoCombustible tipoCombustible,
 		        TipoTransmision tipoTransmision, TipoNuevoUsado tipoNuevoUsado, String numPasajeros, double velCrucero,
@@ -99,24 +106,116 @@ public class ModelFactoryController {
 		        boolean hasABS, String numBolsasAire, boolean sensorColision, boolean sensorTraficoCruzado,
 		        boolean asisPermCarril) {
 
-		    if (modelo.equals("Vans")) {
-		        return new Vans(tipoTransaccion, tipoCombustible, tipoTransmision, tipoNuevoUsado, marca, modelo, cambios, velMaxima, cilindraje, placa, numPasajeros, velCrucero, numPuertas, capMaletero, hasAireAcondicionado, hasCamaraReversa, numBolsasAire, hasABS, sensorColision, sensorTraficoCruzado, asisPermCarril);
+			if (modelo.equals("Vans")) {
+		        return new Vans(tipoTransaccion, tipoCombustible, tipoTransmision, tipoNuevoUsado, marca, modelo, cambios,
+		                velMaxima, cilindraje, placa, numPasajeros, velCrucero, numPuertas, capMaletero, hasAireAcondicionado,
+		                hasCamaraReversa, hasABS, numBolsasAire);
 		    } else if (modelo.equals("Camioneta")) {
-		        return new Camioneta(tipoTransaccion, tipoCombustible, tipoTransmision, tipoNuevoUsado, marca, modelo, cambios, velMaxima, cilindraje, placa, numPasajeros, velCrucero, numPuertas, capMaletero, hasAireAcondicionado, hasCamaraReversa, numBolsasAire, hasABS, sensorColision, sensorTraficoCruzado, asisPermCarril);
+		        return new Camioneta(tipoTransaccion, tipoCombustible, tipoTransmision, tipoNuevoUsado, marca, modelo, cambios,
+		                velMaxima, cilindraje, placa, numPasajeros, velCrucero, numPuertas, capMaletero, hasAireAcondicionado,
+		                hasCamaraReversa, hasABS, numBolsasAire);
 		    } else if (modelo.equals("PickUp")) {
-		        return new PickUp(tipoTransaccion, tipoCombustible, tipoTransmision, tipoNuevoUsado, marca, modelo, cambios, velMaxima, cilindraje, placa, numPasajeros, velCrucero, numPuertas, capMaletero, hasAireAcondicionado, hasCamaraReversa, numBolsasAire, hasABS, sensorColision, sensorTraficoCruzado, asisPermCarril);
+		        return new PickUp(tipoTransaccion, tipoCombustible, tipoTransmision, tipoNuevoUsado, marca, modelo, cambios,
+		                velMaxima, cilindraje, placa, numPasajeros, velCrucero, numPuertas, capMaletero, hasAireAcondicionado,
+		                hasCamaraReversa, hasABS, numBolsasAire);
 		    } else if (modelo.equals("Sedan")) {
-		        return new Sedan();
+		        return new Sedan(tipoTransaccion, tipoCombustible, tipoTransmision, tipoNuevoUsado, marca, modelo, cambios,
+		                velMaxima, cilindraje, placa, numPasajeros, velCrucero, numPuertas, capMaletero, hasAireAcondicionado,
+		                hasCamaraReversa, hasABS, numBolsasAire);
 		    }
 
 		    // Si el modelo no coincide con ninguno de los anteriores, se lanza una excepción
 		    throw new IllegalArgumentException("Modelo de vehículo no válido: " + modelo);
 		}
 
+		public static boolean validarCampos(String marca, String modelo, String cambios, double velMaxima, String cilindraje,
+                String placa, TipoTransaccion tipoTransaccion,
+                TipoCombustible tipoCombustible, TipoTransmision tipoTransmision,
+                TipoNuevoUsado tipoNuevoUsado, String numPasajeros, double velCrucero,
+                String numPuertas, String capMaletero, boolean hasAireAcondicionado,
+                boolean hasCamaraReversa, boolean hasABS, String numBolsasAire,
+                boolean sensorColision, boolean sensorTraficoCruzado, boolean asisPermCarril) {
+			// Validar que todos los campos obligatorios estén completos
+			if (marca.isEmpty() || modelo.isEmpty() || cambios.isEmpty() || cilindraje.isEmpty() || placa.isEmpty() ||
+			tipoTransaccion == null || tipoCombustible == null ||
+			tipoTransmision == null || tipoNuevoUsado == null || numPasajeros.isEmpty() ||
+			numPuertas.isEmpty() || capMaletero.isEmpty() || numBolsasAire.isEmpty()) {
+			mostrarAlerta("Por favor, completa todos los campos obligatorios.");
+			return false;
+			}
+
+			// Validar que los campos numéricos sean válidos
+			if (velMaxima <= 0 || velCrucero < 0) {
+			mostrarAlerta("Por favor, ingresa valores numéricos válidos para la velocidad máxima y el velocidad de crucero.");
+			return false;
+			}
+
+			// Otras validaciones específicas según tus requisitos
+
+			return true;  // Todos los campos son válidos
+			}
+
+			public static void mostrarAlerta(String mensaje) {
+		    	Alert alert = new Alert(AlertType.WARNING);
+		        alert.setTitle("Alerta");
+		        alert.setHeaderText(null);
+		        alert.setContentText(mensaje);
+		        alert.showAndWait();
+		    }
 
 
 
 
+//------------------------------Crear vehiculo Liviano--------------------------------------
+
+			public static Vehiculo crearVehiculoPesado(String marca, String modelo, String cambios, double velMaxima, String cilindraje,
+			        String placa, TipoTransaccion tipoTransaccion, TipoCombustible tipoCombustible,
+			        TipoTransmision tipoTransmision, TipoNuevoUsado tipoNuevoUsado, String numPasajeros, double velCrucero,
+			        String numPuertas, String capMaletero, boolean hasAireAcondicionado, boolean hasCamaraReversa,
+			        boolean hasABS, String numBolsasAire) {
+
+				if (modelo.equals("Bus")) {
+			        return new Bus(tipoTransaccion, tipoCombustible, tipoTransmision, tipoNuevoUsado, marca, modelo, cambios,
+			                velMaxima, cilindraje, placa, numPasajeros, velCrucero, numPuertas, capMaletero, hasAireAcondicionado,
+			                hasCamaraReversa, hasABS, numBolsasAire);
+			    } else if (modelo.equals("Camion")) {
+			        return new Camion(tipoTransaccion, tipoCombustible, tipoTransmision, tipoNuevoUsado, marca, modelo, cambios,
+			                velMaxima, cilindraje, placa, numPasajeros, velCrucero, numPuertas, capMaletero, hasAireAcondicionado,
+			                hasCamaraReversa, hasABS, numBolsasAire);
+			    }
+
+			    // Si el modelo no coincide con ninguno de los anteriores, se lanza una excepción
+			    throw new IllegalArgumentException("Modelo de vehículo no válido: " + modelo);
+
+
+			}
+
+			public static boolean validarCamposPesado(String marca, String modelo, String cambios, double velMaxima, String cilindraje,
+	                String placa, TipoTransaccion tipoTransaccion,
+	                TipoCombustible tipoCombustible, TipoTransmision tipoTransmision,
+	                TipoNuevoUsado tipoNuevoUsado, String numPasajeros, double velCrucero,
+	                String numPuertas, String capMaletero, boolean hasAireAcondicionado,
+	                boolean hasCamaraReversa, boolean hasABS, String numBolsasAire
+	                ) {
+				// Validar que todos los campos obligatorios estén completos
+				if (marca.isEmpty() || modelo.isEmpty() || cambios.isEmpty() || cilindraje.isEmpty() || placa.isEmpty() ||
+				tipoTransaccion == null || tipoCombustible == null ||
+				tipoTransmision == null || tipoNuevoUsado == null || numPasajeros.isEmpty() ||
+				numPuertas.isEmpty() || capMaletero.isEmpty() || numBolsasAire.isEmpty()) {
+				mostrarAlerta("Por favor, completa todos los campos obligatorios.");
+				return false;
+				}
+
+				// Validar que los campos numéricos sean válidos
+				if (velMaxima <= 0 || velCrucero < 0) {
+				mostrarAlerta("Por favor, ingresa valores numéricos válidos para la velocidad máxima y el velocidad de crucero.");
+				return false;
+				}
+
+				// Otras validaciones específicas según tus requisitos
+
+				return true;  // Todos los campos son válidos
+				}
 
 }
 
