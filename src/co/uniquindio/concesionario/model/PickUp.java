@@ -28,12 +28,27 @@ public class PickUp extends VehiculoLiviano implements Serializable{
 	 * @param asisPermCarril
 	 */
 	public PickUp(TipoTransaccion tipoTransaccion, TipoCombustible tipoCombustible, TipoTransmision tipoTransmision,
-			TipoNuevoUsado tipoNuevoUsado, String marca, String modelo, String cambios, double velCrucero,
-			String cilindraje, String placa, String numPasajeros, double velMax, String numPuertas,
-			String capMaletero, boolean hasCamaraReversa, boolean hasAireAcondicionado, String numBolsasAire, boolean hasABS, boolean sensorColision, boolean sensorTraficoCruzado,
-			boolean asisPermCarril) {
-		super();
+			TipoNuevoUsado tipoNuevoUsado, String marca, String modelo, String cambios, Double velMax,
+			String cilindraje, String placa, String numPasajeros, double velCrucero, String numPuertas,
+			String capMaletero, boolean hasAireAcondicionado, boolean hasCamaraReversa, boolean hasABS,
+			String numBolsasAire) {
+		super(tipoTransaccion, tipoCombustible, tipoTransmision, tipoNuevoUsado, marca, modelo, cambios, velMax, cilindraje,
+				placa, numPasajeros, velCrucero, numPuertas, capMaletero, hasAireAcondicionado, hasCamaraReversa, hasABS,
+				numBolsasAire);
+		// TODO Auto-generated constructor stub
 	}
+
+	@Override
+	public String toString() {
+		return "PickUp [sensorColision=" + sensorColision + ", sensorTraficoCruzado=" + sensorTraficoCruzado
+				+ ", asisPermCarril=" + asisPermCarril + ", numPuertas=" + numPuertas + ", capMaletero=" + capMaletero
+				+ ", hasAireAcondicionado=" + hasAireAcondicionado + ", hasCamaraReversa=" + hasCamaraReversa
+				+ ", hasABS=" + hasABS + ", numBolsasAire=" + numBolsasAire + ", tipoTransaccion=" + tipoTransaccion
+				+ ", tipoCombustible=" + tipoCombustible + ", tipoTransmision=" + tipoTransmision + ", tipoNuevoUsado="
+				+ tipoNuevoUsado + ", marca=" + marca + ", modelo=" + modelo + ", cambios=" + cambios + ", velMax="
+				+ velMax + ", cilindraje=" + cilindraje + ", placa=" + placa + "]";
+	}
+
 
 
 

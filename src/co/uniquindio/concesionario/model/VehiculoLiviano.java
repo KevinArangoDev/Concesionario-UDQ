@@ -1,13 +1,17 @@
 package co.uniquindio.concesionario.model;
 
+import java.io.Serializable;
+
+import co.uniquindio.concesionario.model.Carro;
+
 @SuppressWarnings("serial")
-public abstract class VehiculoLiviano  extends Carro{
+public abstract class VehiculoLiviano  extends Carro implements Serializable{
 	/**
 	 * Declaracion de atributos
 	 */
-	private boolean sensorColision;
-	private  boolean sensorTraficoCruzado;
-	private boolean asisPermCarril;
+	protected boolean sensorColision;
+	protected  boolean sensorTraficoCruzado;
+	protected boolean asisPermCarril;
 
 	/**
 	 * Constructor de la clase VehiculoLiviano y los demas atributos de su superclase
@@ -75,9 +79,11 @@ public abstract class VehiculoLiviano  extends Carro{
 	}
 	@Override
 	public String toString() {
-		return "VehiculoLiviano [velCrucero=" +  ", sensorColision=" + sensorColision
-				+ ", sensorTraficoCruzado=" + sensorTraficoCruzado + ", asisPermCarril=" + asisPermCarril + "]";
+		return "VehiculoLiviano [sensorColision=" + sensorColision + ", sensorTraficoCruzado=" + sensorTraficoCruzado
+				+ ", asisPermCarril=" + asisPermCarril + "]";
 	}
+
+
 //------------------------------------------------------------------------------------------------
 
 }

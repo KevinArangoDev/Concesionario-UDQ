@@ -38,6 +38,17 @@ public class Bus extends VehiculoPesado  implements Serializable{
 		// TODO Auto-generated constructor stub
 	}
 
+	@Override
+	public String toString() {
+		return "Bus [numPuertas=" + numPuertas + ", capMaletero=" + capMaletero + ", hasAireAcondicionado="
+				+ hasAireAcondicionado + ", hasCamaraReversa=" + hasCamaraReversa + ", hasABS=" + hasABS
+				+ ", numBolsasAire=" + numBolsasAire + ", tipoTransaccion=" + tipoTransaccion + ", tipoCombustible="
+				+ tipoCombustible + ", tipoTransmision=" + tipoTransmision + ", tipoNuevoUsado=" + tipoNuevoUsado
+				+ ", marca=" + marca + ", modelo=" + modelo + ", cambios=" + cambios + ", velMax=" + velMax
+				+ ", cilindraje=" + cilindraje + ", placa=" + placa + "]";
+	}
+
+
 
 
 

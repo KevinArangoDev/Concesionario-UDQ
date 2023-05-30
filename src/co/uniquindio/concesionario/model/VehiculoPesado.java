@@ -10,9 +10,9 @@ public abstract class VehiculoPesado extends Carro {
 	/**
 	 * Atributos
 	 */
-	private String capMaletero;
-	private String salidasEmergencia;
-	private String capCajaCarga;
+	protected String capMaletero;
+	protected String salidasEmergencia;
+	protected String capCajaCarga;
 
 
 	/**

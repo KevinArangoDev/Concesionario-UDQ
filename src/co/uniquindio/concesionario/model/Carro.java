@@ -11,12 +11,12 @@ public abstract class Carro  extends Vehiculo implements Serializable{
 	 */
 	private String numPasajeros;
 	private double velCrucero;
-	private String numPuertas;
-	private String capMaletero;
-	private boolean hasAireAcondicionado;
-	private boolean hasCamaraReversa;
-	private boolean hasABS;
-	private String numBolsasAire;
+	protected String numPuertas;
+	protected String capMaletero;
+	protected boolean hasAireAcondicionado;
+	protected boolean hasCamaraReversa;
+	protected boolean hasABS;
+	protected String numBolsasAire;
 
 	/**
 	 * constructor con los atributos de la clase Carro y su superClase Vehiculo
@@ -116,12 +116,14 @@ public Carro() {
 	}
 // --------------------------------------------------------------
 
-	//metodo toString
 	@Override
 	public String toString() {
-		return "Carro [numPuertas=" + numPuertas + ", capMaletero=" + capMaletero + ", hasAireAcondicionado="
-				+ hasAireAcondicionado + ", hasCamaraReversa=" + hasCamaraReversa + ", hasABS=" + hasABS
-
-				+ ", numBolsasAire=" + numBolsasAire + "]";
+		return "Carro [numPasajeros=" + numPasajeros + ", velCrucero=" + velCrucero + ", numPuertas=" + numPuertas
+				+ ", capMaletero=" + capMaletero + ", hasAireAcondicionado=" + hasAireAcondicionado
+				+ ", hasCamaraReversa=" + hasCamaraReversa + ", hasABS=" + hasABS + ", numBolsasAire=" + numBolsasAire
+				+ "]";
 	}
+
+	//metodo toString
+
 }

@@ -43,6 +43,7 @@ public class ReporteController implements Initializable {
 
         // Configurar los datos en la tabla
         tablaVehiculos.setItems(FXCollections.observableArrayList(concesionario.getListaVehiculos()));
+
     }
 
 

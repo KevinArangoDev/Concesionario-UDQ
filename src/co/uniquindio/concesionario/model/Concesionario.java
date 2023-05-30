@@ -19,7 +19,7 @@ public class Concesionario implements Serializable {
 	private ArrayList<Cliente> listaClientes = new ArrayList<Cliente>();
 	private ArrayList<Empleado> listaEmpleados = new ArrayList<Empleado>();
 	private ArrayList<Vehiculo> listaVehiculos = new ArrayList<Vehiculo>();
-	private ArrayList<Transaccion> listaTransacciones = new ArrayList<Transaccion>();
+	private ArrayList<Vehiculo> listaTransacciones = new ArrayList<Vehiculo>();
 	private ArrayList<Administrador> listaAdministradores = new ArrayList<Administrador>();
 
 	/**
@@ -82,11 +82,11 @@ public class Concesionario implements Serializable {
 		this.listaVehiculos = listaVehiculos;
 	}
 
-	public ArrayList<Transaccion> getListaTransacciones() {
+	public ArrayList<Vehiculo> getListaTransacciones() {
 		return listaTransacciones;
 	}
 
-	public void setListaTransacciones(ArrayList<Transaccion> listaTransacciones) {
+	public void setListaTransacciones(ArrayList<Vehiculo> listaTransacciones) {
 		this.listaTransacciones = listaTransacciones;
 	}
 

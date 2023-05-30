@@ -7,16 +7,16 @@ public abstract class Vehiculo implements Serializable {
 	/**
 	 * declaracion de atributos
 	 */
-	private TipoTransaccion tipoTransaccion;
-	private TipoCombustible tipoCombustible;
-	private TipoTransmision tipoTransmision;
-	private TipoNuevoUsado tipoNuevoUsado;
-	private  String marca;
-	private String modelo;
-	private  String cambios;
-	private Double velMax;
-	private String cilindraje;
-	private String placa ;
+	protected TipoTransaccion tipoTransaccion;
+	protected TipoCombustible tipoCombustible;
+	protected TipoTransmision tipoTransmision;
+	protected TipoNuevoUsado tipoNuevoUsado;
+	protected  String marca;
+	protected String modelo;
+	protected  String cambios;
+	protected Double velMax;
+	protected String cilindraje;
+	protected String placa ;
 
 	/**
 	 * Constructor para la clase Vehiculo
@@ -123,16 +123,18 @@ public abstract class Vehiculo implements Serializable {
 		return tipoTransmision;
 	}
 
+	@Override
+	public String toString() {
+		return "Vehiculo [tipoTransaccion=" + tipoTransaccion + ", tipoCombustible=" + tipoCombustible
+				+ ", tipoTransmision=" + tipoTransmision + ", tipoNuevoUsado=" + tipoNuevoUsado + ", marca=" + marca
+				+ ", modelo=" + modelo + ", cambios=" + cambios + ", velMax=" + velMax + ", cilindraje=" + cilindraje
+				+ ", placa=" + placa + "]";
+	}
+
 
 
 	// metodo to String
-	@Override
-	public String toString() {
-		return "Vehiculo [tipoCombustible=" + tipoCombustible + ", tipoTrasmision=" + tipoTransmision
-				+ ", tipoNuevoUsado=" + tipoNuevoUsado + ", marca=" + marca + ", modelo=" + modelo + ", Cambios="
-				+ cambios + ", velMax=" + velMax + ", cilindraje=" + cilindraje + ", numPasajeros=" +
-				 ", placa=" + placa + "]";
-	}
+
 
 }
 
