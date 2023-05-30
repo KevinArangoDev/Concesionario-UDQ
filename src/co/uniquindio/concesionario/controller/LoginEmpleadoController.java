@@ -97,7 +97,6 @@ public class LoginEmpleadoController implements Initializable {
 						getClass().getResource("../view/PrincipalView.fxml"));
 				Parent root = loader.load();
 
-				EmpleadoController controlador = loader.getController();
 
 				Scene scene = new Scene(root);
 				Stage stage = new Stage();
