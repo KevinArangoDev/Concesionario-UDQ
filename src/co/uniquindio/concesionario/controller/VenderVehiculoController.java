@@ -44,7 +44,7 @@ public class VenderVehiculoController implements Initializable {
         ArrayList<Vehiculo> vehiculos = singleton.getConcesionario().getListaVehiculos();
 
 		colVehiculo.setCellValueFactory( new PropertyValueFactory<>("placa") );
-		colPrecio.setCellValueFactory( new PropertyValueFactory<>("precio") );
+		colPrecio.setCellValueFactory( new PropertyValueFactory<>("modelo") );
 
         // Agregar los vehículos al ComboBox
         listaBuscarVehicvulo.getItems().addAll(vehiculos);
@@ -109,7 +109,7 @@ public class VenderVehiculoController implements Initializable {
     private TableColumn<Vehiculo, String> colVehiculo;
 
     @FXML
-    private TableColumn<Vehiculo, Double> colPrecio;
+    private TableColumn<Vehiculo, String> colPrecio;
 
     @FXML
     void buscarVehiculo(ActionEvent event) {

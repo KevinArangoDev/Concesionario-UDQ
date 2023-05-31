@@ -106,6 +106,9 @@ public class ComprarLivianoController {
 
     @FXML
     private ComboBox<String> tieneSenTrafCruzado;
+    @FXML
+    private ComboBox<String> cbxModeloLiviano;
+
 
     @FXML
     private TextField txtNumPuertas;
@@ -123,17 +126,20 @@ public class ComprarLivianoController {
 
     @FXML
     private void initialize() {
+    	 cbxModeloLiviano.getItems().add("Camioneta");
+    	 cbxModeloLiviano.getItems().add("Vans");
+    	 cbxModeloLiviano.getItems().add("Sedan");
+    	 cbxModeloLiviano.getItems().add("PickUp");
+
         singleton = ModelFactoryController.getInstance();
 
         ArrayList<Empleado> empleados = ModelFactoryController.getInstance().concesionario.getListaEmpleados(); // Obtén el ArrayList<Empleado>
 
 	     // Agregar un nuevo empleado a la lista
-	     Empleado nuevoEmpleado = new Empleado("Luis", "", "", "");
-	     empleados.add(nuevoEmpleado);
+//	     Empleado nuevoEmpleado = new Empleado("Luis", "", "", "");
+//	     empleados.add(nuevoEmpleado);
 
 	     // Agregar el nombre del nuevo empleado al ComboBox
-	     String nombreEmpleado = nuevoEmpleado.getNombre();
-	     vendedorComboBox.getItems().add(nombreEmpleado);
 
         // Configurar opciones para otros ComboBox
         listaCombustibleLiviano.getItems().addAll(TipoCombustible.values());
@@ -158,7 +164,7 @@ public class ComprarLivianoController {
     	Concesionario concesionario = ModelFactoryController.getInstance().getConcesionario();
 
         String marca = txtMarcaLiviano.getText();
-        String modelo = txtModeloLiviano.getText();
+        String modelo = cbxModeloLiviano.getSelectionModel().getSelectedItem();
         String cambios = txtCambios.getText();
         String velMaximaText = txtVelMaxima.getText();
         String cilindraje = txtCilindraje.getText();
@@ -251,7 +257,7 @@ public class ComprarLivianoController {
 
     private void limpiarCampos() {
         txtMarcaLiviano.clear();
-        txtModeloLiviano.clear();
+        cbxModeloLiviano.getSelectionModel().clearSelection();
         txtCambios.clear();
         txtVelMaxima.clear();
         txtCilindraje.clear();

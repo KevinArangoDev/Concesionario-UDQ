@@ -30,8 +30,8 @@
             </Label>
             <TableView fx:id="tblCarritoCompras" layoutX="44.0" layoutY="350.0" prefHeight="200.0" prefWidth="209.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="251.0">
               <columns>
-                <TableColumn fx:id="colVehiculo" prefWidth="96.0" text="Vehículo" />
-                <TableColumn fx:id="colPrecio" prefWidth="111.0" text="Precio" />
+                <TableColumn fx:id="colVehiculo" prefWidth="96.0" text="placa" />
+                <TableColumn fx:id="colPrecio" prefWidth="111.0" text="Modelo" />
               </columns>
             </TableView>
             <Label layoutX="273.0" layoutY="480.0" text="Iva:" textFill="#eeeeee">
