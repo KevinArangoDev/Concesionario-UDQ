@@ -23,6 +23,7 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
 
 public class ActualizarEmpleadoController implements Initializable{
+	//llamamaos   singleton
 	ModelFactoryController modelFactoryController = ModelFactoryController.getInstance();
 
 

@@ -32,7 +32,8 @@ public class Concesionario implements Serializable {
 		super();
 		this.nombre = nombre;
 		this.direccion = direccion;
-		this.listaEmpleados.add( new Empleado("admin", "23", "22","sss", 200.0, "aa", "123", EstadoEmpleado.ACTIVO) );
+		this.listaEmpleados.add( new Empleado("juan", "23", "123","vendedor", 200.0, "perez", "123", EstadoEmpleado.ACTIVO) );
+
 	}
 
 	// constructor vacio
@@ -76,8 +77,9 @@ public class Concesionario implements Serializable {
 	}
 
 	public ArrayList<Vehiculo> getListaVehiculos() {
-		listaVehiculos.add( new Moto(TipoTransaccion.ALQUILER, TipoCombustible.DIESEL, TipoTransmision.AUTOMATICO, TipoNuevoUsado.NUEVO, "aaa", "111", "222", 120.0, "11", "1234A") );
+//		listaVehiculos.add( new Moto(TipoTransaccion.ALQUILER, TipoCombustible.DIESEL, TipoTransmision.AUTOMATICO, TipoNuevoUsado.NUEVO, "honda", "2023", "2", 12000.0, "2", "kps80f") );
 		return listaVehiculos;
+
 	}
 
 	public void setListaVehiculos(ArrayList<Vehiculo> listaVehiculos) {
@@ -400,30 +402,12 @@ public class Concesionario implements Serializable {
             return false;
         }
 	}
-//			throws FileNotFoundException, IOException, AdministradorException {
-//		Administrador administradorIS = validarAdministrador(idAdmin, contrasenia);
-//		if (administradorIS != null) {
-//			return administradorIS;
-//		} else {
-//			throw new AdministradorException("Usuario no existe");
-//		}
-//
-//	}
-//
-//	private Administrador validarAdministrador(String idAdmin, String contrasenia)
-//			throws FileNotFoundException, IOException {
-//		ArrayList<Administrador> administradores = listaAdministradores;
-//
-//		for (int i = 0; i < administradores.size(); i++) {
-//			Administrador adminAux = administradores.get(i);
-//			if (adminAux.getId().equals(idAdmin)
-//					&& adminAux.getContrasenia().equalsIgnoreCase(contrasenia)) {
-//				return adminAux;
-//			}
-//		}
-//		return null;
-//	}
-
+/**
+ *
+ * @param idUsuario
+ * @return
+ * @throws IOException
+ */
 	public Administrador CargarAdministrador(String idUsuario) throws IOException {
 
 		ArrayList<Administrador> contenido = listaAdministradores;

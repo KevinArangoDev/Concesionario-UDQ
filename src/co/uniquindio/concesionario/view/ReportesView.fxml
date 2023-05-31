@@ -25,12 +25,11 @@
                      <children>
                         <TableView fx:id="tblInventario" prefHeight="414.0" prefWidth="905.0">
                            <columns>
-                              <TableColumn fx:id="colTransaccion" prefWidth="128.0" text="Transaccion" />
-                              <TableColumn fx:id="colTipo" prefWidth="96.0" text="tipo" />
-                              <TableColumn fx:id="colMarca" prefWidth="93.0" text="marca" />
-                              <TableColumn fx:id="colModelo" prefWidth="56.0" text="modelo" />
-                              <TableColumn fx:id="colPlaca" prefWidth="126.0" text="placa" />
-                              <TableColumn fx:id="colValor" prefWidth="230.0" text="valor" />
+                              <TableColumn fx:id="colTipo" prefWidth="151.0" text="tipo" />
+                              <TableColumn fx:id="colMarca" prefWidth="145.0" text="marca" />
+                              <TableColumn fx:id="colModelo" prefWidth="182.0" text="modelo" />
+                              <TableColumn fx:id="colPlaca" prefWidth="188.0" text="placa" />
+                              <TableColumn fx:id="colValor" prefWidth="222.0" text="valor" />
                            </columns>
                         </TableView>
                      </children>
@@ -43,11 +42,11 @@
                      <children>
                         <TableView fx:id="Transacciones" layoutX="8.0" layoutY="6.0" prefHeight="423.0" prefWidth="935.0">
                           <columns>
-                            <TableColumn fx:id="colVehiculo" prefWidth="75.0" text="Vehiculo" />
-                            <TableColumn fx:id="colCliente" prefWidth="131.0" text="Cliente" />
-                              <TableColumn fx:id="colEmpleado" prefWidth="171.0" text="Empleado" />
-                              <TableColumn fx:id="colFechaCompra" prefWidth="160.0" text="FechaCompra" />
-                              <TableColumn fx:id="colMetodoCompra" prefWidth="397.0" text="Tipo Transaccion" />
+                            <TableColumn fx:id="colVehiculo" prefWidth="163.0" text="Vehiculo" />
+                            <TableColumn fx:id="colCliente" prefWidth="114.0" text="Cliente" />
+                              <TableColumn fx:id="colEmpleado" prefWidth="216.0" text="Empleado" />
+                              <TableColumn fx:id="colFechaCompra" prefWidth="198.0" text="FechaCompra" />
+                              <TableColumn fx:id="colMetodoCompra" prefWidth="243.0" text="Tipo Transaccion" />
                           </columns>
                         </TableView>
                      </children>

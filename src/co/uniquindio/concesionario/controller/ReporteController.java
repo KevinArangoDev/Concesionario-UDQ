@@ -52,8 +52,8 @@ public class ReporteController implements Initializable {
     @FXML
     private TableColumn<String, Vehiculo> colVehiculo;
 
-    @FXML
-    private TableColumn<Vehiculo, TipoTransaccion> colTransaccion;
+//    @FXML
+//    private TableColumn<Vehiculo, TipoTransaccion> colTransaccion;
 
     @FXML
     private TableColumn<Vehiculo, TipoNuevoUsado> colTipo;
@@ -87,7 +87,7 @@ public class ReporteController implements Initializable {
 		colModelo.setCellValueFactory( new PropertyValueFactory<>("modelo") );
 		colPlaca.setCellValueFactory( new PropertyValueFactory<>("placa") );
 		colTipo.setCellValueFactory( new PropertyValueFactory<>("tipoNuevoUsado") );
-		colTransaccion.setCellValueFactory( new PropertyValueFactory<>("tipoTransaccion") );
+//		colTransaccion.setCellValueFactory( new PropertyValueFactory<>("tipoTransaccion") );
 		colValor.setCellValueFactory( new PropertyValueFactory<>("precio") );
 
 		ArrayList<Vehiculo> vehiculos = modelFactoryController.concesionario.getListaVehiculos();
@@ -96,7 +96,7 @@ public class ReporteController implements Initializable {
 		//tblTransacciones
 		colEmpleado.setCellValueFactory(new PropertyValueFactory<>("empleado"));
 		colVehiculo.setCellValueFactory(new PropertyValueFactory<>("vehiculo"));
-		colCliente.setCellValueFactory(new PropertyValueFactory<>("vehiculo"));
+		colCliente.setCellValueFactory(new PropertyValueFactory<>("cliente"));
 		colFechaCompra.setCellValueFactory(new PropertyValueFactory<>("fechaCompra"));
 		colMetodoCompra.setCellValueFactory(new PropertyValueFactory<>("metodoCompra"));
 
