@@ -154,7 +154,7 @@ public class AlquilarVehiculoController implements Initializable {
 
     }
 
-
+ 
 
     @FXML
     void limpiarDatos(ActionEvent event) {
