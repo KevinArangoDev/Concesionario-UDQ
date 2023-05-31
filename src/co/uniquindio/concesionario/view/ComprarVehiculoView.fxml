@@ -12,7 +12,7 @@
    <children>
       <Pane prefHeight="100.0" prefWidth="600.0" style="-fx-background-color: #222831;">
          <children>
-            <Label layoutX="138.0" layoutY="33.0" text="Tipo de Vehículo a Comprar" textFill="#eeeeee">
+            <Label layoutX="70.0" layoutY="40.0" text="Tipo de Vehículo a Comprar ó Registrar" textFill="#eeeeee">
                <font>
                   <Font name="Bell MT" size="28.0" />
                </font>
