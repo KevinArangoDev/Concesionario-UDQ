@@ -22,8 +22,8 @@
                                     <Font name="Bell MT Bold" size="28.0" />
                                  </font>
                               </Label>
-                              <ComboBox fx:id="listaCombustible" layoutX="210.0" layoutY="231.0" onAction="#listaCombustible" prefHeight="40.0" prefWidth="270.0" AnchorPane.rightAnchor="18.0" />
-                              <Label layoutX="22.0" layoutY="238.0" text="Tipo de Combustible:" textFill="#eeeeee" AnchorPane.leftAnchor="20.0">
+                              <ComboBox fx:id="listaCombustible" layoutX="210.0" layoutY="497.0" onAction="#listaCombustible" prefHeight="40.0" prefWidth="270.0" AnchorPane.rightAnchor="18.0" />
+                              <Label layoutX="15.0" layoutY="505.0" text="Tipo de Combustible:" textFill="#eeeeee" AnchorPane.leftAnchor="15.0">
                                  <font>
                                     <Font name="Bell MT" size="20.0" />
                                  </font>
@@ -34,23 +34,29 @@
                                  </font>
                               </Label>
                               <ComboBox fx:id="listaTrasmision" layoutX="210.0" layoutY="321.0" onAction="#listaTrasmision" prefHeight="40.0" prefWidth="270.0" />
-                              <Label layoutX="27.0" layoutY="423.0" text="Nuevo ó Usado:" textFill="#eeeeee">
+                              <Label layoutX="20.0" layoutY="424.0" text="Nuevo ó Usado:" textFill="#eeeeee">
                                  <font>
                                     <Font name="Bell MT" size="20.0" />
                                  </font>
                               </Label>
                               <ComboBox fx:id="listaNuevoUsado" layoutX="210.0" layoutY="416.0" onAction="#listaNuevoUsado" prefHeight="40.0" prefWidth="270.0" />
-                              <Label layoutX="27.0" layoutY="523.0" text="Marca:" textFill="#eeeeee">
+                              <Label layoutX="20.0" layoutY="577.0" text="Marca:" textFill="#eeeeee">
                                  <font>
                                     <Font name="Bell MT" size="20.0" />
                                  </font>
                               </Label>
-                              <JFXTextField fx:id="txtMarca" layoutX="210.0" layoutY="516.0" prefHeight="39.0" prefWidth="269.0" style="-fx-background-color: #eeeeee;" />
+                              <JFXTextField fx:id="txtMarca" layoutX="211.0" layoutY="570.0" prefHeight="39.0" prefWidth="269.0" style="-fx-background-color: #eeeeee;" />
                               <Label layoutX="115.0" layoutY="65.0" text="Información del Cliente" textFill="#222831">
                                  <font>
                                     <Font name="Bell MT Bold" size="28.0" />
                                  </font>
                               </Label>
+            <Label layoutX="20.0" layoutY="251.0" text="Tipo Transacción:" textFill="#eeeeee">
+               <font>
+                  <Font name="Bell MT" size="20.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="listaTransaccion" layoutX="210.0" layoutY="244.0" prefHeight="40.0" prefWidth="270.0" />
                            </children>
                         </AnchorPane>
                         <AnchorPane layoutX="520.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #eeeeee;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="500.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">

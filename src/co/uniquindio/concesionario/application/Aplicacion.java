@@ -36,7 +36,7 @@ public class Aplicacion extends Application {
             out.writeObject(concesionario);
             out.close();
             fileOut.close();
-            System.out.println("El objeto Concesionario ha sido serializado y guardado en moto.ser");
+            System.out.println("El objeto Concesionario ha sido serializado y guardado en concesionario.ser");
         } catch (IOException e) {
             e.printStackTrace();
         }
