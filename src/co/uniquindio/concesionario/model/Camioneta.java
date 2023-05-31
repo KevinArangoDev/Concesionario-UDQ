@@ -24,7 +24,7 @@ public class Camioneta extends VehiculoLiviano implements Serializable{
 		return "Camioneta [sensorColision=" + sensorColision + ", sensorTraficoCruzado=" + sensorTraficoCruzado
 				+ ", asisPermCarril=" + asisPermCarril + ", numPuertas=" + numPuertas + ", capMaletero=" + capMaletero
 				+ ", hasAireAcondicionado=" + hasAireAcondicionado + ", hasCamaraReversa=" + hasCamaraReversa
-				+ ", hasABS=" + hasABS + ", numBolsasAire=" + numBolsasAire + ", tipoTransaccion=" + tipoTransaccion
+				+ ", hasABS=" + hasABS + ", numBolsasAire=" + numBolsasAire
 				+ ", tipoCombustible=" + tipoCombustible + ", tipoTransmision=" + tipoTransmision + ", tipoNuevoUsado="
 				+ tipoNuevoUsado + ", marca=" + marca + ", modelo=" + modelo + ", cambios=" + cambios + ", velMax="
 				+ velMax + ", cilindraje=" + cilindraje + ", placa=" + placa + "]";

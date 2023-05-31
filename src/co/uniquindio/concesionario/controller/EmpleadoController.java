@@ -72,7 +72,7 @@ public class EmpleadoController implements Initializable {
     				getClass().getResource("../view/AlquilarVehiculoView.fxml"));
     		Parent root = loader.load();
 
-    		ComprarVehiculoController controlador = loader.getController();
+    		AlquilarVehiculoController controlador = loader.getController();
 
     		Scene scene = new Scene(root);
     		Stage stage = new Stage();
