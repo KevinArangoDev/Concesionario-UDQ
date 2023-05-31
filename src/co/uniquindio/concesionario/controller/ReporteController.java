@@ -2,6 +2,7 @@ package co.uniquindio.concesionario.controller;
 
 
 
+import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -17,11 +18,17 @@ import co.uniquindio.concesionario.model.Transaccion;
 import co.uniquindio.concesionario.model.Vehiculo;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.collections.FXCollections;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 
 public class ReporteController implements Initializable {
 	ModelFactoryController modelFactoryController = ModelFactoryController.getInstance();
@@ -70,6 +77,8 @@ public class ReporteController implements Initializable {
     private TableColumn<String, Cliente> colCliente;
     @FXML
     private TableColumn<Vehiculo, Double> colValor;
+    @FXML
+    private Button btnVolver;
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
@@ -98,6 +107,30 @@ public class ReporteController implements Initializable {
 		Transacciones.setItems(FXCollections.observableArrayList(transacciones));
 
 	}
+    @FXML
+    void volverVenAdministrador(ActionEvent event) {
+       	try {
+
+    		FXMLLoader loader = new FXMLLoader(
+    				getClass().getResource("../view/AdministradorView.fxml"));
+    		Parent root = loader.load();
+
+
+    		Scene scene = new Scene(root);
+    		Stage stage = new Stage();
+
+    		stage.setScene(scene);
+    		stage.show();
+    		stage.setTitle("Login Administrador");
+    		Stage myStage = (Stage) this.btnVolver.getScene().getWindow();
+    		myStage.close();
+
+    	} catch (IOException e) {
+
+    	}
+
+    }
+
 
 
 

@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.BorderPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #eeeeee;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.uniquindio.concesionario.controller.ReporteController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="632.0" prefWidth="1000.0" style="-fx-background-color: #eeeeee;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.uniquindio.concesionario.controller.ReporteController">
    <children>
       <Pane prefHeight="100.0" prefWidth="1000.0" style="-fx-background-color: #222831;">
          <children>
@@ -21,7 +21,7 @@
         <tabs>
           <Tab text="Inventario">
             <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="413.0" prefWidth="946.0">
                      <children>
                         <TableView fx:id="tblInventario" prefHeight="414.0" prefWidth="905.0">
                            <columns>
@@ -47,7 +47,7 @@
                             <TableColumn fx:id="colCliente" prefWidth="131.0" text="Cliente" />
                               <TableColumn fx:id="colEmpleado" prefWidth="171.0" text="Empleado" />
                               <TableColumn fx:id="colFechaCompra" prefWidth="160.0" text="FechaCompra" />
-                              <TableColumn fx:id="colMetodoCompra" prefWidth="397.0" text="metodoCompra" />
+                              <TableColumn fx:id="colMetodoCompra" prefWidth="397.0" text="Tipo Transaccion" />
                           </columns>
                         </TableView>
                      </children>
@@ -56,5 +56,6 @@
           </Tab>
         </tabs>
       </TabPane>
+      <Button fx:id="btnVolver" layoutX="478.0" layoutY="562.0" mnemonicParsing="false" onAction="#volverVenAdministrador" text="Volver" />
    </children>
 </AnchorPane>
