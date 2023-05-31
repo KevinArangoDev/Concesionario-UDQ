@@ -2,12 +2,6 @@ package co.uniquindio.concesionario.model;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Optional;
-
-import co.uniquindio.concesionario.exception.ClienteException;
-import co.uniquindio.concesionario.exception.EmpleadoException;
 
 @SuppressWarnings("serial")
 public class Empleado extends Persona implements Serializable{
@@ -16,7 +10,7 @@ public class Empleado extends Persona implements Serializable{
 	 * Atributos
 	 */
 	private String cargo;
-	private double sueldo;
+	private Double sueldo;
 	private EstadoEmpleado estadoEmpleado;
 	private ArrayList<Cliente> listaClientes;
 	private String password;
@@ -30,12 +24,12 @@ public class Empleado extends Persona implements Serializable{
 	 * @param cargo
 	 * @param sueldo
 	 */
-	public Empleado(String nombre, String edad, String id, String cargo, double sueldo  , String apellido , String password){
+	public Empleado(String nombre, String edad, String id, String cargo, Double sueldo  , String apellido , String password ,EstadoEmpleado estadoEmpleado){
 		super(nombre, edad, id , apellido);
 		this.cargo = cargo;
 		this.sueldo = sueldo;
 		this.password=password;
-		this.estadoEmpleado = EstadoEmpleado.ACTIVO;
+		this.estadoEmpleado = estadoEmpleado;
 
 	}
 
@@ -59,10 +53,10 @@ public class Empleado extends Persona implements Serializable{
 	public void setCargo(String cargo) {
 		this.cargo = cargo;
 	}
-	public double getSueldo() {
+	public Double getSueldo() {
 		return sueldo;
 	}
-	public void setSueldo(double sueldo) {
+	public void setSueldo(Double sueldo) {
 		this.sueldo = sueldo;
 	}
 	public ArrayList<Cliente> getListaClientes() {

@@ -7,7 +7,7 @@ public abstract class Vehiculo implements Serializable {
 	/**
 	 * declaracion de atributos
 	 */
-	protected TipoTransaccion tipoTransaccion;
+
 	protected TipoCombustible tipoCombustible;
 	protected TipoTransmision tipoTransmision;
 	protected TipoNuevoUsado tipoNuevoUsado;
@@ -17,6 +17,7 @@ public abstract class Vehiculo implements Serializable {
 	protected Double velMax;
 	protected String cilindraje;
 	protected String placa ;
+	protected double precio;
 
 	/**
 	 * Constructor para la clase Vehiculo
@@ -45,7 +46,7 @@ public abstract class Vehiculo implements Serializable {
 		this.velMax = velMax;
 		this.cilindraje = cilindraje;
 		this.placa = placa;
-		this.tipoTransaccion = tipoTransaccion;
+
 	}
 
 	public Vehiculo() {
@@ -60,12 +61,7 @@ public abstract class Vehiculo implements Serializable {
 	public TipoCombustible getTipoCombustible() {
 		return tipoCombustible;
 	}
-	public TipoTransaccion getTipoTransaccion() {
-		return tipoTransaccion;
-	}
-	public void setTipoTransaccion(TipoTransaccion tipoTransaccion) {
-		this.tipoTransaccion = tipoTransaccion;
-	}
+
 
 	public void setTipoCombustible(TipoCombustible tipoCombustible) {
 		this.tipoCombustible = tipoCombustible;
@@ -123,13 +119,24 @@ public abstract class Vehiculo implements Serializable {
 		return tipoTransmision;
 	}
 
+
+	public double getPrecio() {
+		return precio;
+	}
+
+	public void setPrecio(double precio) {
+		this.precio = precio;
+	}
+
 	@Override
 	public String toString() {
-		return "Vehiculo [tipoTransaccion=" + tipoTransaccion + ", tipoCombustible=" + tipoCombustible
-				+ ", tipoTransmision=" + tipoTransmision + ", tipoNuevoUsado=" + tipoNuevoUsado + ", marca=" + marca
-				+ ", modelo=" + modelo + ", cambios=" + cambios + ", velMax=" + velMax + ", cilindraje=" + cilindraje
-				+ ", placa=" + placa + "]";
+		return "Vehiculo [tipoCombustible=" + tipoCombustible + ", tipoTransmision=" + tipoTransmision
+				+ ", tipoNuevoUsado=" + tipoNuevoUsado + ", marca=" + marca + ", modelo=" + modelo + ", cambios="
+				+ cambios + ", velMax=" + velMax + ", cilindraje=" + cilindraje + ", placa=" + placa + ", precio="
+				+ precio + "]";
 	}
+
+
 
 
 

@@ -21,7 +21,7 @@ public class Camion extends VehiculoPesado implements Serializable{
 		return "Camion [capMaletero=" + capMaletero + ", salidasEmergencia=" + salidasEmergencia + ", capCajaCarga="
 				+ capCajaCarga + ", numPuertas=" + numPuertas + ", hasAireAcondicionado=" + hasAireAcondicionado
 				+ ", hasCamaraReversa=" + hasCamaraReversa + ", hasABS=" + hasABS + ", numBolsasAire=" + numBolsasAire
-				+ ", tipoTransaccion=" + tipoTransaccion + ", tipoCombustible=" + tipoCombustible + ", tipoTransmision="
+				+  ", tipoCombustible=" + tipoCombustible + ", tipoTransmision="
 				+ tipoTransmision + ", tipoNuevoUsado=" + tipoNuevoUsado + ", marca=" + marca + ", modelo=" + modelo
 				+ ", cambios=" + cambios + ", velMax=" + velMax + ", cilindraje=" + cilindraje + ", placa=" + placa
 				+ "]";

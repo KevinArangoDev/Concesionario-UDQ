@@ -81,7 +81,7 @@ public class AdministradorController implements Initializable {
 
     		stage.setScene(scene);
     		stage.show();
-    		stage.setTitle("Reportes");
+    		stage.setTitle("crud Empleado");
     		Stage myStage = (Stage) this.btnCRUDEmpleado.getScene().getWindow();
     		myStage.close();
 
@@ -121,7 +121,29 @@ public class AdministradorController implements Initializable {
 
     @FXML
     void cerrarSesion(ActionEvent event) {
+    	try {
 
+    		FXMLLoader loader = new FXMLLoader(
+    				getClass().getResource("../view/LoginAdministradorView.fxml"));
+    		Parent root = loader.load();
+
+
+    		Scene scene = new Scene(root);
+    		Stage stage = new Stage();
+
+    		stage.setScene(scene);
+    		stage.show();
+    		stage.setTitle("Login Administrador");
+    		Stage myStage = (Stage) this.btnCRUDEmpleado.getScene().getWindow();
+    		myStage.close();
+
+    	} catch (IOException e) {
+
+    	}
+
+    }
+    public TableView<Empleado> getTableView() {
+        return tblListaEmpleados;
     }
     @Override
  	public void initialize(URL location, ResourceBundle resources) {

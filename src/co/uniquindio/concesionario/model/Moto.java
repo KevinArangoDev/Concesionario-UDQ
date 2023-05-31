@@ -10,9 +10,11 @@ public class Moto extends Vehiculo implements Serializable{
 		super(tipoTransaccion, tipoCombustible, tipoTransmision, tipoNuevoUsado, marca, modelo, cambios, velMax, cilindraje, placa);
 		// TODO Auto-generated constructor stub
 	}
+	
 
 	public Moto(){
 		super();
 	}
+	
 
 }

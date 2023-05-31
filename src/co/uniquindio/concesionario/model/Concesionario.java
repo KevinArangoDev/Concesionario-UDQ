@@ -4,15 +4,9 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Optional;
 
-import co.uniquindio.concesionario.exception.AdministradorException;
-import co.uniquindio.concesionario.exception.ClienteException;
 import co.uniquindio.concesionario.exception.ConcesionarioException;
 import co.uniquindio.concesionario.exception.EmpleadoException;
-import co.uniquindio.concesionario.exception.VehiculoException;
 
 @SuppressWarnings("serial")
 public class Concesionario implements Serializable {
@@ -25,8 +19,8 @@ public class Concesionario implements Serializable {
 	private ArrayList<Cliente> listaClientes = new ArrayList<Cliente>();
 	private ArrayList<Empleado> listaEmpleados = new ArrayList<Empleado>();
 	private ArrayList<Vehiculo> listaVehiculos = new ArrayList<Vehiculo>();
-	private ArrayList<Vehiculo> listaTransacciones = new ArrayList<Vehiculo>();
 	private ArrayList<Administrador> listaAdministradores = new ArrayList<Administrador>();
+	private ArrayList<Transaccion> listaTransacciones = new ArrayList<>();
 
 	/**
 	 * constructor de la clase concesionario
@@ -38,6 +32,8 @@ public class Concesionario implements Serializable {
 		super();
 		this.nombre = nombre;
 		this.direccion = direccion;
+		this.listaEmpleados.add( new Empleado("juan", "23", "123","vendedor", 200.0, "perez", "123", EstadoEmpleado.ACTIVO) );
+
 	}
 
 	// constructor vacio
@@ -81,18 +77,20 @@ public class Concesionario implements Serializable {
 	}
 
 	public ArrayList<Vehiculo> getListaVehiculos() {
+//		listaVehiculos.add( new Moto(TipoTransaccion.ALQUILER, TipoCombustible.DIESEL, TipoTransmision.AUTOMATICO, TipoNuevoUsado.NUEVO, "honda", "2023", "2", 12000.0, "2", "kps80f") );
 		return listaVehiculos;
+
 	}
 
 	public void setListaVehiculos(ArrayList<Vehiculo> listaVehiculos) {
 		this.listaVehiculos = listaVehiculos;
 	}
 
-	public ArrayList<Vehiculo> getListaTransacciones() {
+	public ArrayList<Transaccion> getListaTransacciones() {
 		return listaTransacciones;
 	}
 
-	public void setListaTransacciones(ArrayList<Vehiculo> listaTransacciones) {
+	public void setListaTransacciones(ArrayList<Transaccion> listaTransacciones) {
 		this.listaTransacciones = listaTransacciones;
 	}
 
@@ -212,6 +210,7 @@ public class Concesionario implements Serializable {
 	 */
 
 	public void agregarEmpleado( Empleado empleado) throws ConcesionarioException {
+
 		int bandera = 0;
 		for (int i = 0; i < listaEmpleados.size() && bandera == 0; i++) {
 			if (listaEmpleados.get(i).getId().equals(empleado.getId())) {
@@ -246,11 +245,12 @@ public class Concesionario implements Serializable {
 		for (int i = 0; i < listaEmpleados.size(); i++) {
 			if (listaEmpleados.get(i).getId().equals(empleadoActualizado.getId())) {
 				listaEmpleados.set(i, empleadoActualizado);
-			} else {
-				// Si no se encontró el empleado con el id especificado
-				throw new ConcesionarioException("no se encontro un empleado con esa id");
-
 			}
+//			else {
+//				// Si no se encontró el empleado con el id especificado
+//				throw new ConcesionarioException("no se encontro un empleado con esa id");
+//
+//			}
 		}
 
 	}
@@ -262,9 +262,10 @@ public class Concesionario implements Serializable {
 	 * @param cliente
 	 * @throws ConcesionarioException
 	 */
-	public void eliminarEmpleado( Empleado empleado) throws ConcesionarioException {
 
-		String idEmpleado = empleado.getId();
+	public void eliminarEmpleado( Empleado empleadoSeleccionado) throws ConcesionarioException {
+
+		String idEmpleado = empleadoSeleccionado.getId();
 
 		for (int i = 0; i < listaEmpleados.size(); i++) {
 			if (listaEmpleados.get(i).getId().equals(idEmpleado)) {
@@ -273,9 +274,6 @@ public class Concesionario implements Serializable {
 				System.out.println("Se elimino el empleado.");
 				// Persistencia.guardarCliente(listaClientes);
 				break;
-			} else {
-				throw new ConcesionarioException("no existe un empleado con esa id");
-
 			}
 
 		}
@@ -285,120 +283,25 @@ public class Concesionario implements Serializable {
 	 * metodo para bloquear un empleado
 	 *
 	 * @param empleado
+	 * @param estado
+	 * @param bloqueado
 	 * @throws ConcesionarioException
 	 */
-	public void bloquearEmpleado( Empleado empleado) throws ConcesionarioException {
+
+	public void bloquearEmpleado( Empleado empleado, EstadoEmpleado estado) throws ConcesionarioException {
 		String idEmpleado = empleado.getId();
 
 		for (int i = 0; i < listaEmpleados.size(); i++) {
 			if (listaEmpleados.get(i).getId().equals(idEmpleado)) {
-				listaEmpleados.get(i).setEstadoEmpleado(EstadoEmpleado.BLOQUEADO);
+				listaEmpleados.get(i).setEstadoEmpleado(estado);
 
 				System.out.println("Se bloqueo el empleado. " + getNombre());
 				break;
-			} else {
-				throw new ConcesionarioException("no se encontro un empleado con esa id");
-
 			}
-
 		}
 	}
 //--------------------------------------------------------------------------------------------------------------------------------------------------
 
-																					//CRUD CLIENTE
-//
-//	/**
-//	 * metodo para agregar un cliente a la lista de clientes  , validando si el cliente
-//	 *  ya existe segun su id y verificando si el empleado esta activo
-//	 * @param cliente
-//	 * @throws EmpleadoExceptions
-//	 */
-//
-//	public void agregarCliente(Empleado empleado ,Cliente cliente) throws EmpleadoExceptions  {
-//
-//		if(empleado.getEstadoEmpleado().equals(EstadoEmpleado.ACTIVO)){
-//			int bandera = 0;
-//			for (int i = 0; i < listaClientes.size() && bandera == 0; i++) {
-//				if (listaClientes.get(i).getId().equals(cliente.getId())) {
-//					bandera = 1;
-//				}
-//			}
-//			if (bandera == 0) {
-//				listaClientes.add(cliente);
-//			//	Persistencia.guardarCliente(listaClientes);
-//				System.out.println("Se agrego un nuevo cliente .");
-//			} else {
-//				System.out.println("Este cliente ya existe");
-//			}
-//		}else{
-//			throw new EmpleadoExceptions("este empleado no puede agregar clientes , EMPLEADO BLOQUEADO");
-//
-//		}
-//
-//
-//	}
-//	/**
-//	 * metodo utilizado para actualizar la informacion del cliente que retorna un valor booleando true
-//	 * si el cliente fue actualizadao exitosamente o false si o fue actualizado
-//	 * y verificando si el empleado esta activo
-//	 * @param nombre
-//	 * @param edad
-//	 * @param id
-//	 * @param direccion
-//	 * @param telefono
-//	 * @param listaClientes
-//	 * @return
-//	 * @throws EmpleadoExceptions
-//	 */
-//
-//	public boolean actualizarCliente(Empleado empleado ,String nombre, String edad , String id , String direccion , String telefono) throws EmpleadoExceptions{
-//		if(empleado.getEstadoEmpleado().equals(EstadoEmpleado.ACTIVO)){
-//			Cliente clienteAct = new Cliente(nombre, edad, id, direccion, telefono);
-//			if (id != null) {
-//				for (int i = 0; i < listaClientes.size(); i++) {
-//					if (listaClientes.get(i).getId().equals(id)) {
-//						listaClientes.set(i, clienteAct);
-//
-//						// Guarda en el txt
-//						//Persistencia.guardarComprador(listaClientes);
-//						return true;
-//					}
-//				}
-//			}
-//
-//		}else{
-//			throw new EmpleadoExceptions("el empleado se encuentra bloqueado");
-//		}
-//		return false;
-//	}
-//
-//	/**
-//	 * metodo utilizado para eliminar un cliente de la lista  de clientes   validando que el cliente existe
-//	 * obteniendo su id y verificando si el empleado esta activo
-//	 * @param cliente
-//	 * @throws EmpleadoExceptions
-//	 */
-//
-//	public void eliminarCliente(Empleado empleado ,Cliente cliente) throws EmpleadoExceptions  {
-//		if(empleado.getEstadoEmpleado().equals(EstadoEmpleado.ACTIVO)){
-//			String idCliente = cliente.getId();
-//
-//			for (int i = 0; i < listaClientes.size(); i++) {
-//				if (listaClientes.get(i).getId().equals(idCliente)) {
-//					listaClientes.remove(i);
-//
-//					System.out.println("Se elimino el cliente.");
-//					//Persistencia.guardarCliente(listaClientes);
-//					break;
-//				}else System.out.println("no existe un cliente con esa id");
-//
-//			}
-//
-//		}else throw new EmpleadoExceptions("el empleado se encuentra Bloqueado");
-//
-//
-//	}
-//
 
 	public void agregarCliente(Cliente cliente) throws EmpleadoException, ConcesionarioException  {
 //		if(empleado.estadoEmpleado==EstadoEmpleado.ACTIVO){
@@ -463,6 +366,7 @@ public class Concesionario implements Serializable {
 	 * @throws EmpleadoExceptions
 	 */
 
+	@SuppressWarnings("unused")
 	public void eliminarCliente(Cliente cliente) throws EmpleadoException, ConcesionarioException  {
 //		if(estadoEmpleado==EstadoEmpleado.ACTIVO){
 			String idCliente = cliente.getId();
@@ -498,30 +402,12 @@ public class Concesionario implements Serializable {
             return false;
         }
 	}
-//			throws FileNotFoundException, IOException, AdministradorException {
-//		Administrador administradorIS = validarAdministrador(idAdmin, contrasenia);
-//		if (administradorIS != null) {
-//			return administradorIS;
-//		} else {
-//			throw new AdministradorException("Usuario no existe");
-//		}
-//
-//	}
-//
-//	private Administrador validarAdministrador(String idAdmin, String contrasenia)
-//			throws FileNotFoundException, IOException {
-//		ArrayList<Administrador> administradores = listaAdministradores;
-//
-//		for (int i = 0; i < administradores.size(); i++) {
-//			Administrador adminAux = administradores.get(i);
-//			if (adminAux.getId().equals(idAdmin)
-//					&& adminAux.getContrasenia().equalsIgnoreCase(contrasenia)) {
-//				return adminAux;
-//			}
-//		}
-//		return null;
-//	}
-
+/**
+ *
+ * @param idUsuario
+ * @return
+ * @throws IOException
+ */
 	public Administrador CargarAdministrador(String idUsuario) throws IOException {
 
 		ArrayList<Administrador> contenido = listaAdministradores;
@@ -589,4 +475,20 @@ public class Concesionario implements Serializable {
 		}
 		return null;
 	}
+
+
+	public void crearTransaccion(Transaccion transaccion){
+		listaTransacciones.add(transaccion);
+
+		if( transaccion.getVehiculo() != null){
+			eliminarVehiculo(transaccion.getVehiculo());
+		}
+
+
+		System.out.println( listaTransacciones );
+		System.out.println( listaVehiculos );
+
+	}
+
+
 }

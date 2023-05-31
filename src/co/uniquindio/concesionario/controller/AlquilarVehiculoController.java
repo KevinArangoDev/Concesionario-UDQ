@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
+
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
 
@@ -11,11 +12,10 @@ import co.uniquindio.concesionario.model.Cliente;
 import co.uniquindio.concesionario.model.Empleado;
 import co.uniquindio.concesionario.model.Transaccion;
 import co.uniquindio.concesionario.model.Vehiculo;
-
-import java.net.URL;
-import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
@@ -26,11 +26,8 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
-import javafx.event.ActionEvent;
-import javafx.fxml.Initializable;
 
-public class VenderVehiculoController implements Initializable {
-
+public class AlquilarVehiculoController implements Initializable {
 	ModelFactoryController singleton = ModelFactoryController.getInstance();
 
 	public void setModelFactoryController(ModelFactoryController singleton) {
@@ -48,7 +45,7 @@ public class VenderVehiculoController implements Initializable {
 
         // Agregar los vehículos al ComboBox
         listaBuscarVehicvulo.getItems().addAll(vehiculos);
-        listaMetodoDeCompra.getItems().add("Venta");
+        listaMetodoDeCompra.getItems().add("Alquiler");
 
 
 	}
@@ -180,7 +177,5 @@ public class VenderVehiculoController implements Initializable {
     	}
 
     }
-
-
 
 }

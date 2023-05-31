@@ -51,13 +51,13 @@
                                     <Font name="Bell MT" size="20.0" />
                                  </font>
                               </Label>
-                              <JFXTextField fx:id="txtModeloPesado" layoutX="211.0" layoutY="579.0" prefHeight="39.0" prefWidth="154.0" style="-fx-background-color: #eeeeee;" />
             <Label layoutX="27.0" layoutY="237.0" text="Tipo Transacción:" textFill="#eeeeee">
                <font>
                   <Font name="Bell MT" size="20.0" />
                </font>
             </Label>
             <ComboBox fx:id="listaTipoTransaccion" layoutX="212.0" layoutY="230.0" prefHeight="40.0" prefWidth="153.0" />
+            <ComboBox fx:id="cbxModelo" layoutX="195.0" layoutY="574.0" prefHeight="40.0" prefWidth="154.0" />
                            </children>
                         </AnchorPane>
                         <AnchorPane layoutX="520.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #eeeeee;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="400.0" AnchorPane.rightAnchor="400.0" AnchorPane.topAnchor="0.0">
@@ -171,7 +171,7 @@
                   <Font name="Bell MT" size="20.0" />
                </font>
             </Label>
-            <ComboBox fx:id="vendedorCombobox" layoutX="158.0" layoutY="334.0" prefHeight="40.0" prefWidth="222.0" />
+
                            </children>
                         </AnchorPane>
                      </children>

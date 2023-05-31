@@ -30,25 +30,27 @@ public class ComprarMotoController {
 
 	 private ModelFactoryController singleton;
 
+
 	    public void initialize() {
 	        singleton = ModelFactoryController.getInstance();
+
 
 	        listaTransaccion.getItems().addAll(TipoTransaccion.COMPRA, TipoTransaccion.REGISTRO);
 
 
-	        // Obtener los valores de la enumeración TipoCombustible
+	        // Obtener los valores de la enumeraciÃ³n TipoCombustible
 	        TipoCombustible[] tiposCombustible = TipoCombustible.values();
 
 	        // Agregar los valores al ComboBox
 	        listaCombustible.getItems().addAll(tiposCombustible);
 
-	     // Obtener los valores de la enumeración TipoCombustible
+	     // Obtener los valores de la enumeraciÃ³n TipoCombustible
 	        TipoNuevoUsado[] tipoNuevoUsado = TipoNuevoUsado.values();
 
 	        // Agregar los valores al ComboBox
 	        listaNuevoUsado.getItems().addAll(tipoNuevoUsado);
 
-	     // Obtener los valores de la enumeración TipoCombustible
+	     // Obtener los valores de la enumeraciÃ³n TipoCombustible
 	        TipoTransmision[] tiposTrasmision = TipoTransmision.values();
 
 	        // Agregar los valores al ComboBox
@@ -145,7 +147,7 @@ public class ComprarMotoController {
         if (tipoCombustible == null || tipoTransmision == null || tipoNuevoUsado == null
                 || marca.isEmpty() || modelo.isEmpty() || cambios.isEmpty()
                 || velMaximaText.isEmpty() || cilindraje.isEmpty() || placa.isEmpty()) {
-            // Mostrar alerta de campos vacíos
+            // Mostrar alerta de campos vacÃ­os
             Alert alert = new Alert(AlertType.ERROR);
             alert.setTitle("Error");
             alert.setHeaderText(null);

@@ -9,6 +9,7 @@ import co.uniquindio.concesionario.model.TipoCombustible;
 import co.uniquindio.concesionario.model.TipoNuevoUsado;
 import co.uniquindio.concesionario.model.TipoTransaccion;
 import co.uniquindio.concesionario.model.TipoTransmision;
+import co.uniquindio.concesionario.model.Transaccion;
 import co.uniquindio.concesionario.model.Vehiculo;
 
 import java.io.IOException;
@@ -42,8 +43,9 @@ public class ComprarPesadoController {
     @FXML
     private JFXTextField txtVelCruceroPesado;
 
-    @FXML
-    private JFXTextField txtModeloPesado;
+@FXML
+    private ComboBox<String> cbxModelo;
+
 
     @FXML
     private JFXTextField txtMarcaPesado;
@@ -115,10 +117,13 @@ public class ComprarPesadoController {
         singleton = ModelFactoryController.getInstance();
 
         // Configurar opciones para otros ComboBox
+   	 	cbxModelo.getItems().add("Bus");
+   	 	cbxModelo.getItems().add("Camion");
         listaCombustiblePesado.getItems().addAll(TipoCombustible.values());
         listaTrasmisionPesados.getItems().addAll(TipoTransmision.values());
         listaNuevoUsadoPesado.getItems().addAll(TipoNuevoUsado.values());
         listaTipoTransaccion.getItems().addAll(TipoTransaccion.COMPRA, TipoTransaccion.REGISTRO);
+
 
 
         ObservableList<String> opcionesSiNo = FXCollections.observableArrayList("Si", "No");
@@ -132,7 +137,7 @@ public class ComprarPesadoController {
     	Concesionario concesionario = ModelFactoryController.getInstance().getConcesionario();
 
         String marca = txtMarcaPesado.getText();
-        String modelo = txtModeloPesado.getText();
+        String modelo = cbxModelo.getSelectionModel().getSelectedItem();
         String cambios = txtCambiosPesado.getText();
         String velMaximaText = txtVelMaximaPesado.getText();
         String cilindraje = txtCilindrajePesado.getText();
@@ -172,12 +177,13 @@ public class ComprarPesadoController {
         }
 
         if (ModelFactoryController.validarCamposPesado(marca, modelo, cambios, velMaxima, cilindraje, placa, tipoTransaccion, tipoCombustible, tipoTransmision, tipoNuevoUsado, numPasajeros, velCrucero, numPuertas, capMaletero, hasAireAcondicionado, hasCamaraReversa, hasABS, numBolsasAire)) {
+
         	Vehiculo vehiculoPesado = ModelFactoryController.crearVehiculoPesado(marca, modelo, cambios, velMaxima, cilindraje,
                     placa, tipoTransaccion, tipoCombustible, tipoTransmision, tipoNuevoUsado, numPasajeros, velCrucero,
                     numPuertas, capMaletero, hasAireAcondicionado, hasCamaraReversa, hasABS, numBolsasAire);
         		concesionario.getListaVehiculos().add(vehiculoPesado);
-        		concesionario.getListaTransacciones().add(vehiculoPesado);
         		ModelFactoryController.mostrarAlerta("¡Vehículo comprado!");
+
                 limpiarCampos();
 
 
@@ -193,7 +199,7 @@ public class ComprarPesadoController {
 
     private void limpiarCampos() {
         txtMarcaPesado.clear();
-        txtModeloPesado.clear();
+        cbxModelo.getSelectionModel().clearSelection();
         txtCambiosPesado.clear();
         txtVelMaximaPesado.clear();
         txtCilindrajePesado.clear();

@@ -21,6 +21,18 @@ public class Cliente extends Persona implements Serializable {
 	}
 
 
+	public Cliente(String nombre, String edad, String id, String apellido) {
+		super(nombre, edad, id, apellido);
+
+	}
+
+
+	public Cliente(String nombre, String id, String apellido) {
+		super(nombre, id, apellido);
+		// TODO Auto-generated constructor stub
+	}
+
+
 	/**
 	 * Getters and setters
 	 */
@@ -43,7 +55,7 @@ public class Cliente extends Persona implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Cliente [direccion=" + direccion + ", telefono=" + telefono + "]";
+		return "cliente:"+getNombre() +" apellid"+getApellido();
 	}
 
 

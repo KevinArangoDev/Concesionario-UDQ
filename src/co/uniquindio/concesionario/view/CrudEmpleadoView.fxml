@@ -77,23 +77,18 @@
                <children>
                   <TableView fx:id="tblCrudEmpleados" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
                     <columns>
-                      <TableColumn fx:id="colCargo" prefWidth="125.0" text="Cargo" />
-                      <TableColumn fx:id="colId" prefWidth="125.0" text="ID" />
-                        <TableColumn fx:id="colNombre" prefWidth="125.0" text="Nombre" />
-                        <TableColumn fx:id="colApellido" prefWidth="125.0" text="Apellido" />
-                        <TableColumn fx:id="colEdad" prefWidth="70.0" text="Edad" />
-                        <TableColumn fx:id="colSueldo" prefWidth="129.0" text="Sueldo" />
+                      <TableColumn fx:id="colCargo" prefWidth="102.0" text="Cargo" />
+                      <TableColumn fx:id="colId" prefWidth="101.0" text="ID" />
+                        <TableColumn fx:id="colNombre" prefWidth="113.0" text="Nombre" />
+                        <TableColumn fx:id="colApellido" prefWidth="124.0" text="Apellido" />
+                        <TableColumn fx:id="colEdad" prefWidth="72.0" text="Edad" />
+                        <TableColumn fx:id="colSueldo" prefWidth="98.0" text="Sueldo" />
+                        <TableColumn fx:id="colEstado" prefWidth="98.0" text="Estado" />
                     </columns>
                   </TableView>
                   <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
                      <children>
                         <TextField fx:id="txtIdBuscar" prefHeight="40.0" prefWidth="250.0" />
-                        <ComboBox fx:id="cbxFilterCargo" prefHeight="40.0" prefWidth="230.0" promptText="Seleccione el cargo" style="-fx-background-color: #cccccc;">
-
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                        </ComboBox>
                         <JFXButton fx:id="btnBuscarEmpleado" onAction="#filtrarEmpleados" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #2a313c;" text="Buscar" textFill="#eeeeee">
                            <cursor>
                               <Cursor fx:constant="HAND" />
