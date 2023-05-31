@@ -8,6 +8,7 @@ import co.uniquindio.concesionario.model.Concesionario;
 import co.uniquindio.concesionario.model.Moto;
 import co.uniquindio.concesionario.model.TipoCombustible;
 import co.uniquindio.concesionario.model.TipoNuevoUsado;
+import co.uniquindio.concesionario.model.TipoTransaccion;
 import co.uniquindio.concesionario.model.TipoTransmision;
 
 import java.io.IOException;
@@ -34,19 +35,22 @@ public class ComprarMotoController {
 	        singleton = ModelFactoryController.getInstance();
 
 
-	        // Obtener los valores de la enumeración TipoCombustible
+	        listaTransaccion.getItems().addAll(TipoTransaccion.COMPRA, TipoTransaccion.REGISTRO);
+
+
+	        // Obtener los valores de la enumeraciÃ³n TipoCombustible
 	        TipoCombustible[] tiposCombustible = TipoCombustible.values();
 
 	        // Agregar los valores al ComboBox
 	        listaCombustible.getItems().addAll(tiposCombustible);
 
-	     // Obtener los valores de la enumeración TipoCombustible
+	     // Obtener los valores de la enumeraciÃ³n TipoCombustible
 	        TipoNuevoUsado[] tipoNuevoUsado = TipoNuevoUsado.values();
 
 	        // Agregar los valores al ComboBox
 	        listaNuevoUsado.getItems().addAll(tipoNuevoUsado);
 
-	     // Obtener los valores de la enumeración TipoCombustible
+	     // Obtener los valores de la enumeraciÃ³n TipoCombustible
 	        TipoTransmision[] tiposTrasmision = TipoTransmision.values();
 
 	        // Agregar los valores al ComboBox
@@ -68,6 +72,9 @@ public class ComprarMotoController {
 
     @FXML
     private ComboBox<TipoNuevoUsado> listaNuevoUsado;
+
+    @FXML
+    private ComboBox<TipoTransaccion> listaTransaccion;
 
     @FXML
     private JFXTextField txtVelocidadMaxima;
@@ -140,7 +147,7 @@ public class ComprarMotoController {
         if (tipoCombustible == null || tipoTransmision == null || tipoNuevoUsado == null
                 || marca.isEmpty() || modelo.isEmpty() || cambios.isEmpty()
                 || velMaximaText.isEmpty() || cilindraje.isEmpty() || placa.isEmpty()) {
-            // Mostrar alerta de campos vacíos
+            // Mostrar alerta de campos vacÃ­os
             Alert alert = new Alert(AlertType.ERROR);
             alert.setTitle("Error");
             alert.setHeaderText(null);
@@ -164,6 +171,8 @@ public class ComprarMotoController {
         moto.setPlaca(placa);
 
         concesionario.getListaVehiculos().add(moto);
+		concesionario.getListaTransacciones().add(moto);
+
       // Borrar los campos
         txtMarca.setText("");
         txtModelo.setText("");
@@ -174,6 +183,8 @@ public class ComprarMotoController {
         listaCombustible.getSelectionModel().clearSelection();
         listaTrasmision.getSelectionModel().clearSelection();
         listaNuevoUsado.getSelectionModel().clearSelection();
+        listaTransaccion.getSelectionModel().clearSelection();
+
 
      // Mostrar alerta de compra exitosa
         Alert alert = new Alert(AlertType.INFORMATION);
@@ -186,11 +197,27 @@ public class ComprarMotoController {
 
     @FXML
     void limpiarDatosMoto(ActionEvent event) {
-
+    	limpiarDatos();
     }
 
 
-    @FXML
+    private void limpiarDatos() {
+    	 // Borrar los campos
+        txtMarca.setText("");
+        txtModelo.setText("");
+        txtCambios.setText("");
+        txtVelocidadMaxima.setText("");
+        txtCilindraje.setText("");
+        txtPlaca.setText("");
+        listaCombustible.getSelectionModel().clearSelection();
+        listaTrasmision.getSelectionModel().clearSelection();
+        listaNuevoUsado.getSelectionModel().clearSelection();
+        listaTransaccion.getSelectionModel().clearSelection();
+	}
+
+
+
+	@FXML
     void volVentEmpleado(ActionEvent event) {
     	try {
 

@@ -213,11 +213,6 @@ public class ComprarLivianoController {
         		concesionario.getListaVehiculos().add(vehiculoLiviano);
         		ModelFactoryController.mostrarAlerta("¡Vehículo comprado!");
                 limpiarCampos();
-                ArrayList<Vehiculo> listaVehiculos = concesionario.getListaVehiculos();
-
-                for (Vehiculo vehiculo : listaVehiculos) {
-                    System.out.println(vehiculo.toString());
-                }
 
         } else {
         	ModelFactoryController.mostrarAlerta("Por favor, completa todos los campos y selecciona una opción de revisión técnica.");

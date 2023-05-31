@@ -185,11 +185,7 @@ public class ComprarPesadoController {
         		ModelFactoryController.mostrarAlerta("¡Vehículo comprado!");
 
                 limpiarCampos();
-                ArrayList<Vehiculo> listaVehiculos = concesionario.getListaVehiculos();
 
-                for (Vehiculo vehiculo : listaVehiculos) {
-                    System.out.println(vehiculo.toString());
-                }
 
         } else {
         	ModelFactoryController.mostrarAlerta("Por favor, completa todos los campos y selecciona una opción de revisión técnica.");
@@ -197,7 +193,7 @@ public class ComprarPesadoController {
     }
 
     @FXML
-    private void limpiarDatosLiviano(ActionEvent event) {
+    private void limpiarDatosPesado(ActionEvent event) {
         limpiarCampos();
     }
 

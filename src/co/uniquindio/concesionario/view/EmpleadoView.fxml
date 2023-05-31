@@ -38,9 +38,9 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </JFXButton>
-            <JFXButton fx:id="btnComprarVehiculo" onAction="#ventComprarVehiculo" prefHeight="80.0" prefWidth="300.0" style="-fx-background-color: #2a313c;" text="Comprar Vehículo" textFill="#eeeeee">
+            <JFXButton fx:id="btnComprarVehiculo" onAction="#ventComprarVehiculo" prefHeight="80.0" prefWidth="300.0" style="-fx-background-color: #2a313c;" text="Comprar/Registrar Vehículo" textFill="#eeeeee">
                <font>
-                  <Font name="Bell MT Bold" size="20.0" />
+                  <Font name="Bell MT Bold" size="16.0" />
                </font>
                <cursor>
                   <Cursor fx:constant="HAND" />
